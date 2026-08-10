@@ -1,0 +1,65 @@
+[
+  {
+    "id": "prod-1",
+    "name": "Artisan Full-Grain Leather Travel Duffel",
+    "slug": "artisan-full-grain-leather-travel-duffel",
+    "price": 12500,
+    "originalPrice": 16000,
+    "category": "Fashion & Accessories",
+    "rating": 4.9,
+    "reviewsCount": 84,
+    "stock": 15,
+    "isFeatured": true,
+    "description": "Handcrafted premium full-grain Pakistani cowhide leather travel bag with brass hardware, reinforced shoe compartment, and padded laptop sleeve. Perfect for weekend getaways and business trips.",
+    "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1000&q=80",
+    "specs": {
+      "Material": "100% Genuine Full-Grain Leather",
+      "Dimensions": "52cm x 28cm x 26cm",
+      "Capacity": "40 Liters",
+      "Warranty": "2 Years Limited Warranty"
+    },
+    "tags": ["Leather", "Travel", "Premium", "Handmade"]
+  },
+  {
+    "id": "prod-2",
+    "name": "Acoustics SoundFlow Pro ANC Wireless Earbuds",
+    "slug": "acoustics-soundflow-pro-anc-wireless-earbuds",
+    "price": 7999,
+    "originalPrice": 11500,
+    "category": "Electronics & Audio",
+    "rating": 4.8,
+    "reviewsCount": 142,
+    "stock": 28,
+    "isFeatured": true,
+    "description": "Active Noise Cancelling true wireless earbuds with custom 11mm dynamic drivers, 36-hour total battery life with fast USB-C wireless charging case, and IPX7 water resistance.",
+    "image": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=1000&q=80",
+    "specs": {
+      "Bluetooth": "v5.3 Low Latency",
+      "Battery Life": "8 hrs + 28 hrs with Case",
+      "Noise Cancellation": "-40dB Hybrid ANC",
+      "Microphones": "Quad AI Clear Voice Mics"
+    },
+    "tags": ["Audio", "Wireless", "ANC", "Gadgets"]
+  },
+  {
+    "id": "prod-3",
+    "name": "Chrono Titan AMOLED Smart Watch Series 5",
+    "slug": "chrono-titan-amoled-smart-watch-series-5",
+    "price": 15499,
+    "originalPrice": 19999,
+    "category": "Wearables",
+    "rating": 4.95,
+    "reviewsCount": 210,
+    "stock": 10,
+    "isFeatured": true,
+    "description": "Ultra-sleek titanium alloy smartwatch with 1.43-inch Always-On Retina AMOLED display, SpO2 & 24/7 heart rate monitoring, Bluetooth Calling, and 100+ sports tracking modes.",
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1000&q=80",
+    "specs": {
+      "Display": "1.43\" AMOLED 466x466",
+      "Body Material": "Aerospace Grade Titanium",
+      "Water Resistance": "5 ATM Swimproof",
+      "Battery": "Up to 12 Days Typical Usage"
+    },
+    "tags": ["Smartwatch", "Fitness", "Titanium", "Tech"]
+  }
+]

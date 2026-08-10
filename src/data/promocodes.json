@@ -1,0 +1,28 @@
+[
+  {
+    "code": "WELCOME10",
+    "type": "percentage",
+    "value": 10,
+    "description": "10% Off your total order"
+  },
+  {
+    "code": "PAKISTAN500",
+    "type": "fixed",
+    "value": 500,
+    "minSpend": 3000,
+    "description": "₨ 500 Off on orders above ₨ 3,000"
+  },
+  {
+    "code": "FREESHIP",
+    "type": "free_shipping",
+    "value": 250,
+    "description": "Free Standard Delivery across Pakistan"
+  },
+  {
+    "code": "VIP20",
+    "type": "percentage",
+    "value": 20,
+    "minSpend": 10000,
+    "description": "20% Off for VIP orders above ₨ 10,000"
+  }
+]

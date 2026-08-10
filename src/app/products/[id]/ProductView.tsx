@@ -1,0 +1,205 @@
+'use client';
+
+import React, { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Product } from '@/types/store';
+import { useStore } from '@/context/StoreContext';
+import {
+  Star,
+  ShoppingCart,
+  ArrowLeft,
+  Check,
+  ShieldCheck,
+  Truck,
+  RotateCcw,
+  Plus,
+  Minus,
+  Tag
+} from 'lucide-react';
+
+export default function ProductView({ product }: { product: Product }) {
+  const { addToCart, cart, getStock } = useStore();
+  const [quantity, setQuantity] = useState(1);
+
+  const liveStock = getStock(product.id);
+  const isInCart = cart.some(item => item.product.id === product.id);
+  const inCartQty = cart.find(item => item.product.id === product.id)?.quantity ?? 0;
+
+  const discountPercent = product.originalPrice
+    ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
+    : 0;
+
+  const handleQuantity = (delta: number) => {
+    const newQty = quantity + delta;
+    if (newQty >= 1 && newQty <= liveStock) {
+      setQuantity(newQty);
+    }
+  };
+
+  const handleAddToCart = () => {
+    const added = addToCart(product, quantity);
+    if (added) {
+      setQuantity(1);
+    }
+  };
+
+  const isSoldOut = liveStock <= 0;
+  const canAddMore = inCartQty + quantity <= liveStock;
+
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+
+      {/* Breadcrumb / Back button */}
+      <Link href="/" className="inline-flex items-center gap-2 text-xs font-semibold text-slate-400 hover:text-emerald-400 transition">
+        <ArrowLeft className="w-4 h-4" />
+        <span>Back to Store Catalog</span>
+      </Link>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+        {/* Product Image Showcase */}
+        <div className="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden relative aspect-square">
+          <Image
+            src={product.image}
+            alt={product.name}
+            fill
+            priority
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover"
+          />
+          {discountPercent > 0 && (
+            <div className="absolute top-4 left-4 bg-rose-500 text-white font-extrabold text-xs px-3 py-1 rounded-lg shadow-lg flex items-center gap-1">
+              <Tag className="w-3.5 h-3.5" />
+              <span>SAVE {discountPercent}%</span>
+            </div>
+          )}
+        </div>
+
+        {/* Product Specs & Purchase Column */}
+        <div className="space-y-6">
+
+          <div>
+            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
+              {product.category}
+            </span>
+            <h1 className="text-3xl font-black text-white mt-1 leading-tight">
+              {product.name}
+            </h1>
+
+            {/* Rating */}
+            <div className="flex items-center gap-2 mt-3 text-xs text-slate-400">
+              <div className="flex items-center gap-1 text-amber-400 font-bold">
+                <Star className="w-4 h-4 fill-amber-400" />
+                <span>{product.rating}</span>
+              </div>
+              <span>•</span>
+              <span>{product.reviewsCount} Customer Reviews</span>
+              <span>•</span>
+              <span className="text-emerald-400 font-semibold">Verified Stock ({liveStock} units available)</span>
+            </div>
+          </div>
+
+          {/* Pricing in PKR */}
+          <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 flex items-center justify-between">
+            <div>
+              <div className="text-xs text-slate-400">Price in Pakistan (PKR)</div>
+              <div className="flex items-baseline gap-3">
+                <span className="text-3xl font-black text-white">
+                  ₨ {product.price.toLocaleString()}
+                </span>
+                {product.originalPrice && (
+                  <span className="text-sm text-slate-500 line-through">
+                    ₨ {product.originalPrice.toLocaleString()}
+                  </span>
+                )}
+              </div>
+            </div>
+
+            <div className="text-right text-xs text-emerald-400 font-semibold">
+              <div>Inclusive of all taxes</div>
+              <div>Free Delivery Over ₨ 15,000</div>
+            </div>
+          </div>
+
+          <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            {product.description}
+          </p>
+
+          {/* Quantity Selector & Add to Cart */}
+          <div className="flex items-center gap-4 pt-4 border-t border-slate-800">
+            <div className="flex items-center bg-slate-900 border border-slate-700 rounded-xl p-1">
+              <button
+                onClick={() => handleQuantity(-1)}
+                disabled={quantity <= 1}
+                className="p-2 text-slate-400 hover:text-white disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                <Minus className="w-4 h-4" />
+              </button>
+              <span className="w-10 text-center font-extrabold text-sm text-white">
+                {quantity}
+              </span>
+              <button
+                onClick={() => handleQuantity(+1)}
+                disabled={quantity >= liveStock}
+                className="p-2 text-slate-400 hover:text-white disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                <Plus className="w-4 h-4" />
+              </button>
+            </div>
+
+            <button
+              onClick={handleAddToCart}
+              disabled={isSoldOut}
+              className="flex-1 py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl shadow-emerald-500/20 transition disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <ShoppingCart className="w-5 h-5" />
+              <span>Add {quantity} to Cart</span>
+              {isInCart && <Check className="w-4 h-4 text-emerald-200" />}
+            </button>
+          </div>
+
+          {!canAddMore && !isSoldOut && (
+            <p className="text-xs text-amber-400 font-semibold">
+              Note: You already have {inCartQty} in your cart (max {liveStock} available).
+            </p>
+          )}
+
+          {/* Technical Specifications Table */}
+          <div className="pt-6 border-t border-slate-800 space-y-3">
+            <h3 className="text-sm font-bold text-white">Technical Specifications</h3>
+            <div className="bg-slate-900/60 rounded-2xl border border-slate-800 overflow-hidden divide-y divide-slate-800 text-xs">
+              {Object.entries(product.specs).map(([key, val]) => (
+                <div key={key} className="flex items-center justify-between p-3">
+                  <span className="text-slate-400 font-medium">{key}</span>
+                  <span className="text-white font-semibold">{val}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Delivery Trust Badges */}
+          <div className="grid grid-cols-3 gap-3 pt-4 text-center text-xs">
+            <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1">
+              <Truck className="w-4 h-4 text-emerald-400 mx-auto" />
+              <div className="font-bold text-slate-200">Express Delivery</div>
+              <div className="text-[10px] text-slate-400">TCS / Leopards</div>
+            </div>
+            <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1">
+              <ShieldCheck className="w-4 h-4 text-emerald-400 mx-auto" />
+              <div className="font-bold text-slate-200">Official Warranty</div>
+              <div className="text-[10px] text-slate-400">100% Genuine</div>
+            </div>
+            <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1">
+              <RotateCcw className="w-4 h-4 text-emerald-400 mx-auto" />
+              <div className="font-bold text-slate-200">7 Days Return</div>
+              <div className="text-[10px] text-slate-400">Hassle-Free</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  );
+}
