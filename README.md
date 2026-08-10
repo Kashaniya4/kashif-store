@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛍️ Bazaar.pk — Pakistan's Premier E-Commerce Store
 
-## Getting Started
+A production-ready Pakistani e-commerce storefront built with **Next.js 16** and **React 19**, featuring local payment gateways (JazzCash, EasyPaisa, SadaPay, COD), nationwide courier logistics (TCS, Leopards, Trax), and full technical SEO for global discoverability.
 
-First, run the development server:
+## ✨ Features
+
+### 🛒 Storefront
+- **Product catalog** with categories, search, and live stock tracking
+- **Product detail pages** with specs, ratings, and discount badges
+- **Shopping cart** drawer with quantity controls and stock validation
+- **Promo codes** — percentage, fixed, and free-shipping types (WELCOME10 included)
+
+### 💳 Pakistani Payments
+- JazzCash, EasyPaisa, SadaPay / NayaPay, Visa / Mastercard, Bank IBAN transfer, Cash on Delivery
+- PKR (₨) currency throughout, free delivery over ₨ 15,000
+- Payment gateway simulation modal with confirmation + confetti
+
+### 📦 Logistics Admin (`/admin`)
+- Password-protected dashboard (default: `admin123`, override via `NEXT_PUBLIC_ADMIN_PASSWORD`)
+- Revenue, orders, pending-dispatch, and shipped metrics
+- Courier assignment (TCS / Leopards / Trax / PostEx / CallCourier) + auto tracking numbers
+- Printable tax invoice, order search & status pipeline
+
+### ⚡ JSON Product Importer (`/json-importer`)
+- Paste or upload a JSON array of products — validated and merged into the live catalog instantly
+- Persists to localStorage (survives reloads)
+
+### 🔍 Technical SEO (added for global ranking)
+- **Structured data (JSON-LD)**: `Product`, `Offer`, `AggregateRating`, `BreadcrumbList`, `FAQPage`, `Organization`, `WebSite` (+`SearchAction`), `LocalBusiness`, `ItemList`
+- **Per-page metadata**: title templates, descriptions, Open Graph, Twitter cards, canonical URLs
+- **`robots.txt`** with crawl rules (admin/checkout/importer blocked)
+- **Dynamic `sitemap.xml`** — auto-generates from `products.json`
+- **SEO landing pages**: `/products`, `/category/[slug]` (server-rendered for crawlers)
+- **PWA**: `manifest.json`, brand icons (192/512/maskable), apple-touch-icon
+- `noindex` on admin, checkout, and importer routes
+
+## 🚀 Getting Started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🏗️ Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## 🌍 Deployment
 
-To learn more about Next.js, take a look at the following resources:
+Deploys as a standard Next.js app — works out of the box on **Vercel**, Netlify, or any Node server.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### After deploying, update these in `src/lib/seo.ts`:
+1. `url` / `domain` → your live domain (e.g. `https://www.yourstore.com`)
+2. `logo` URLs → your absolute asset paths
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Then register in **Google Search Console**, submit `/sitemap.xml`, and verify.
 
-## Deploy on Vercel
+## 📁 Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+src/
+├── app/
+│   ├── page.tsx                # Home + structured data
+│   ├── layout.tsx              # Global metadata, fonts, viewport
+│   ├── robots.ts               # Crawl rules
+│   ├── sitemap.ts              # Dynamic sitemap
+│   ├── products/
+│   │   ├── page.tsx            # All-products landing
+│   │   └── [id]/page.tsx       # Product detail + Product schema
+│   ├── category/[slug]/page.tsx# Category landing pages
+│   ├── admin/                  # Logistics dashboard (noindex)
+│   ├── checkout/               # Checkout (noindex)
+│   └── json-importer/          # JSON import tool (noindex)
+├── components/                 # UI components
+├── context/StoreContext.tsx    # Global state (cart, orders, promos)
+├── data/                       # products.json, promocodes.json
+├── lib/seo.ts                  # SEO config + schema builders
+└── types/                      # TypeScript interfaces
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔑 Adding Products
+
+Edit `src/data/products.json` — sitemap, category pages, product metadata, and structured data all regenerate automatically.
+
+## 🖼️ Brand Icons
+
+Regenerate PWA icons after branding changes:
+
+```bash
+node scripts/generate-icons.mjs
+```
+
+## 📄 License
+
+Private project. All rights reserved.
