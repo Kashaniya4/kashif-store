@@ -48,7 +48,7 @@ export const SocialAuthModal: React.FC = () => {
     setUser({
       id: `usr-guest-${Date.now()}`,
       name: guestName,
-      email: guestEmail || `${guestPhone}@guest.bazaar.pk`,
+      email: guestEmail || `${guestPhone}@guest.sastamaal.net`,
       phone: guestPhone,
       provider: 'guest'
     });
@@ -71,7 +71,7 @@ export const SocialAuthModal: React.FC = () => {
           <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto mb-3">
             <UserIcon className="w-6 h-6" />
           </div>
-          <h3 className="text-xl font-extrabold text-white">Welcome to Bazaar.pk</h3>
+          <h3 className="text-xl font-extrabold text-white">Welcome to sastamaal.net</h3>
           <p className="text-xs text-slate-400 mt-1">
             Choose your preferred sign in method or continue as a guest for fast checkout.
           </p>

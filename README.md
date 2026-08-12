@@ -1,4 +1,4 @@
-# 🛍️ Bazaar.pk — Pakistan's Premier E-Commerce Store
+# 🛍️ sastamaal.net — Pakistan's Premier E-Commerce Store
 
 A production-ready Pakistani e-commerce storefront built with **Next.js 16** and **React 19**, featuring local payment gateways (JazzCash, EasyPaisa, SadaPay, COD), nationwide courier logistics (TCS, Leopards, Trax), and full technical SEO for global discoverability.
 

@@ -37,18 +37,15 @@ export const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 gap-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg group-hover:scale-105 transition-transform">
-              PK
-            </div>
-            <div>
-              <span className="font-extrabold text-xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-400">
-                BAZAAR<span className="text-emerald-400">.PK</span>
-              </span>
-              <span className="block text-[10px] uppercase font-semibold tracking-widest text-emerald-400/90">
-                Premium Store
-              </span>
-            </div>
+          <Link href="/" className="flex items-center group">
+            <Image
+              src="/brand/sastamaal-logo-transparent.png"
+              alt="sastamaal.net"
+              width={512}
+              height={280}
+              priority
+              className="h-10 w-auto object-contain group-hover:opacity-90 transition-opacity"
+            />
           </Link>
 
           {/* Live Search */}

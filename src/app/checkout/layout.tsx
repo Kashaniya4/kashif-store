@@ -4,7 +4,7 @@ import { SITE_CONFIG } from '@/lib/seo';
 // Transactional page — keep out of search indexes.
 export const metadata: Metadata = {
   title: 'Secure Checkout & Shipping',
-  description: 'Complete your secure Bazaar.pk order with JazzCash, EasyPaisa, SadaPay, bank transfer or Cash on Delivery. Nationwide 24-48hr delivery.',
+  description: 'Complete your secure sastamaal.net order with JazzCash, EasyPaisa, SadaPay, bank transfer or Cash on Delivery. Nationwide 24-48hr delivery.',
   robots: {
     index: false,
     follow: false,

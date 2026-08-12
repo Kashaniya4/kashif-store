@@ -10,13 +10,13 @@ const products = productsData as unknown as Product[];
 
 export const metadata: Metadata = {
   title: 'All Products — Electronics, Fashion & Wearables in Pakistan',
-  description: `Browse all ${products.length} products at Bazaar.pk — premium electronics, audio, fashion accessories and smart wearables in Pakistan. JazzCash, EasyPaisa, COD & nationwide delivery.`,
+  description: `Browse all ${products.length} products at sastamaal.net — premium electronics, audio, fashion accessories and smart wearables in Pakistan. JazzCash, EasyPaisa, COD & nationwide delivery.`,
   alternates: {
     canonical: `${SITE_CONFIG.url}/products`,
   },
   openGraph: {
     title: `All Products — Electronics, Fashion & Wearables in Pakistan | ${SITE_CONFIG.name}`,
-    description: `Browse all ${products.length} products at Bazaar.pk with nationwide delivery and local payment options.`,
+    description: `Browse all ${products.length} products at sastamaal.net with nationwide delivery and local payment options.`,
     url: `${SITE_CONFIG.url}/products`,
     type: 'website',
     images: [{ url: '/brand/bazaar-logo.svg', width: 800, height: 400, alt: SITE_CONFIG.shortName }],
@@ -35,7 +35,7 @@ export default function AllProductsPage() {
         <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">Full Catalog</span>
         <h1 className="text-3xl font-black text-white mt-1">All Products in Pakistan</h1>
         <p className="text-xs text-slate-400 mt-2 max-w-2xl">
-          Shop the complete Bazaar.pk catalog — {products.length} products across {categories.length} categories, delivered nationwide via TCS, Leopards &amp; Trax with JazzCash, EasyPaisa and COD checkout.
+          Shop the complete sastamaal.net catalog — {products.length} products across {categories.length} categories, delivered nationwide via TCS, Leopards &amp; Trax with JazzCash, EasyPaisa and COD checkout.
         </p>
       </div>
 

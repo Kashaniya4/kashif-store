@@ -430,7 +430,7 @@ export default function AdminLogisticsPage() {
               
               <div className="flex items-center justify-between border-b pb-4">
                 <div>
-                  <h2 className="text-2xl font-black text-slate-900">BAZAAR.PK</h2>
+                  <h2 className="text-2xl font-black text-slate-900">SASTAMAAL.NET</h2>
                   <p className="text-xs text-slate-500">Official Tax Invoice & Order Receipt</p>
                 </div>
                 <div className="text-right">

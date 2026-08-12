@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Product } from '@/types/store';
 import { useStore } from '@/context/StoreContext';
+import { categorySlug } from '@/lib/seo';
 import {
   Star,
   ShoppingCart,
@@ -15,7 +16,11 @@ import {
   RotateCcw,
   Plus,
   Minus,
-  Tag
+  Tag,
+  MessageCircle,
+  BadgeCheck,
+  Package,
+  Sparkles,
 } from 'lucide-react';
 
 export default function ProductView({ product }: { product: Product }) {
@@ -51,10 +56,18 @@ export default function ProductView({ product }: { product: Product }) {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
 
       {/* Breadcrumb / Back button */}
-      <Link href="/" className="inline-flex items-center gap-2 text-xs font-semibold text-slate-400 hover:text-emerald-400 transition">
-        <ArrowLeft className="w-4 h-4" />
-        <span>Back to Store Catalog</span>
-      </Link>
+      <nav className="flex flex-wrap items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
+        <Link href="/" className="inline-flex items-center gap-1 hover:text-emerald-400 transition">
+          <ArrowLeft className="w-4 h-4" />
+          <span>Store Catalog</span>
+        </Link>
+        <span>/</span>
+        <Link href={`/category/${categorySlug(product.category)}`} className="hover:text-emerald-400 transition">
+          {product.category}
+        </Link>
+        <span>/</span>
+        <span className="text-white font-semibold">{product.name}</span>
+      </nav>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
@@ -122,9 +135,19 @@ export default function ProductView({ product }: { product: Product }) {
             </div>
           </div>
 
-          <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
-            {product.description}
-          </p>
+          <div className="space-y-3">
+            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              {product.description}
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+              {product.tags.slice(0, 3).map((tag) => (
+                <div key={tag} className="rounded-xl border border-slate-800 bg-slate-900/60 p-3 text-slate-300 flex items-center gap-2">
+                  <Sparkles className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>{tag}</span>
+                </div>
+              ))}
+            </div>
+          </div>
 
           {/* Quantity Selector & Add to Cart */}
           <div className="flex items-center gap-4 pt-4 border-t border-slate-800">
@@ -200,6 +223,43 @@ export default function ProductView({ product }: { product: Product }) {
         </div>
 
       </div>
+
+      {/* Product confidence sections */}
+      <section className="grid gap-4 md:grid-cols-3">
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 space-y-3">
+          <BadgeCheck className="w-6 h-6 text-emerald-400" />
+          <h2 className="text-white font-bold">Why this product stands out</h2>
+          <p className="text-sm text-slate-400 leading-relaxed">
+            {product.name} is selected for customers who want reliable quality, clear pricing in PKR, and a smooth Pakistani checkout experience.
+          </p>
+        </div>
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 space-y-3">
+          <Package className="w-6 h-6 text-emerald-400" />
+          <h2 className="text-white font-bold">Packed for safe delivery</h2>
+          <p className="text-sm text-slate-400 leading-relaxed">
+            We prepare every order carefully and ship via trusted courier partners including TCS, Leopards, and Trax.
+          </p>
+        </div>
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 space-y-3">
+          <MessageCircle className="w-6 h-6 text-emerald-400" />
+          <h2 className="text-white font-bold">Support before and after purchase</h2>
+          <p className="text-sm text-slate-400 leading-relaxed">
+            Have questions about size, specs, payment, or delivery? Our local support team can help before checkout.
+          </p>
+        </div>
+      </section>
+
+      {/* Related discovery */}
+      <section className="rounded-3xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">Explore more</span>
+          <h2 className="text-xl font-black text-white mt-1">More {product.category} products in Pakistan</h2>
+          <p className="text-sm text-slate-400 mt-1">Compare similar products with local payments, PKR pricing, and nationwide delivery.</p>
+        </div>
+        <Link href={`/category/${categorySlug(product.category)}`} className="px-5 py-3 rounded-xl bg-emerald-500 text-slate-950 font-black text-xs uppercase tracking-wider text-center">
+          View Category
+        </Link>
+      </section>
     </div>
   );
 }

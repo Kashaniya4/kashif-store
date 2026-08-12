@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 // Internal tool — not for search engines.
 export const metadata: Metadata = {
   title: 'JSON Product Importer',
-  description: 'Bazaar.pk internal tool to import product catalog JSON (authorized staff only).',
+  description: 'sastamaal.net internal tool to import product catalog JSON (authorized staff only).',
   robots: {
     index: false,
     follow: false,

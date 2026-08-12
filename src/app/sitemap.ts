@@ -8,23 +8,18 @@ const products = productsData as unknown as Product[];
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  // Static core pages
   const staticPages: MetadataRoute.Sitemap = [
-    {
-      url: SITE_CONFIG.url,
-      lastModified: now,
-      changeFrequency: 'daily',
-      priority: 1.0,
-    },
-    {
-      url: `${SITE_CONFIG.url}/products`,
-      lastModified: now,
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
+    { url: SITE_CONFIG.url, lastModified: now, changeFrequency: 'daily', priority: 1.0 },
+    { url: `${SITE_CONFIG.url}/products`, lastModified: now, changeFrequency: 'daily', priority: 0.95 },
+    { url: `${SITE_CONFIG.url}/policies`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
+    { url: `${SITE_CONFIG.url}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${SITE_CONFIG.url}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${SITE_CONFIG.url}/shipping-policy`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${SITE_CONFIG.url}/return-policy`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${SITE_CONFIG.url}/privacy-policy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${SITE_CONFIG.url}/terms-of-service`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
   ];
 
-  // Every product detail page (uses slug → canonical URL)
   const productPages: MetadataRoute.Sitemap = products.map((product) => ({
     url: `${SITE_CONFIG.url}/products/${product.slug}`,
     lastModified: now,
@@ -32,7 +27,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  // One canonical category URL per distinct category
   const categories = Array.from(new Set(products.map((p) => p.category)));
   const categoryPages: MetadataRoute.Sitemap = categories.map((category) => ({
     url: `${SITE_CONFIG.url}/category/${categorySlug(category)}`,

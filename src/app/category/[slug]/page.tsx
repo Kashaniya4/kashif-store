@@ -53,8 +53,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const description = descriptor
     ? descriptor.description
     : category
-    ? `Shop ${category} online in Pakistan at Bazaar.pk. Fast nationwide delivery, JazzCash/EasyPaisa/COD payment.`
-    : 'Browse products in this category at Bazaar.pk.';
+    ? `Shop ${category} online in Pakistan at sastamaal.net. Fast nationwide delivery, JazzCash/EasyPaisa/COD payment.`
+    : 'Browse products in this category at sastamaal.net.';
 
   const canonical = `${SITE_CONFIG.url}/category/${slug}`;
 
@@ -109,11 +109,11 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
     faqStructuredData([
       {
         question: `Where can I buy ${category} online in Pakistan?`,
-        answer: `You can buy ${category} online at Bazaar.pk. We deliver nationwide in 24-48 hours via TCS, Leopards and Trax, with free shipping on orders over Rs. 15,000.`,
+        answer: `You can buy ${category} online at sastamaal.net. We deliver nationwide in 24-48 hours via TCS, Leopards and Trax, with free shipping on orders over Rs. 15,000.`,
       },
       {
-        question: `What payment methods does Bazaar.pk accept for ${category.toLowerCase()}?`,
-        answer: `Bazaar.pk accepts JazzCash, EasyPaisa, SadaPay, NayaPay, Visa/Mastercard, bank transfer and Cash on Delivery (COD) for all ${category.toLowerCase()} orders.`,
+        question: `What payment methods does sastamaal.net accept for ${category.toLowerCase()}?`,
+        answer: `sastamaal.net accepts JazzCash, EasyPaisa, SadaPay, NayaPay, Visa/Mastercard, bank transfer and Cash on Delivery (COD) for all ${category.toLowerCase()} orders.`,
       },
     ]),
   ];

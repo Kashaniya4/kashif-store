@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   description: SITE_CONFIG.description,
   applicationName: SITE_CONFIG.name,
   keywords: [...SITE_CONFIG.keywords],
-  authors: [{ name: 'Bazaar.pk Team', url: SITE_CONFIG.url }],
-  creator: 'Bazaar.pk',
-  publisher: 'Bazaar.pk',
+  authors: [{ name: 'sastamaal.net Team', url: SITE_CONFIG.url }],
+  creator: 'sastamaal.net',
+  publisher: 'sastamaal.net',
   category: 'E-Commerce',
   icons: {
     icon: [
@@ -71,8 +71,8 @@ export const metadata: Metadata = {
     title: `${SITE_CONFIG.shortName} | ${SITE_CONFIG.name} — Pakistan's Premier E-Commerce Store`,
     description: SITE_CONFIG.description,
     images: ['/brand/bazaar-logo.svg'],
-    creator: '@bazaarpk',
-    site: '@bazaarpk',
+    creator: '@sastamaalnet',
+    site: '@sastamaalnet',
   },
   robots: {
     index: true,

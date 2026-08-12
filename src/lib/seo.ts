@@ -1,5 +1,5 @@
 /**
- * Centralized SEO configuration for Bazaar.pk
+ * Centralized SEO configuration for sastamaal.net
  * All site-wide constants, metadata generators, and structured data helpers.
  */
 import { Product } from '@/types/store';
@@ -9,26 +9,26 @@ import productsData from '@/data/products.json';
 // 1. Site Identity
 // ---------------------------------------------------------------------------
 export const SITE_CONFIG = {
-  name: 'Bazaar.pk',
-  shortName: 'BAZAAR.PK',
+  name: 'sastamaal.net',
+  shortName: 'SASTAMAAL',
   description:
-    'Pakistan\'s next-generation e-commerce destination with seamless local mobile wallet checkout (JazzCash, EasyPaisa, SadaPay, COD) and nationwide courier delivery across Karachi, Lahore, Islamabad, Faisalabad and more.',
+    "sastamaal.net is Pakistan's next-generation e-commerce destination with seamless local mobile wallet checkout (JazzCash, EasyPaisa, SadaPay, COD) and nationwide courier delivery across Karachi, Lahore, Islamabad, Faisalabad and more.",
   descriptionLong:
-    'Bazaar.pk is Pakistan\'s premier online store delivering premium electronics, fashion & accessories with JazzCash, EasyPaisa, SadaPay & cash-on-delivery payment options. Fast 24-48hr express shipping via TCS, Leopards & Trax to all major Pakistani cities.',
-  url: 'https://kashif-store.vercel.app',
-  domain: 'kashif-store.vercel.app',
-  logo: 'https://kashif-store.vercel.app/brand/bazaar-logo.svg',
-  logoTextOnly: 'https://kashif-store.vercel.app/brand/bazaar-icon.svg',
+    "sastamaal.net is Pakistan's premier online store delivering premium electronics, fashion & accessories with JazzCash, EasyPaisa, SadaPay & cash-on-delivery payment options. Fast 24-48hr express shipping via TCS, Leopards & Trax to all major Pakistani cities.",
+  url: 'https://sastamaal.net',
+  domain: 'sastamaal.net',
+  logo: 'https://sastamaal.net/brand/sastamaal-logo.png',
+  logoTextOnly: 'https://sastamaal.net/brand/sastamaal-logo-transparent.png',
   locale: 'en-PK',
   currency: 'PKR',
-  phone: '+923001234567',
-  phoneDisplay: '0300-1234567',
-  email: 'support@bazaar.pk',
+  phone: '+923397100515',
+  phoneDisplay: '0339-7100515',
+  email: 'blasterbeaty@gmail.com',
   address: {
-    street: 'Gulberg III, Main Boulevard',
-    city: 'Lahore',
+    street: 'Al-Hamd telecom, Main Sir Sayyad Road, Block 8',
+    city: 'Khanewal',
     region: 'Punjab',
-    postalCode: '55500',
+    postalCode: '',
     country: 'PK',
   },
   social: {
@@ -37,7 +37,7 @@ export const SITE_CONFIG = {
     tiktok: 'https://tiktok.com',
     linkedin: 'https://linkedin.com',
     youtube: 'https://youtube.com',
-    whatsapp: 'https://wa.me/923001234567',
+    whatsapp: 'https://wa.me/923397100515',
   },
   keywords: [
     'pakistan ecommerce',
@@ -57,6 +57,8 @@ export const SITE_CONFIG = {
     'leather bag',
     'wearables',
     'audio',
+    'sastamaal',
+    'khanewal ecommerce',
   ],
 } as const;
 
@@ -81,9 +83,9 @@ export function buildMetadata(overrides: {
     title,
     description,
     keywords: overrides.openGraph?.keywords ?? [...SITE_CONFIG.keywords].join(', '),
-    authors: [{ name: 'Bazaar.pk Team', url: SITE_CONFIG.url }],
-    creator: 'Bazaar.pk Team',
-    publisher: 'Bazaar.pk',
+    authors: [{ name: 'sastamaal.net Team', url: SITE_CONFIG.url }],
+    creator: 'sastamaal.net Team',
+    publisher: 'sastamaal.net',
     formatDetection: {
       email: false,
       address: false,
@@ -115,8 +117,8 @@ export function buildMetadata(overrides: {
       title,
       description,
       images: [DEFAULT_OG_IMAGE],
-      creator: '@bazaarpk',
-      site: '@bazaarpk',
+      creator: '@sastamaalnet',
+      site: '@sastamaalnet',
     },
     robots: {
       index: overrides.noindex ? false : true,
@@ -181,9 +183,9 @@ export function productStructuredData(product: Product) {
     image: [product.image],
     description: product.description,
     sku: product.id,
-    mpn: product.id.replace('prod-', 'BAZAAR-PK-'),
+    mpn: product.id.replace('prod-', 'SASTAMAAL-NET-'),
     gtin: `000000${Math.abs(product.id.split('').reduce((a, c) => a + c.charCodeAt(0), 0))}`,
-    brand: { '@type': 'Brand', name: 'Bazaar.pk' },
+    brand: { '@type': 'Brand', name: 'sastamaal.net' },
     category: product.category,
     keywords: product.tags.join(', '),
     aggregateRating: {
@@ -205,7 +207,7 @@ export function productStructuredData(product: Product) {
             itemCondition: 'https://schema.org/NewCondition',
           }
         : {}),
-      seller: { '@type': 'Organization', name: 'Bazaar.pk', url: SITE_CONFIG.url },
+      seller: { '@type': 'Organization', name: 'sastamaal.net', url: SITE_CONFIG.url },
       ...(discount > 0
         ? {
             priceSpecification: {
@@ -329,7 +331,7 @@ export function organizationStructuredData() {
       SITE_CONFIG.social.youtube,
     ],
     department: [
-      { '@type': 'LocalBusiness', name: 'Bazaar.pk Head Office', address: SITE_CONFIG.address },
+      { '@type': 'LocalBusiness', name: 'sastamaal.net Head Office', address: SITE_CONFIG.address },
     ],
   };
 }
@@ -366,7 +368,7 @@ export function localBusinessStructuredData() {
     '@context': 'https://schema.org/',
     '@type': 'LocalBusiness',
     '@id': `${SITE_CONFIG.url}/#localbusiness`,
-    name: 'Bazaar.pk Official Store',
+    name: 'sastamaal.net Official Store',
     image: SITE_CONFIG.logo,
     telephone: SITE_CONFIG.phone,
     email: SITE_CONFIG.email,

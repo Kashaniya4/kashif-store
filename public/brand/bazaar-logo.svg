@@ -1,13 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" role="img" aria-label="Bazaar.pk logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 80" role="img" aria-label="sastamaal.net logo">
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#10b981"/>
-      <stop offset="1" stop-color="#2dd4bf"/>
+      <stop offset="1" stop-color="#0d9488"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fcd34d"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="txt" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#cbd5e1"/>
     </linearGradient>
   </defs>
-  <rect width="48" height="48" rx="14" fill="url(#g)"/>
-  <path d="M15 32l4-12h10l4 12h-4.5l-1-3.5h-7l-1 3.5H15zm8-13.5l-2.2 6.7h4.4L23 18.5z" fill="#020617"/>
-  <path d="M24 40l4-1.2-1.4-8.3-5.2 5.6L24 40z" fill="#0f766e"/>
-  <text x="60" y="34" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="800" fill="#f8fafc">BAZAAR</text>
-  <text x="60" y="56" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#34d399" letter-spacing="4">.PK</text>
+
+  <!-- Symbol: price tag + bolt -->
+  <circle cx="28" cy="30" r="26" fill="url(#g)"/>
+  <circle cx="40" cy="14" r="8" fill="#ffffff" opacity="0.14"/>
+  <circle cx="14" cy="48" r="12" fill="#0f766e" opacity="0.25"/>
+  <path d="M28 8 C47 8 60 21 60 40 C60 59 47 72 28 72 C9 72 -4 59 -4 40 C-4 21 9 8 28 8 Z"
+        fill="none" stroke="#ffffff" stroke-width="4" stroke-opacity="0.9"/>
+  <path d="M10 40 L-4 40" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-opacity="0.9"/>
+  <path d="M36 24 L26 40 L32 40 L24 56 L42 36 L35 36 L44 24 Z" fill="url(#gold)"/>
+
+  <!-- Wordmark -->
+  <text x="58" y="34" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="800" fill="url(#txt)">SASTAMAAL</text>
+  <text x="58" y="54" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#34d399" letter-spacing="3">.NET</text>
 </svg>

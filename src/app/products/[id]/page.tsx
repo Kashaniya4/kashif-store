@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
   if (!product) {
     return {
-      title: 'Product Not Found — Bazaar.pk',
+      title: 'Product Not Found — sastamaal.net',
       description: 'The product you are looking for does not exist or was removed.',
       robots: { index: false, follow: false },
     };
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
     : 0;
 
-  const description = `${product.name} — ${priceDisplay}${product.originalPrice ? ` (M.R.P. ₨ ${product.originalPrice.toLocaleString()})` : ''}${discount > 0 ? ` | ${discount}% OFF` : ''} | ${product.category} | Buy online at Bazaar.pk with JazzCash, EasyPaisa, COD & nationwide delivery.`;
+  const description = `${product.name} — ${priceDisplay}${product.originalPrice ? ` (M.R.P. ₨ ${product.originalPrice.toLocaleString()})` : ''}${discount > 0 ? ` | ${discount}% OFF` : ''} | ${product.category} | Buy online at sastamaal.net with JazzCash, EasyPaisa, COD & nationwide delivery.`;
   const canonicalUrl = `${SITE_CONFIG.url}/products/${product.slug}`;
 
   return {

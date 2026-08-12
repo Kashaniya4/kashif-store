@@ -25,14 +25,34 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "unsplash.com" },
     ],
+    // Lazy-load + generate WebP/AVIF variants to cut page weight.
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 60 * 60 * 24 * 30, // 30-day cache for optimized images
   },
 
-  // International targeting for Pakistan (geo-SEO)
-  // Uncomment after adding country verification in Google Search Console:
-  // headers: async () => [
-  //   { source: "/(.*)", headers: [...securityHeaders] },
-  // ],
+  // International targeting for Pakistan (geo-SEO) + security headers.
+  // CSP is commented so it does not block Google fonts/analytics until verified.
+  headers: async () => [
+    {
+      source: "/brand/:path*",
+      headers: [
+        { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+      ],
+    },
+    { source: "/manifest.json", headers: [{ key: "Cache-Control", value: "public, max-age=86400" }] },
+    { source: "/robots.txt", headers: [{ key: "Cache-Control", value: "public, max-age=86400" }] },
+    { source: "/sitemap.xml", headers: [{ key: "Cache-Control", value: "public, max-age=86400" }] },
+    { source: "/favicon.ico", headers: [{ key: "Cache-Control", value: "public, max-age=86400" }] },
+    ...securityHeaders.map((h) => ({
+      source: "/(.*)",
+      headers: [h],
+    })),
+  ],
 
+  // Reduce bundle size and speed up client navigation.
+  experimental: {
+    optimizePackageImports: ["lucide-react"],
+  },
 };
 
 export default nextConfig;

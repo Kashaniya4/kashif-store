@@ -46,7 +46,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
   const totalPayable = getCartTotal();
 
   const handleCopyIBAN = () => {
-    navigator.clipboard.writeText('PK82BAZAAR00019283746501');
+    navigator.clipboard.writeText('PK82SASTA00019283746501');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -297,12 +297,12 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
 
           {selectedMethod === 'bank_transfer' && (
             <div className="p-4 rounded-2xl bg-slate-950 border border-slate-800 space-y-3 text-xs">
-              <div className="font-bold text-slate-200">Bazaar.pk Official Bank Account Details</div>
+              <div className="font-bold text-slate-200">sastamaal.net Official Bank Account Details</div>
               <div className="space-y-1 text-slate-300 font-mono bg-slate-900 p-3 rounded-xl border border-slate-800">
                 <div>Bank: <strong className="text-white">Meezan Bank Limited</strong></div>
-                <div>Account Title: <strong className="text-white">Bazaar PK E-Commerce</strong></div>
+                <div>Account Title: <strong className="text-white">Sastamaal E-Commerce</strong></div>
                 <div className="flex items-center justify-between pt-1">
-                  <span>IBAN: <strong className="text-emerald-400">PK82BAZAAR00019283746501</strong></span>
+                  <span>IBAN: <strong className="text-emerald-400">PK82SASTA00019283746501</strong></span>
                   <button
                     type="button"
                     onClick={handleCopyIBAN}

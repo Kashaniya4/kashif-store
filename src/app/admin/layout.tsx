@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 // Admin portal — absolutely not for search engines.
 export const metadata: Metadata = {
   title: 'Logistics Admin',
-  description: 'Bazaar.pk order management and logistics dispatch portal (authorized staff only).',
+  description: 'sastamaal.net order management and logistics dispatch portal (authorized staff only).',
   robots: {
     index: false,
     follow: false,

@@ -90,24 +90,29 @@ function inPoly(x, y, pts) {
   return inside;
 }
 
-// Shopping-bag mark in [0,1] coordinates
-function inBagMark(x, y) {
-  // main bag body (rounded bottom)
-  const inBody =
-    x >= 0.36 && x <= 0.64 &&
-    inRoundedRect(x, y, 0.36, 0.36, 0.64, 0.74, 0.035);
-  if (inBody) {
-    // cut out the handle hole (rounded top of body)
-    if (x >= 0.475 && x <= 0.525 && y >= 0.30 && y <= 0.42) return false;
-    return true;
-  }
-  // handle arc (two side posts + top bar) drawn as a thick ring segment
-  const hx = (x - 0.5) * 4;         // center x around 0.5
-  const hy = (y - 0.34) * 4;        // center y of handle top
-  const dist = Math.hypot(hx, hy);
-  const inHandleRing = dist >= 0.72 && dist <= 0.86 && y <= 0.34 + 0.08;
-  if (inHandleRing && !inBody) return true;
-  return false;
+// ---- pure-symbol mark: price-tag outline + gold charging bolt ----
+// Tag ring: pill/rounded-circle with a horizontal pin notch on the left.
+function inTagRing(x, y) {
+  const cx = 0.5, cy = 0.52, R = 0.33;
+  const dist = Math.hypot(x - cx, y - cy);
+  const onRing = Math.abs(dist - R) < 0.042;
+  const inRingBounds = dist >= R - 0.05 && dist <= R + 0.05;
+  if (!onRing || !inRingBounds) return false;
+  // keep the ring a clean circle (already handled by radius check)
+  return true;
+}
+// Left pin notch: a horizontal tab sticking out at the tag's left edge.
+function inTagPin(x, y) {
+  const cy = 0.52;
+  return x >= 0.045 && x <= 0.19 && Math.abs(y - cy) < 0.042;
+}
+// Gold lightning bolt inside the tag.
+function inBolt(x, y) {
+  const u = (x - 0.5) * 2.1;
+  const v = (y - 0.52) * 2.1;
+  return inPoly(u, v, [
+    [-0.32, -0.44], [0.14, 0.05], [-0.08, 0.05], [0.32, 0.44], [-0.14, -0.05], [0.08, -0.05],
+  ]);
 }
 
 function render(size, maskable) {
@@ -118,9 +123,11 @@ function render(size, maskable) {
   const y1 = 1 - pad;
   const radius = maskable ? 0.5 : 0.22;
   const top = hexToRgb('#10b981');
-  const bot = hexToRgb('#14b8a6');
+  const bot = hexToRgb('#0d9488');
   const dark = hexToRgb('#022c22');
   const white = hexToRgb('#f8fafc');
+  const goldA = hexToRgb('#fbbf24');
+  const goldB = hexToRgb('#f59e0b');
 
   const rgba = Buffer.alloc(size * size * 4);
   for (let py = 0; py < size; py++) {
@@ -145,13 +152,15 @@ function render(size, maskable) {
           g = lerp(top[1], bot[1], (u + v) / 2);
           b = lerp(top[2], bot[2], (u + v) / 2);
         }
-      } else if (inBagMark(u, v)) {
-        // subtle dark shadow behind mark
-        if (inBagMark(u - 0.008, v - 0.006)) {
-          r = white[0]; g = white[1]; b = white[2];
-        } else {
-          r = dark[0]; g = dark[1]; b = dark[2];
-        }
+      } else if (inBolt(u, v)) {
+        // gold charging bolt
+        const t = (u + v) / 2;
+        r = lerp(goldA[0], goldB[0], t);
+        g = lerp(goldA[1], goldB[1], t);
+        b = lerp(goldA[2], goldB[2], t);
+      } else if (inTagRing(u, v) || inTagPin(u, v)) {
+        // white price-tag outline
+        r = white[0]; g = white[1]; b = white[2];
       }
 
       rgba[i] = r;

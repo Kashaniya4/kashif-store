@@ -18,7 +18,12 @@
       "Capacity": "40 Liters",
       "Warranty": "2 Years Limited Warranty"
     },
-    "tags": ["Leather", "Travel", "Premium", "Handmade"]
+    "tags": [
+      "Leather",
+      "Travel",
+      "Premium",
+      "Handmade"
+    ]
   },
   {
     "id": "prod-2",
@@ -39,7 +44,12 @@
       "Noise Cancellation": "-40dB Hybrid ANC",
       "Microphones": "Quad AI Clear Voice Mics"
     },
-    "tags": ["Audio", "Wireless", "ANC", "Gadgets"]
+    "tags": [
+      "Audio",
+      "Wireless",
+      "ANC",
+      "Gadgets"
+    ]
   },
   {
     "id": "prod-3",
@@ -60,6 +70,448 @@
       "Water Resistance": "5 ATM Swimproof",
       "Battery": "Up to 12 Days Typical Usage"
     },
-    "tags": ["Smartwatch", "Fitness", "Titanium", "Tech"]
+    "tags": [
+      "Smartwatch",
+      "Fitness",
+      "Titanium",
+      "Tech"
+    ]
+  },
+  {
+    "id": "prod-4",
+    "name": "VoltX Max 65W GaN Fast Charger",
+    "slug": "voltx-max-65w-gan-fast-charger",
+    "price": 1750,
+    "originalPrice": 2299,
+    "category": "Mobile Accessories",
+    "rating": 4.7,
+    "reviewsCount": 64,
+    "stock": 42,
+    "isFeatured": true,
+    "description": "Ultra-compact 65W GaN charging brick with dual USB-C PD and USB-A ports. Charges laptops, phones, and tablets simultaneously in half the time—perfect for travel and desktop use across Pakistan.",
+    "image": "https://images.unsplash.com/photo-1557767382-97b28f5488e7?auto=format&fit=crop&w=1000&q=80",
+    "specs": {
+      "Output": "65W USB-C PD + 18W USB-A",
+      "Technology": "GaN (Gallium Nitride)",
+      "Input": "100-240V Global (Type C Plug)",
+      "Protection": "OVP, OCP, OTP, SCP"
+    },
+    "tags": [
+      "Charger",
+      "Fast Charging",
+      "GaN",
+      "Travel"
+    ]
+  },
+  {
+    "id": "prod-5",
+    "name": "SwiftLink 5A Braided USB-C Cable",
+    "slug": "swiftlink-5a-braided-usb-c-cable",
+    "price": 350,
+    "originalPrice": 500,
+    "category": "Mobile Accessories",
+    "rating": 4.6,
+    "reviewsCount": 98,
+    "stock": 120,
+    "isFeatured": false,
+    "description": "Nylon-braided USB-C to USB-C cable supporting 5A fast charging up to 100W and data transfer at 480Mbps. Built to survive 10,000+ bends—ideal for daily Pakistani wall-charging setups.",
+    "image": "https://images.unsplash.com/photo-1762681290814-432626dffb8c?auto=format&fit=crop&w=1000&q=80",
+    "specs": {
+      "Material": "Nylon Braided Jacket",
+      "Speed": "USB 2.0 High-Speed (480Mbps)",
+      "Power": "5A / 100W PD Fast Charge",
+      "Length": "1 Meter (3.3ft)"
+    },
+    "tags": [
+      "Cable",
+      "USB-C",
+      "Fast Charging",
+      "Durability"
+    ]
+  },
+  {
+    "id": "prod-6",
+    "name": "ShieldView Ultra Clear Screen Protector",
+    "slug": "shieldview-ultra-clear-screen-protector",
+    "price": 350,
+    "originalPrice": 500,
+    "category": "Mobile Accessories",
+    "rating": 4.5,
+    "reviewsCount": 76,
+    "stock": 200,
+    "isFeatured": false,
+    "description": "High-clarity tempered glass screen protector with 9H hardness, oleophobic coating, and bubble-free adhesive. Provides military-grade drop protection while keeping your display perfectly sharp.",
+    "image": "https://images.unsplash.com/photo-1750041888982-67a58e6c9014?auto=format&fit=crop&w=1000&q=80",
+    "specs": {
+      "Thickness": "0.33mm Tempered Glass",
+      "Hardness": "9H (Military Grade)",
+      "Coating": "Oleophobic + Hydrophobic",
+      "Compatibility": "Universal 6.0\" to 6.8\" Displays"
+    },
+    "tags": [
+      "Screen Protector",
+      "Tempered Glass",
+      "Protection"
+    ]
+  },
+  {
+    "id": "prod-7",
+    "name": "AeroCool Pro Magnetic Phone Cooler",
+    "slug": "aerocool-pro-magnetic-phone-cooler",
+    "price": 750,
+    "originalPrice": 999,
+    "category": "Mobile Accessories",
+    "rating": 4.4,
+    "reviewsCount": 52,
+    "stock": 35,
+    "isFeatured": true,
+    "description": "Clip-on magnetic cooling fan with a 4200 RPM turbo motor and LED indicators. Keeps your phone 8-12°C cooler during gaming, livestreaming, or long charge sessions in Pakistan's heat.",
+    "image": "https://images.unsplash.com/photo-1705614232873-190b1770c6be?auto=format&fit=crop&w=1000&q=80",
+    "specs": {
+      "Motor Speed": "4200 RPM",
+      "Cooling Method": "Magnetic Clip-On Fan",
+      "Power": "USB-C Powered (5V/2A)",
+      "Compatibility": "5\" to 7\" Phones (MagSafe Ready)"
+    },
+    "tags": [
+      "Phone Cooler",
+      "Gaming",
+      "Magnetic",
+      "Cooling Fan"
+    ]
+  },
+  {
+    "id": "prod-8",
+    "name": "BassBoom X Wireless Bluetooth Speaker",
+    "slug": "bassboom-x-wireless-bluetooth-speaker",
+    "price": 1850,
+    "originalPrice": 2500,
+    "category": "Mobile Accessories",
+    "rating": 4.75,
+    "reviewsCount": 88,
+    "stock": 24,
+    "isFeatured": true,
+    "description": "360° omni-directional Bluetooth 5.3 speaker with 30mm drivers delivering deep bass and crystal-clear highs. IPX7 waterproof, 18-hour battery, and TWS stereo pairing for any Pakistani party or trip.",
+    "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=1000&q=80",
+    "specs": {
+      "Bluetooth": "v5.3, 10m Range",
+      "Battery": "18 Hours Playtime",
+      "Water Resistance": "IPX7",
+      "Audio": "30mm Drivers, TWS Stereo"
+    },
+    "tags": [
+      "Bluetooth Speaker",
+      "Portable",
+      "Waterproof",
+      "Bass"
+    ]
+  },
+  {
+    "id": "prod-9",
+    "name": "FlexArmor Shockproof Phone Back Cover",
+    "slug": "flexarmor-shockproof-phone-back-cover",
+    "price": 650,
+    "originalPrice": 850,
+    "category": "Mobile Accessories",
+    "rating": 4.3,
+    "reviewsCount": 67,
+    "stock": 90,
+    "isFeatured": false,
+    "description": "Hybrid dual-layer case with air-cushion corners and a raised camera ring. Military-grade drop absorption, anti-yellowing frosted PC back, and precise cutouts for any Pakistani smartphone model.",
+    "image": "https://images.unsplash.com/photo-1535157412991-2ef801c1748b?auto=format&fit=crop&w=1000&q=80",
+    "specs": {
+      "Layers": "Dual-Layer (PC + TPU)",
+      "Drop Test": "Military-Grade (MIL-STD 810G)",
+      "Finish": "Anti-Yellowing Frosted PC",
+      "Features": "Air Cushion Corners, Raised Camera Ring"
+    },
+    "tags": [
+      "Phone Case",
+      "Shockproof",
+      "Back Cover",
+      "Protection"
+    ]
+  },
+  {
+    "id": "prod-10",
+    "name": "PowerCore 30000mAh Power Bank",
+    "slug": "powercore-30000mah-power-bank",
+    "price": 5799,
+    "originalPrice": 7500,
+    "category": "Mobile Accessories",
+    "rating": 4.65,
+    "reviewsCount": 134,
+    "stock": 28,
+    "isFeatured": true,
+    "description": "High-capacity 30000mAh power bank with 30W USB-C PD and dual USB-A outputs. Charges a phone 4-5X or powers a laptop. Smart IC protection and airplane-safe certified for travel across Pakistan.",
+    "image": "https://images.unsplash.com/photo-1566554738544-d962991c3fee?auto=format&fit=crop&w=1000&q=80",
+    "specs": {
+      "Capacity": "30000mAh / 111Wh",
+      "Output": "30W USB-C PD, 2x USB-A",
+      "Input": "30W USB-C Recharge",
+      "Certification": "Airline Safe"
+    },
+    "tags": [
+      "Power Bank",
+      "Portable Charger",
+      "High Capacity"
+    ]
+  },
+  {
+    "id": "prod-11",
+    "name": "SnapMount 15W MagSafe Wireless Charger",
+    "slug": "snapmount-15w-magsafe-wireless-charger",
+    "price": 1299,
+    "originalPrice": 1699,
+    "category": "Mobile Accessories",
+    "rating": 4.55,
+    "reviewsCount": 41,
+    "stock": 38,
+    "isFeatured": false,
+    "description": "MagSafe-compatible wireless charger with 15W Qi2 fast charging, a non-slip silicone pad, and a built-in temperature-control chip to keep your phone cool while charging overnight.",
+    "image": "https://images.unsplash.com/photo-1545235616-db3cd822ad8c?auto=format&fit=crop&w=1000&q=80",
+    "specs": {
+      "Wireless Standard": "Qi2 + MagSafe (15W)",
+      "Input": "USB-C PD 20W Adapter (not included)",
+      "Safety": "Temperature Control Chip",
+      "Material": "Non-Slip Silicone Surface"
+    },
+    "tags": [
+      "Wireless Charger",
+      "MagSafe",
+      "Fast Charge"
+    ]
+  },
+  {
+    "id": "prod-12",
+    "name": "LinkHub 3-in-1 Charging Station Dock",
+    "slug": "linkhub-3-in-1-charging-station-dock",
+    "price": 1899,
+    "originalPrice": 2499,
+    "category": "Mobile Accessories",
+    "rating": 4.6,
+    "reviewsCount": 59,
+    "stock": 40,
+    "isFeatured": false,
+    "description": "Sleek aluminum charging dock with one 30W USB-C PD port and two 18W USB-A ports. Powers phone, earbuds, and a second device at once from a single wall outlet—great for home or Pakistani offices.",
+    "image": "https://images.unsplash.com/photo-1709294339771-f4b88c706d34?auto=format&fit=crop&w=1000&q=80",
+    "specs": {
+      "Ports": "1x USB-C PD 30W, 2x USB-A 18W",
+      "Material": "Aluminum Alloy Housing",
+      "Safety": "Overcurrent & Surge Protection",
+      "Plug": "Type C / Type G Interchangeable"
+    },
+    "tags": [
+      "Charging Station",
+      "Dock",
+      "Multi-Device",
+      "Aluminum"
+    ]
+  },
+  {
+    "id": "prod-13",
+    "name": "VoltX Lite 20W USB-C Fast Charger",
+    "slug": "voltx-lite-20w-usb-c-fast-charger",
+    "price": 650,
+    "originalPrice": 899,
+    "category": "Mobile Accessories",
+    "rating": 4.5,
+    "reviewsCount": 52,
+    "stock": 60,
+    "isFeatured": false,
+    "description": "Compact foldable 20W USB-C charger for phones and earbuds. Features a tangle-free retractable pin and full safety protection, designed for daily Pakistani mains sockets.",
+    "image": "https://images.unsplash.com/photo-1707167144682-5de04050ad18?auto=format&fit=crop&w=1000&q=80",
+    "specs": {
+      "Output": "20W USB-C PD",
+      "Plug": "Foldable Type-C (Pakistan Standard)",
+      "Protection": "OVP, OCP, OTP",
+      "Warranty": "1 Year"
+    },
+    "tags": [
+      "Charger",
+      "20W Fast Charge",
+      "Foldable",
+      "USB-C"
+    ]
+  },
+  {
+    "id": "prod-14",
+    "name": "SwiftLink Pro 100W USB-C Cable",
+    "slug": "swiftlink-pro-100w-usb-c-cable",
+    "price": 450,
+    "originalPrice": 650,
+    "category": "Mobile Accessories",
+    "rating": 4.6,
+    "reviewsCount": 69,
+    "stock": 105,
+    "isFeatured": false,
+    "description": "Ultra-durable aluminum-braided USB-C cable rated for 100W Power Delivery and 10Gbps data. The reinforced stress joints handle heavy daily Pakistani charging and carry without fraying.",
+    "image": "https://images.unsplash.com/photo-1572721546624-05bf65ad7679?auto=format&fit=crop&w=1000&q=80",
+    "specs": {
+      "Material": "Aluminum Braided Jacket",
+      "Speed": "USB 3.2 Gen 2 (10Gbps)",
+      "Power": "100W PD Fast Charge",
+      "Length": "1.2 Meter"
+    },
+    "tags": [
+      "Cable",
+      "USB-C",
+      "100W",
+      "Data Transfer"
+    ]
+  },
+  {
+    "id": "prod-15",
+    "name": "ShieldView Privacy Anti-Peep Screen Protector",
+    "slug": "shieldview-privacy-anti-peep-screen-protector",
+    "price": 550,
+    "originalPrice": 750,
+    "category": "Mobile Accessories",
+    "rating": 4.4,
+    "reviewsCount": 43,
+    "stock": 85,
+    "isFeatured": false,
+    "description": "Tempered glass privacy screen protector that narrows the view to 45° on each side. Anti-spy, 9H hardness, and oleophobic coating keep your screen safe and private in public Pakistani spaces.",
+    "image": "https://images.unsplash.com/photo-1679486622067-a4cc6b796303?auto=format&fit=crop&w=1000&q=80",
+    "specs": {
+      "Privacy Angle": "45° Anti-Peep",
+      "Thickness": "0.33mm Tempered Glass",
+      "Hardness": "9H",
+      "Compatibility": "Universal 6.0\" to 6.8\""
+    },
+    "tags": [
+      "Screen Protector",
+      "Privacy",
+      "Anti-Spy",
+      "Protector"
+    ]
+  },
+  {
+    "id": "prod-16",
+    "name": "AeroCool Mini Clip-On Phone Fan",
+    "slug": "aerocool-mini-clip-on-phone-fan",
+    "price": 500,
+    "originalPrice": 700,
+    "category": "Mobile Accessories",
+    "rating": 4.2,
+    "reviewsCount": 38,
+    "stock": 50,
+    "isFeatured": false,
+    "description": "Mini clip-on cooling fan for smartphones that plugs into a power bank or USB port. Lightweight, quiet 3000 RPM motor, and an adjustable angle—great for long calls and hot Pakistani summers.",
+    "image": "https://images.unsplash.com/photo-1658673609646-9c7ba9514b89?auto=format&fit=crop&w=1000&q=80",
+    "specs": {
+      "Motor": "3000 RPM Brushless",
+      "Mounting": "Universal Spring Clip",
+      "Power": "USB-C/Micro-USB Cable",
+      "Speed": "3 Adjustable Settings"
+    },
+    "tags": [
+      "Phone Fan",
+      "Cooling",
+      "Mini Fan",
+      "Summer"
+    ]
+  },
+  {
+    "id": "prod-17",
+    "name": "BassBoom Mini Bluetooth Speaker",
+    "slug": "bassboom-mini-bluetooth-speaker",
+    "price": 950,
+    "originalPrice": 1299,
+    "category": "Mobile Accessories",
+    "rating": 4.3,
+    "reviewsCount": 62,
+    "stock": 70,
+    "isFeatured": false,
+    "description": "Pocket-sized Bluetooth 5.3 speaker with punchy bass and 8-hour battery. Water-resistant mesh and a carabiner clip make it easy to take music anywhere in Pakistan.",
+    "image": "https://images.unsplash.com/photo-1589003077984-894e133dabab?auto=format&fit=crop&w=1000&q=80",
+    "specs": {
+      "Bluetooth": "v5.3, 10m",
+      "Battery": "8 Hours",
+      "Water Resistance": "IPX5 Mesh",
+      "Features": "Carabiner Clip, Built-in Mic"
+    },
+    "tags": [
+      "Mini Speaker",
+      "Bluetooth",
+      "Portable",
+      "Bass"
+    ]
+  },
+  {
+    "id": "prod-18",
+    "name": "FlexArmor Clear View Phone Case",
+    "slug": "flexarmor-clear-view-phone-case",
+    "price": 400,
+    "originalPrice": 550,
+    "category": "Mobile Accessories",
+    "rating": 4.1,
+    "reviewsCount": 37,
+    "stock": 115,
+    "isFeatured": false,
+    "description": "Crystal-clear TPU case that shows off your phone's design while adding military-grade drop protection. Anti-scratch coating and raised edges guard the screen and camera on any Pakistani surface.",
+    "image": "https://images.unsplash.com/photo-1672906674626-f58e6885f632?auto=format&fit=crop&w=1000&q=80",
+    "specs": {
+      "Material": "Flexible TPU",
+      "Protection": "MIL-STD Drop Tested",
+      "Finish": "Anti-Scratch, Clear",
+      "Edge Support": "Raised Screen/Camera Lips"
+    },
+    "tags": [
+      "Clear Case",
+      "Transparent",
+      "Protection"
+    ]
+  },
+  {
+    "id": "prod-19",
+    "name": "PowerCore 10000mAh Mini Power Bank",
+    "slug": "powercore-10000mah-mini-power-bank",
+    "price": 2799,
+    "originalPrice": 3499,
+    "category": "Mobile Accessories",
+    "rating": 4.5,
+    "reviewsCount": 75,
+    "stock": 65,
+    "isFeatured": false,
+    "description": "Pocket-friendly 10000mAh power bank with a single 18W USB-C PD port and an LED battery level indicator. Slides easily into any Pakistani pocket or small purse for all-day charging.",
+    "image": "https://images.unsplash.com/photo-1635861321688-b63d28749a82?auto=format&fit=crop&w=1000&q=80",
+    "specs": {
+      "Capacity": "10000mAh",
+      "Output": "18W USB-C PD",
+      "Input": "Micro-USB Recharge",
+      "Feature": "LED Battery Indicator"
+    },
+    "tags": [
+      "Power Bank",
+      "Mini",
+      "10000mAh",
+      "Portable"
+    ]
+  },
+  {
+    "id": "prod-20",
+    "name": "VoltX 4-Port USB Wall Charger",
+    "slug": "voltx-4-port-usb-wall-charger",
+    "price": 1499,
+    "originalPrice": 1999,
+    "category": "Mobile Accessories",
+    "rating": 4.4,
+    "reviewsCount": 48,
+    "stock": 55,
+    "isFeatured": false,
+    "description": "Space-saving 4-port USB wall charger with 30W total output and an integrated nightstand light. Powers a phone, earbuds, tablet, and more from one Pakistani socket without a mess of adapters.",
+    "image": "https://images.unsplash.com/photo-1603899122911-27c0cb85824a?auto=format&fit=crop&w=1000&q=80",
+    "specs": {
+      "Ports": "4x USB-A, 1x USB-C PD",
+      "Total Output": "30W",
+      "Plug": "Pakistan Standard 3-Pin",
+      "Feature": "Built-in Night LED Light"
+    },
+    "tags": [
+      "Wall Charger",
+      "4-Port",
+      "Multi-Device"
+    ]
   }
 ]
