@@ -130,7 +130,19 @@ export const Footer: React.FC = () => {
           <div>
             <h5 className="text-xs font-bold text-white uppercase tracking-wider mb-4">Help & Support</h5>
             <ul className="space-y-3 text-xs">
-              <li className="flex items-start gap-2.5"><MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span>Al-Hamd telecom, Main Sir Sayyad Road, Block 8, Khanewal</span></li>
+              <li>
+                <a
+                  href="https://maps.app.goo.gl/BhU2TupDpo9d5qLN7?g_st=awb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2.5 hover:text-emerald-400 transition-colors group"
+                >
+                  <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                  <span className="underline decoration-dotted underline-offset-2 decoration-slate-600 group-hover:decoration-emerald-400">
+                    Al-Hamd telecom, Main Sir Sayyad Road, Block 8, Khanewal
+                  </span>
+                </a>
+              </li>
               <li className="flex items-center gap-2.5"><PhoneCall className="w-4 h-4 text-emerald-400 shrink-0" /><span>0339-7100515</span></li>
               <li className="flex items-center gap-2.5"><Mail className="w-4 h-4 text-emerald-400 shrink-0" /><span>blasterbeaty@gmail.com</span></li>
               <li className="flex items-center gap-2.5"><MessageCircle className="w-4 h-4 text-emerald-400 shrink-0" /><span>WhatsApp: 0339-7100515</span></li>
