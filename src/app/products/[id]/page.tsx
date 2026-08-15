@@ -11,8 +11,14 @@ import {
   breadcrumbStructuredData,
 } from '@/lib/seo';
 
+const products = productsData as unknown as Product[];
+
+export function generateStaticParams() {
+  return products.map(p => ({ id: p.slug || p.id }));
+}
+
 function findProduct(id: string): Product | undefined {
-  return (productsData as unknown as Product[]).find(p => p.id === id || p.slug === id);
+  return products.find(p => p.id === id || p.slug === id);
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
