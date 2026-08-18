@@ -55,18 +55,18 @@ export const ProductMarquee: React.FC = () => {
           <Link
             key={`${product.id}-${i}`}
             href={`/products/${product.slug || product.id}`}
-            className="group shrink-0 flex flex-col items-center gap-1.5 w-20 transition-all hover:scale-110"
+            className="group shrink-0 flex flex-col items-center gap-1.5 transition-all hover:scale-110"
           >
-            <div className="relative w-16 h-16 rounded-xl overflow-hidden border-2 border-slate-800 group-hover:border-emerald-500/60 transition-all shadow-md group-hover:shadow-lg group-hover:shadow-emerald-500/20">
+            <div className="w-16 h-16 rounded-xl overflow-hidden border-2 border-slate-800 group-hover:border-emerald-500/60 transition-all shadow-md group-hover:shadow-lg group-hover:shadow-emerald-500/20">
               <Image
                 src={product.image}
                 alt={product.name}
-                fill
-                sizes="64px"
-                className="object-cover"
+                width={64}
+                height={64}
+                className="w-full h-full object-cover"
               />
             </div>
-            <span className="text-[10px] text-slate-500 group-hover:text-emerald-400 transition-colors text-center leading-tight w-full truncate">
+            <span className="text-[10px] text-slate-500 group-hover:text-emerald-400 transition-colors text-center leading-tight w-16 truncate">
               {product.name.split(' ').slice(0, 2).join(' ')}
             </span>
           </Link>

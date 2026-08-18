@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { LucideIcon, ArrowRight } from 'lucide-react';
 
 interface PromoBannerImage {
@@ -82,20 +81,19 @@ export const PromoBanner: React.FC<PromoBannerProps> = ({
 
       {/* Product thumbnail row — 4 small inline */}
       {images.length > 0 && (
-        <div className="relative z-10 flex gap-1.5 pt-1.5">
+        <div className="relative z-10 grid grid-cols-4 gap-1.5 pt-1.5">
           {images.slice(0, 4).map((img, i) => (
-            <span
+            <div
               key={i}
-              className="relative flex-1 h-10 rounded-md overflow-hidden border border-white/10 hover:border-white/25 transition-all bg-black/40"
+              className="h-10 rounded-md overflow-hidden border border-white/10 hover:border-white/25 transition-all bg-black/40"
             >
-              <Image
+              <img
                 src={img.src}
                 alt={img.alt}
-                fill
-                sizes="(max-width: 1024px) 15vw, 10vw"
-                className="object-cover transition-transform duration-200 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-200 group-hover:scale-110"
+                loading="lazy"
               />
-            </span>
+            </div>
           ))}
         </div>
       )}

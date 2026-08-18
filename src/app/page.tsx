@@ -18,7 +18,6 @@ import {
   PackageCheck,
   Zap,
   Headphones,
-  BadgePercent,
 } from 'lucide-react';
 import {
   SITE_CONFIG,
@@ -198,12 +197,11 @@ export default function HomePage() {
                         style={{ animationDelay: `${idx * 0.15}s` }}
                       >
                         <div className="relative w-10 h-10 rounded-lg overflow-hidden shrink-0 border border-white/10">
-                          <Image
+                          <img
                             src={product.image}
                             alt={product.name}
-                            fill
-                            sizes="40px"
-                            className="object-cover group-hover:scale-110 transition-transform duration-500"
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            loading="lazy"
                           />
                           {discount > 0 && (
                             <span className="absolute top-0 left-0 bg-rose-500 text-white text-[7px] font-bold px-0.5 rounded-sm">
