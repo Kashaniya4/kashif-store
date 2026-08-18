@@ -131,27 +131,28 @@
   },
   {
     "id": "prod-6",
-    "name": "ShieldView Ultra Clear Screen Protector",
-    "slug": "shieldview-ultra-clear-screen-protector",
-    "price": 350,
-    "originalPrice": 500,
-    "category": "Mobile Accessories",
-    "rating": 4.5,
-    "reviewsCount": 76,
-    "stock": 200,
-    "isFeatured": false,
-    "description": "High-clarity tempered glass screen protector with 9H hardness, oleophobic coating, and bubble-free adhesive. Provides military-grade drop protection while keeping your display perfectly sharp.",
-    "image": "https://images.unsplash.com/photo-1750041888982-67a58e6c9014?auto=format&fit=crop&w=1000&q=80",
+    "name": "AirPods Pro 2nd Gen Wireless Earbuds",
+    "slug": "airpods-pro-2nd-gen-wireless-earbuds",
+    "price": 8999,
+    "originalPrice": 12500,
+    "category": "Electronics & Audio",
+    "rating": 4.85,
+    "reviewsCount": 210,
+    "stock": 45,
+    "isFeatured": true,
+    "description": "Premium true wireless earbuds with Active Noise Cancellation, Adaptive Transparency, Personalized Spatial Audio, and up to 6 hours of listening time on a single charge.",
+    "image": "https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?auto=format&fit=crop&w=1000&q=80",
     "specs": {
-      "Thickness": "0.33mm Tempered Glass",
-      "Hardness": "9H (Military Grade)",
-      "Coating": "Oleophobic + Hydrophobic",
-      "Compatibility": "Universal 6.0\" to 6.8\" Displays"
+      "Chip": "Apple H2",
+      "Battery Life": "6 hrs + 30 hrs with Case",
+      "Noise Cancellation": "Active + Transparency",
+      "Water Resistance": "IPX4 Sweat & Water Resistant"
     },
     "tags": [
-      "Screen Protector",
-      "Tempered Glass",
-      "Protection"
+      "AirPods",
+      "Wireless Earbuds",
+      "ANC",
+      "Premium Audio"
     ]
   },
   {

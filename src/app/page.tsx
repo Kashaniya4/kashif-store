@@ -99,7 +99,7 @@ export default function HomePage() {
 
       {/* Hero Banner — Dark Sci-Fi Theme with Laser Effects */}
       <section className="relative overflow-hidden rounded-2xl lg:rounded-3xl">
-        <div className="relative w-full h-[360px] sm:h-[420px] lg:h-[460px] rounded-2xl lg:rounded-3xl overflow-hidden">
+        <div className="relative w-full min-h-[400px] sm:min-h-[480px] lg:min-h-[520px] rounded-2xl lg:rounded-3xl overflow-hidden">
           {/* Sci-fi animated background */}
           <div className="absolute inset-0 scifi-hero-bg" />
           <div className="absolute inset-0 scifi-grid" />
@@ -138,7 +138,7 @@ export default function HomePage() {
           {/* Content overlay */}
           <div className="absolute inset-0 flex items-center">
             <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full">
-              <div className="flex items-center justify-between gap-8">
+              <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
                 {/* Left: Text content */}
                 <div className="max-w-2xl text-white flex-1 min-w-0">
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] sm:text-xs font-semibold shadow-sm backdrop-blur-sm">

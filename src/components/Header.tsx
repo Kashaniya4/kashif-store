@@ -34,32 +34,35 @@ export const Header: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 gap-4">
-          {/* Logo — compact symbol + wordmark */}
-          <Link href="/" className="flex items-center gap-2 sm:gap-3 group shrink-0">
+        <div className="flex items-center justify-between h-24 gap-4">
+          {/* Logo — premium icon + wordmark */}
+          <Link href="/" className="flex items-center gap-2.5 group shrink-0">
             <Image
-              src="/brand/sastamaal-logo.png"
+              src="/brand/logo-icon.svg"
               alt="sastamaal.net"
               width={48}
               height={48}
               priority
-              className="h-10 w-10 sm:h-12 sm:w-12 object-contain group-hover:scale-105 transition-transform"
+              className="h-12 w-12 sm:h-14 sm:w-14 group-hover:scale-105 transition-transform drop-shadow-lg"
             />
-            <span className="text-xl sm:text-2xl font-extrabold text-white tracking-tight group-hover:text-emerald-400 transition-colors">
-              sastamaal<span className="text-emerald-400">.net</span>
-            </span>
+            <div className="flex flex-col leading-none">
+              <span className="text-xl sm:text-2xl font-extrabold text-white tracking-tight group-hover:text-emerald-400 transition-colors">
+                sastamaal<span className="text-emerald-400">.net</span>
+              </span>
+              <span className="text-[9px] sm:text-[10px] text-slate-400 font-medium tracking-[0.15em] uppercase">Pakistan&apos;s Gadget Store</span>
+            </div>
           </Link>
 
           {/* Live Search */}
-          <div className="hidden md:flex flex-1 max-w-md mx-4 relative">
+          <div className="hidden md:flex flex-1 max-w-xs mx-4 relative">
             <input
               type="text"
-              placeholder="Search items by name, category, or tag..."
+              placeholder="Search..."
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              className="w-full bg-slate-800/80 text-white placeholder-slate-400 text-sm rounded-full py-3 pl-10 pr-4 border border-slate-700 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition"
+              className="w-full bg-slate-800/80 text-white placeholder-slate-400 text-xs rounded-full py-2 pl-9 pr-3 border border-slate-700 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition"
             />
-            <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
+            <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-2.5" />
           </div>
 
           {/* Right Navigation */}

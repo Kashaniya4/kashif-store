@@ -55,10 +55,10 @@ export const ServerProductCard: React.FC<{ product: Product }> = ({ product }) =
           )}
         </div>
 
-        <span className="mt-4 inline-block w-full text-center py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5">
+        <Link href={`/products/${product.slug || product.id}`} className="mt-4 inline-block w-full text-center py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5">
           View Product
           <ArrowRight className="w-3 h-3" />
-        </span>
+        </Link>
       </div>
     </article>
   );
