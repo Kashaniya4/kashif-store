@@ -38,7 +38,7 @@ export const Header: React.FC = () => {
           {/* Logo — compact symbol + wordmark */}
           <Link href="/" className="flex items-center gap-2 sm:gap-3 group shrink-0">
             <Image
-              src="/brand/bazaar-icon.svg"
+              src="/brand/sastamaal-logo.png"
               alt="sastamaal.net"
               width={48}
               height={48}

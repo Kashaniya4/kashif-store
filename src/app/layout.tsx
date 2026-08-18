@@ -27,13 +27,13 @@ export const metadata: Metadata = {
   category: 'E-Commerce',
   icons: {
     icon: [
-      { url: '/brand/bazaar-icon.svg', type: 'image/svg+xml' },
+      { url: '/brand/sastamaal-logo.png', type: 'image/png' },
       { url: '/favicon.ico', sizes: 'any' },
     ],
-    shortcut: '/brand/bazaar-icon.svg',
-    apple: [{ url: '/apple-touch-icon.png', sizes: '192x192', type: 'image/png' }],
+    shortcut: '/brand/sastamaal-logo.png',
+    apple: [{ url: '/brand/bazaar-icon-192.png', sizes: '192x192', type: 'image/png' }],
     other: [
-      { rel: 'mask-icon', url: '/brand/bazaar-icon.svg', color: '#10b981' },
+      { rel: 'mask-icon', url: '/brand/sastamaal-logo.png', color: '#10b981' },
     ],
   },
   manifest: '/manifest.json',
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     url: SITE_CONFIG.url,
     images: [
       {
-        url: '/brand/bazaar-logo.svg',
+        url: '/brand/sastamaal-logo.png',
         width: 800,
         height: 400,
         alt: SITE_CONFIG.shortName,
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: `${SITE_CONFIG.shortName} | ${SITE_CONFIG.name} — Pakistan's Premier E-Commerce Store`,
     description: SITE_CONFIG.description,
-    images: ['/brand/bazaar-logo.svg'],
+    images: ['/brand/sastamaal-logo.png'],
     creator: '@sastamaalnet',
     site: '@sastamaalnet',
   },

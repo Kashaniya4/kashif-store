@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description: `Browse all ${products.length} products at sastamaal.net with nationwide delivery and local payment options.`,
     url: `${SITE_CONFIG.url}/products`,
     type: 'website',
-    images: [{ url: '/brand/bazaar-logo.svg', width: 800, height: 400, alt: SITE_CONFIG.shortName }],
+    images: [{ url: '/brand/sastamaal-logo.png', width: 800, height: 400, alt: SITE_CONFIG.shortName }],
   },
 };
 

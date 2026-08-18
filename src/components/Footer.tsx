@@ -77,10 +77,10 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
               <Image
-                src="/brand/bazaar-icon.svg"
+                src="/brand/sastamaal-logo.png"
                 alt="sastamaal.net"
-                width={160}
-                height={160}
+                width={48}
+                height={48}
                 className="h-12 w-12 object-contain"
               />
               <span className="text-2xl font-extrabold text-white tracking-tight">
