@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Product } from '@/types/store';
-import { Star } from 'lucide-react';
+import { Star, ArrowRight } from 'lucide-react';
 
 /**
  * Server-rendered product card — used by SEO landing pages (/products,
@@ -44,10 +44,8 @@ export const ServerProductCard: React.FC<{ product: Product }> = ({ product }) =
           </span>
         </div>
 
-        <h2 className="font-bold text-base text-white leading-snug">
-          <Link href={`/products/${product.slug || product.id}`} className="hover:text-emerald-400 transition-colors">
-            {product.name}
-          </Link>
+        <h2 className="font-bold text-base text-white leading-snug group-hover:text-emerald-400 transition-colors">
+          {product.name}
         </h2>
 
         <div className="flex items-baseline gap-2 mt-3">
@@ -57,12 +55,10 @@ export const ServerProductCard: React.FC<{ product: Product }> = ({ product }) =
           )}
         </div>
 
-        <Link
-          href={`/products/${product.slug || product.id}`}
-          className="mt-4 inline-block w-full text-center py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition"
-        >
+        <span className="mt-4 inline-block w-full text-center py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5">
           View Product
-        </Link>
+          <ArrowRight className="w-3 h-3" />
+        </span>
       </div>
     </article>
   );

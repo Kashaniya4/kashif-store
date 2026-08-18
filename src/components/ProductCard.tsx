@@ -55,11 +55,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         {/* Stock Badge */}
         <div className="absolute bottom-3 right-3">
           {!isSoldOut ? (
-            <span className="bg-slate-900/90 text-emerald-400 border border-emerald-500/30 text-[10px] font-semibold px-2 py-0.5 rounded-full backdrop-blur-sm">
+            <span className="bg-emerald-950/95 text-emerald-300 border border-emerald-500/40 text-[10px] font-semibold px-2 py-0.5 rounded-full backdrop-blur-sm">
               In Stock ({liveStock})
             </span>
           ) : (
-            <span className="bg-rose-950/90 text-rose-400 border border-rose-800 text-[10px] font-semibold px-2 py-0.5 rounded-full backdrop-blur-sm">
+            <span className="bg-rose-950/95 text-rose-300 border border-rose-500/40 text-[10px] font-semibold px-2 py-0.5 rounded-full backdrop-blur-sm">
               Out of Stock
             </span>
           )}

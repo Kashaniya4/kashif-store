@@ -4,11 +4,10 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useStore } from '@/context/StoreContext';
-import { ShoppingBag, Search, User as UserIcon, LogOut, Sparkles } from 'lucide-react';
+import { ShoppingBag, Search, User as UserIcon, LogOut, Sparkles, Truck, Globe } from 'lucide-react';
 
 export const Header: React.FC = () => {
   const {
-    cart,
     user,
     setUser,
     setIsCartOpen,
@@ -26,26 +25,29 @@ export const Header: React.FC = () => {
       <div className="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-xs py-1.5 px-4 text-center font-medium tracking-wide flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-2 mx-auto sm:mx-0">
           <Sparkles className="w-3.5 h-3.5 animate-pulse text-amber-300" />
-          <span>🚀 FAST DELIVERIES ACROSS PAKISTAN • USE CODE <strong className="bg-emerald-800 px-1.5 py-0.5 rounded text-amber-200">WELCOME10</strong> FOR 10% OFF</span>
+          <span>FAST DELIVERIES ACROSS PAKISTAN • USE CODE <strong className="bg-emerald-800 px-1.5 py-0.5 rounded text-amber-200">WELCOME10</strong> FOR 10% OFF</span>
         </div>
         <div className="hidden sm:flex items-center gap-4 text-emerald-100">
-          <span>📍 Nationwide Shipping (TCS, Leopards, Trax)</span>
-          <span>🇵🇰 PKR (₨) Currency</span>
+          <span className="flex items-center gap-1.5"><Truck className="w-3.5 h-3.5" /> Nationwide Shipping (TCS, Leopards, Trax)</span>
+          <span className="flex items-center gap-1.5"><Globe className="w-3.5 h-3.5" /> PKR (₨) Currency</span>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 gap-4">
-          {/* Logo */}
-          <Link href="/" className="flex items-center group">
+          {/* Logo — compact symbol + wordmark */}
+          <Link href="/" className="flex items-center gap-2 sm:gap-3 group shrink-0">
             <Image
-              src="/brand/sastamaal-logo-transparent.png"
+              src="/brand/bazaar-icon.svg"
               alt="sastamaal.net"
-              width={512}
-              height={280}
+              width={48}
+              height={48}
               priority
-              className="h-10 w-auto object-contain group-hover:opacity-90 transition-opacity"
+              className="h-10 w-10 sm:h-12 sm:w-12 object-contain group-hover:scale-105 transition-transform"
             />
+            <span className="text-xl sm:text-2xl font-extrabold text-white tracking-tight group-hover:text-emerald-400 transition-colors">
+              sastamaal<span className="text-emerald-400">.net</span>
+            </span>
           </Link>
 
           {/* Live Search */}
@@ -55,7 +57,7 @@ export const Header: React.FC = () => {
               placeholder="Search items by name, category, or tag..."
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              className="w-full bg-slate-800/80 text-white placeholder-slate-400 text-sm rounded-full py-2.5 pl-10 pr-4 border border-slate-700 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition"
+              className="w-full bg-slate-800/80 text-white placeholder-slate-400 text-sm rounded-full py-3 pl-10 pr-4 border border-slate-700 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition"
             />
             <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
           </div>
@@ -64,18 +66,18 @@ export const Header: React.FC = () => {
           <div className="flex items-center gap-3">
             {/* Auth Button */}
             {user ? (
-              <div className="flex items-center gap-2 bg-slate-800/80 border border-slate-700 rounded-full py-1.5 px-3">
+              <div className="flex items-center gap-3 bg-slate-800/80 border border-slate-700 rounded-full py-2 px-3">
                 {user.avatar ? (
-                  <Image src={user.avatar} alt={user.name} width={24} height={24} className="w-6 h-6 rounded-full object-cover" />
+                  <Image src={user.avatar} alt={user.name} width={32} height={32} className="w-8 h-8 rounded-full object-cover" />
                 ) : (
-                  <UserIcon className="w-4 h-4 text-emerald-400" />
+                  <UserIcon className="w-5 h-5 text-emerald-400" />
                 )}
-                <span className="text-xs font-medium max-w-[90px] truncate text-slate-200">
+                <span className="text-sm font-medium max-w-[120px] truncate text-slate-200">
                   {user.name.split(' ')[0]}
                 </span>
                 <button
                   onClick={() => setUser(null)}
-                  className="text-slate-400 hover:text-rose-400 p-0.5 ml-1 transition"
+                  className="p-0.5 text-slate-400 hover:text-rose-400 transition"
                   title="Logout"
                 >
                   <LogOut className="w-3.5 h-3.5" />
@@ -84,7 +86,8 @@ export const Header: React.FC = () => {
             ) : (
               <button
                 onClick={() => setIsAuthModalOpen(true)}
-                className="text-xs font-semibold px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 transition"
+                className="py-2.5 px-4 rounded-lg bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 transition font-medium"
+                title="Sign In / Guest"
               >
                 Sign In / Guest
               </button>
@@ -93,12 +96,12 @@ export const Header: React.FC = () => {
             {/* Cart Button */}
             <button
               onClick={() => setIsCartOpen(true)}
-              className="relative p-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 hover:from-emerald-400 hover:to-teal-400 font-bold transition shadow-lg shadow-emerald-500/20 flex items-center justify-center"
+              className="relative rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 hover:from-emerald-400 hover:to-teal-400 font-bold transition shadow-lg shadow-emerald-500/20 py-3.5 px-4 flex items-center justify-center min-w-[44px] min-h-[44px]"
               aria-label="Open Cart"
             >
               <ShoppingBag className="w-5 h-5" />
               {cartCount > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 bg-slate-950 text-emerald-400 text-[11px] font-extrabold w-5 h-5 rounded-full border-2 border-emerald-400 flex items-center justify-center animate-bounce">
+                <span className="absolute -top-2 -right-2 bg-slate-950 text-emerald-400 text-[13px] font-extrabold w-5 h-5 rounded-full border-2 border-emerald-400 flex items-center justify-center animate-bounce">
                   {cartCount}
                 </span>
               )}
@@ -114,9 +117,9 @@ export const Header: React.FC = () => {
               placeholder="Search products..."
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              className="w-full bg-slate-800 text-white placeholder-slate-400 text-xs rounded-lg py-2 pl-9 pr-3 border border-slate-700 focus:outline-none focus:border-emerald-500"
+              className="w-full bg-slate-800 text-white placeholder-slate-400 text-sm rounded-lg py-3 pl-9 pr-3 border border-slate-700 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
             />
-            <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-2.5" />
+            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
           </div>
         </div>
       </div>

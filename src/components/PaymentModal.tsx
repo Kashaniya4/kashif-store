@@ -109,6 +109,21 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
         promoCodeApplied: activePromo?.code
       });
 
+      // Fire order confirmation email (non-blocking, graceful failure).
+      // No-op if no email address or RESEND_API_KEY missing.
+      void fetch('/api/send-order-confirmation', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ order: newOrder }),
+      })
+        .then(async (res) => {
+          if (!res.ok) {
+            const err = await res.json().catch(() => null);
+            console.warn('[order-email] send failed:', err?.error || res.statusText);
+          }
+        })
+        .catch((err) => console.warn('[order-email] network error:', err));
+
       onOrderSuccess(newOrder);
       onClose();
     }, 2000);
@@ -149,8 +164,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
         </div>
 
         {/* Gateway Option Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 mb-6">
-          
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-6">
           {/* JazzCash */}
           <button
             type="button"
@@ -256,7 +270,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
         </div>
 
         {/* Dynamic Payment Details & Inputs */}
-        <form onSubmit={handleProcessPayment} className="space-y-4">
+        <form onSubmit={handleProcessPayment} className="space-y-4 overflow-x-auto">
           
           {(selectedMethod === 'jazzcash' || selectedMethod === 'easypaisa') && (
             <div className="p-4 rounded-2xl bg-slate-950 border border-slate-800 space-y-3">
@@ -270,7 +284,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
                 value={accountNumber}
                 onChange={e => setAccountNumber(e.target.value)}
                 placeholder="03001234567"
-                className="w-full bg-slate-900 text-white placeholder-slate-500 text-xs rounded-xl py-2.5 px-3 border border-slate-800 focus:outline-none focus:border-emerald-500 font-mono"
+                className="w-full bg-slate-900 text-white placeholder-slate-500 text-xs rounded-xl py-3 px-4 border border-slate-800 focus:outline-none focus:border-emerald-500 font-mono"
               />
               <p className="text-[11px] text-slate-400">
                 A prompt will appear on your phone screen to enter your MPIN and confirm payment of ₨ {totalPayable.toLocaleString()}.
@@ -290,7 +304,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
                 value={accountNumber}
                 onChange={e => setAccountNumber(e.target.value)}
                 placeholder="@username or 03001234567"
-                className="w-full bg-slate-900 text-white placeholder-slate-500 text-xs rounded-xl py-2.5 px-3 border border-slate-800 focus:outline-none focus:border-teal-400"
+                className="w-full bg-slate-900 text-white placeholder-slate-500 text-xs rounded-xl py-3 px-4 border border-slate-800 focus:outline-none focus:border-teal-400"
               />
             </div>
           )}
@@ -319,7 +333,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
                   value={txnProofId}
                   onChange={e => setTxnProofId(e.target.value)}
                   placeholder="e.g. FT2608821903"
-                  className="w-full bg-slate-900 text-white text-xs rounded-xl py-2 px-3 border border-slate-800"
+                  className="w-full bg-slate-900 text-white text-xs rounded-xl py-3 px-4 border border-slate-800"
                 />
               </div>
             </div>
@@ -343,20 +357,26 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
                 type="text"
                 placeholder="Cardholder Name"
                 defaultValue={customerDetails.fullName}
-                className="w-full bg-slate-900 text-white rounded-xl py-2 px-3 border border-slate-800"
+                className="w-full bg-slate-900 text-white rounded-xl py-3 px-4 border border-slate-800"
               />
-              <div className="grid grid-cols-3 gap-2">
+              <input
+                type="text"
+                placeholder="Card Number (4000 ...)"
+                defaultValue="4242 •••• •••• 4242"
+                className="w-full bg-slate-900 text-white rounded-xl py-3 px-4 border border-slate-800 font-mono"
+              />
+              <div className="grid grid-cols-2 gap-2">
                 <input
                   type="text"
-                  placeholder="Card Number (4000 ...)"
-                  defaultValue="4242 •••• •••• 4242"
-                  className="col-span-2 bg-slate-900 text-white rounded-xl py-2 px-3 border border-slate-800 font-mono"
+                  placeholder="MM / YY"
+                  defaultValue="12 / 28"
+                  className="bg-slate-900 text-white rounded-xl py-3 px-4 border border-slate-800 font-mono"
                 />
                 <input
                   type="text"
                   placeholder="CVV"
                   defaultValue="123"
-                  className="bg-slate-900 text-white rounded-xl py-2 px-3 border border-slate-800 font-mono"
+                  className="bg-slate-900 text-white rounded-xl py-3 px-4 border border-slate-800 font-mono"
                 />
               </div>
             </div>
