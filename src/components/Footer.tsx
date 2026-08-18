@@ -71,7 +71,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Footer Navigation Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 py-12 border-b border-slate-800">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 py-12 border-b border-slate-800">
 
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
