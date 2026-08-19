@@ -38,7 +38,7 @@ export const Header: React.FC = () => {
           {/* Logo — PNG with transparent background */}
           <Link href="/" className="flex items-center gap-2.5 group shrink-0">
             <Image
-              src="/brand/sastamaal-logo.png"
+              src="/brand/sastamaal-logo-transparent.png"
               alt="sastamaal.net"
               width={52}
               height={52}
