@@ -76,16 +76,12 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <Image
+              <img
                 src="/brand/sastamaal-logo.png"
                 alt="sastamaal.net"
-                width={50}
-                height={50}
-                className="h-12 w-12 object-contain"
+                className="h-14 w-14 object-contain rounded-xl"
+                style={{ filter: 'drop-shadow(0 0 6px rgba(16, 185, 129, 0.25))' }}
               />
-              <span className="text-2xl font-extrabold text-white tracking-tight">
-                sastamaal<span className="text-emerald-400">.net</span>
-              </span>
             </div>
             <p className="text-xs leading-relaxed text-slate-400 pr-4">
               Pakistan&apos;s next-generation e-commerce destination with seamless local mobile wallet checkout (JazzCash, EasyPaisa, SadaPay, COD) and nationwide courier delivery.
