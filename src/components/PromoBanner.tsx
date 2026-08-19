@@ -79,13 +79,13 @@ export const PromoBanner: React.FC<PromoBannerProps> = ({
         <ArrowRight className={`w-3.5 h-3.5 shrink-0 ${isViolet ? 'text-violet-400' : 'text-emerald-400'} group-hover:translate-x-0.5 transition-transform`} />
       </div>
 
-      {/* Product thumbnail row — 4 product images (plain images, no nested links) */}
+      {/* Product thumbnail row — 4 product images (no nested links) */}
       {images.length > 0 && (
         <div className="relative z-10 grid grid-cols-4 gap-1.5 pt-1.5">
           {images.slice(0, 4).map((img, i) => (
             <div
               key={i}
-              className="relative block aspect-square rounded-lg overflow-hidden border border-white/10 hover:border-white/30 transition-all bg-black/40"
+              className="relative aspect-square rounded-lg overflow-hidden border border-white/10 hover:border-white/30 transition-all bg-black/40"
             >
               <img
                 src={img.src}
