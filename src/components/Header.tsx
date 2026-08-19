@@ -35,13 +35,12 @@ export const Header: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24 gap-4">
-          {/* Logo — high quality, background removed via CSS */}
+          {/* Logo — clean transparent PNG */}
           <Link href="/" className="shrink-0 group" title="sastamaal.net - Home">
             <img
               src="/brand/sastamaal-logo.png"
               alt="sastamaal.net"
-              className="h-14 w-14 sm:h-16 sm:w-16 rounded-xl group-hover:scale-110 transition-transform duration-300"
-              style={{ mixBlendMode: 'lighten' }}
+              className="h-14 w-14 sm:h-16 sm:w-16 rounded-xl group-hover:scale-110 transition-transform duration-300 object-contain"
             />
           </Link>
 
