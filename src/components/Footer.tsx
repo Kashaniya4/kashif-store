@@ -77,7 +77,7 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
               <Image
-                src="/brand/sastamaal-logo-transparent.png"
+                src="/brand/logo-icon.svg"
                 alt="sastamaal.net"
                 width={44}
                 height={44}

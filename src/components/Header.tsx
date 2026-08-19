@@ -38,12 +38,12 @@ export const Header: React.FC = () => {
           {/* Logo — PNG with transparent background */}
           <Link href="/" className="flex items-center gap-2.5 group shrink-0">
             <Image
-              src="/brand/sastamaal-logo-transparent.png"
+              src="/brand/logo-icon.svg"
               alt="sastamaal.net"
-              width={52}
-              height={52}
+              width={44}
+              height={44}
               priority
-              className="h-11 w-11 sm:h-12 sm:w-12 object-contain group-hover:scale-105 transition-transform drop-shadow-lg"
+              className="h-10 w-10 sm:h-11 sm:w-11 object-contain group-hover:scale-105 transition-transform drop-shadow-lg"
             />
             <span className="text-xl sm:text-2xl font-extrabold text-white tracking-tight group-hover:text-emerald-400 transition-colors">
               sastamaal<span className="text-emerald-400">.net</span>

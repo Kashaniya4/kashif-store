@@ -27,13 +27,13 @@ export const metadata: Metadata = {
   category: 'E-Commerce',
   icons: {
     icon: [
-      { url: '/brand/sastamaal-logo.svg', type: 'image/svg+xml' },
+      { url: '/brand/logo-icon.svg', type: 'image/svg+xml' },
       { url: '/favicon.ico', sizes: 'any' },
     ],
-    shortcut: '/brand/sastamaal-logo.svg',
+    shortcut: '/brand/logo-icon.svg',
     apple: [{ url: '/brand/bazaar-icon-192.png', sizes: '192x192', type: 'image/png' }],
     other: [
-      { rel: 'mask-icon', url: '/brand/sastamaal-logo.svg', color: '#10b981' },
+      { rel: 'mask-icon', url: '/brand/logo-icon.svg', color: '#10b981' },
     ],
   },
   manifest: '/manifest.json',
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     url: SITE_CONFIG.url,
     images: [
       {
-        url: '/brand/sastamaal-logo.svg',
+        url: '/brand/logo-icon.svg',
         width: 800,
         height: 400,
         alt: SITE_CONFIG.shortName,
