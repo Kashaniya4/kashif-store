@@ -35,14 +35,17 @@ export const Header: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24 gap-4">
-          {/* Logo — high quality with background removal */}
-          <Link href="/" className="shrink-0 group">
+          {/* Logo + brand text */}
+          <Link href="/" className="flex items-center gap-3 shrink-0 group">
             <img
               src="/brand/sastamaal-logo.png"
               alt="sastamaal.net"
-              className="h-14 w-14 sm:h-16 sm:w-16 object-contain group-hover:scale-105 transition-transform rounded-xl"
+              className="h-12 w-12 sm:h-14 sm:w-14 object-cover rounded-xl group-hover:scale-105 transition-transform"
               style={{ filter: 'drop-shadow(0 0 8px rgba(16, 185, 129, 0.3))' }}
             />
+            <span className="text-xl sm:text-2xl font-extrabold text-white tracking-tight group-hover:text-emerald-400 transition-colors hidden sm:inline">
+              sastamaal<span className="text-emerald-400">.net</span>
+            </span>
           </Link>
 
           {/* Live Search */}
