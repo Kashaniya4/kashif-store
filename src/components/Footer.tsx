@@ -77,11 +77,11 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
               <Image
-                src="/brand/logo-icon.svg"
+                src="/brand/sastamaal-logo.png"
                 alt="sastamaal.net"
-                width={44}
-                height={44}
-                className="h-10 w-10 object-contain"
+                width={50}
+                height={50}
+                className="h-12 w-12 object-contain"
               />
               <span className="text-2xl font-extrabold text-white tracking-tight">
                 sastamaal<span className="text-emerald-400">.net</span>
