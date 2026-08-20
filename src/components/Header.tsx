@@ -60,16 +60,16 @@ export const Header: React.FC = () => {
           </div>
 
           {/* Right Navigation */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             {/* Auth Button */}
             {user ? (
-              <div className="flex items-center gap-3 bg-slate-800/80 border border-slate-700 rounded-full py-2 px-3">
+              <div className="flex items-center gap-2 bg-slate-800/80 border border-slate-700 rounded-full py-1.5 px-3">
                 {user.avatar ? (
-                  <Image src={user.avatar} alt={user.name} width={32} height={32} className="w-8 h-8 rounded-full object-cover" />
+                  <Image src={user.avatar} alt={user.name} width={28} height={28} className="w-7 h-7 rounded-full object-cover" />
                 ) : (
-                  <UserIcon className="w-5 h-5 text-emerald-400" />
+                  <UserIcon className="w-4 h-4 text-emerald-400" />
                 )}
-                <span className="text-sm font-medium max-w-[120px] truncate text-slate-200">
+                <span className="text-xs font-medium max-w-[100px] truncate text-slate-200 hidden sm:inline">
                   {user.name.split(' ')[0]}
                 </span>
                 <button
@@ -77,28 +77,28 @@ export const Header: React.FC = () => {
                   className="p-0.5 text-slate-400 hover:text-rose-400 transition"
                   title="Logout"
                 >
-                  <LogOut className="w-3.5 h-3.5" />
+                  <LogOut className="w-3 h-3" />
                 </button>
               </div>
             ) : (
               <button
                 onClick={() => setIsAuthModalOpen(true)}
-                className="py-2.5 px-4 rounded-lg bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 transition font-medium"
+                className="py-2 px-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 transition text-xs font-medium"
                 title="Sign In / Guest"
               >
-                Sign In / Guest
+                Sign In
               </button>
             )}
 
             {/* Cart Button */}
             <button
               onClick={() => setIsCartOpen(true)}
-              className="relative rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 hover:from-emerald-400 hover:to-teal-400 font-bold transition shadow-lg shadow-emerald-500/20 py-3.5 px-4 flex items-center justify-center min-w-[44px] min-h-[44px]"
+              className="relative rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 hover:from-emerald-400 hover:to-teal-400 font-bold transition shadow-lg shadow-emerald-500/20 py-2.5 px-3 flex items-center justify-center min-w-[36px] min-h-[36px]"
               aria-label="Open Cart"
             >
-              <ShoppingBag className="w-5 h-5" />
+              <ShoppingBag className="w-4 h-4" />
               {cartCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-slate-950 text-emerald-400 text-[13px] font-extrabold w-5 h-5 rounded-full border-2 border-emerald-400 flex items-center justify-center animate-bounce">
+                <span className="absolute -top-2 -right-2 bg-slate-950 text-emerald-400 text-[11px] font-extrabold w-4.5 h-4.5 rounded-full border-2 border-emerald-400 flex items-center justify-center animate-bounce">
                   {cartCount}
                 </span>
               )}
@@ -106,17 +106,17 @@ export const Header: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile Search Bar */}
-        <div className="md:hidden pb-3">
+        {/* Search Bar + Sort Options */}
+        <div className="pb-3 space-y-2">
           <div className="relative">
             <input
               type="text"
               placeholder="Search products..."
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              className="w-full bg-slate-800 text-white placeholder-slate-400 text-sm rounded-lg py-3 pl-9 pr-3 border border-slate-700 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
+              className="w-full bg-slate-800 text-white placeholder-slate-400 text-xs rounded-lg py-2 pl-8 pr-3 border border-slate-700 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
             />
-            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
+            <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" />
           </div>
         </div>
       </div>
