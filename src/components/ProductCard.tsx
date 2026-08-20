@@ -78,11 +78,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             </div>
           </div>
 
-          <Link href={`/products/${product.slug || product.id}`} className="block group-hover:text-emerald-400 transition-colors">
-            <h3 className="font-bold text-base text-white line-clamp-2 leading-snug">
-              {product.name}
-            </h3>
-          </Link>
+          <h3 className="font-bold text-base text-white line-clamp-2 leading-snug group-hover:text-emerald-400 transition-colors">
+            {product.name}
+          </h3>
 
           <p className="text-xs text-slate-400 line-clamp-2 mt-2 leading-relaxed">
             {product.description}
