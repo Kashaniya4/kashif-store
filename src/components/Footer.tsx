@@ -79,7 +79,7 @@ export const Footer: React.FC = () => {
               <img
                 src="/brand/sastamaal-logo.png"
                 alt="sastamaal.net"
-                className="h-12 w-12 object-contain"
+                className="h-14 w-14 object-contain"
               />
             </div>
             <p className="text-xs leading-relaxed text-slate-400 pr-4">
