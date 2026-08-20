@@ -77,9 +77,9 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
               <img
-                src="/brand/logo.svg"
+                src="/brand/sastamaal-logo.png"
                 alt="sastamaal.net"
-                className="h-14 w-14 object-contain"
+                className="h-14 w-14 rounded-xl object-contain"
               />
             </div>
             <p className="text-xs leading-relaxed text-slate-400 pr-4">
