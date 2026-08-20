@@ -174,12 +174,21 @@ export default function HomePage() {
                     </Link>
                   </div>
 
-                  {/* Quick Value Pillars — inline */}
-                  <div className="mt-6 sm:mt-8 flex flex-wrap gap-x-5 sm:gap-x-6 gap-y-2.5 sm:gap-y-3 text-xs sm:text-sm">
-                    <span className="flex items-center gap-2 drop-shadow"><Truck className="w-4 h-4 text-emerald-400" /> 24-48h Delivery</span>
-                    <span className="flex items-center gap-2 drop-shadow"><ShieldCheck className="w-4 h-4 text-emerald-400" /> 100% Genuine</span>
-                    <span className="flex items-center gap-2 drop-shadow"><RefreshCw className="w-4 h-4 text-emerald-400" /> 7-day returns</span>
-                    <span className="flex items-center gap-2 drop-shadow"><MessageCircle className="w-4 h-4 text-emerald-400" /> Local support</span>
+                  {/* Categories — inline in hero */}
+                  <div className="mt-6 sm:mt-8 flex flex-wrap gap-2">
+                    {categories.map((cat) => (
+                      <button
+                        key={cat}
+                        onClick={() => setSelectedCategory(cat)}
+                        className={`px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-semibold whitespace-nowrap transition backdrop-blur-sm ${
+                          selectedCategory === cat
+                            ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40'
+                            : 'bg-white/5 text-slate-400 border border-white/10 hover:border-emerald-500/30 hover:text-white'
+                        }`}
+                      >
+                        {cat}
+                      </button>
+                    ))}
                   </div>
                 </div>
 
@@ -313,29 +322,55 @@ export default function HomePage() {
         )}
       </section>
 
-      {/* Categories — simple */}
+      {/* Trust Badges — Delivery, Genuine, Returns, Support */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-800">
         <div className="flex items-end justify-between gap-4 mb-6">
           <div>
-            <h2 className="text-2xl font-black text-white">Shop by category</h2>
-            <p className="text-sm text-slate-400 mt-1">Find exactly what you need, faster.</p>
+            <h2 className="text-2xl font-black text-white">Why shop with us</h2>
+            <p className="text-sm text-slate-400 mt-1">Trusted by thousands of Pakistani customers.</p>
           </div>
-          <Link href="/products" className="hidden sm:inline-flex text-xs font-semibold text-emerald-400 hover:text-emerald-300 items-center gap-1">
-            All products <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {Array.from(new Set(products.map(p => p.category))).map((category) => (
-            <Link
-              key={category}
-              href={`/category/${toCategorySlug(category)}`}
-              className="group flex items-center justify-between rounded-2xl border border-slate-800 bg-slate-900/50 px-5 py-4 hover:border-emerald-500/50 transition"
-            >
-              <span className="text-white font-semibold">{category}</span>
-              <ArrowRight className="w-4 h-4 text-slate-500 group-hover:text-emerald-400 transition" />
-            </Link>
-          ))}
+          <div className="group flex items-center gap-3 rounded-2xl border border-slate-800 bg-slate-900/50 px-5 py-4 hover:border-emerald-500/50 transition">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+              <Truck className="w-5 h-5" />
+            </div>
+            <div>
+              <span className="text-white font-semibold text-sm block">24-48h Delivery</span>
+              <span className="text-slate-400 text-xs">TCS, Leopards & Trax</span>
+            </div>
+          </div>
+
+          <div className="group flex items-center gap-3 rounded-2xl border border-slate-800 bg-slate-900/50 px-5 py-4 hover:border-emerald-500/50 transition">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+              <ShieldCheck className="w-5 h-5" />
+            </div>
+            <div>
+              <span className="text-white font-semibold text-sm block">100% Genuine</span>
+              <span className="text-slate-400 text-xs">Verified products &amp; warranty</span>
+            </div>
+          </div>
+
+          <div className="group flex items-center gap-3 rounded-2xl border border-slate-800 bg-slate-900/50 px-5 py-4 hover:border-emerald-500/50 transition">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+              <RefreshCw className="w-5 h-5" />
+            </div>
+            <div>
+              <span className="text-white font-semibold text-sm block">7-day returns</span>
+              <span className="text-slate-400 text-xs">Hassle-free replacement</span>
+            </div>
+          </div>
+
+          <div className="group flex items-center gap-3 rounded-2xl border border-slate-800 bg-slate-900/50 px-5 py-4 hover:border-emerald-500/50 transition">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+              <MessageCircle className="w-5 h-5" />
+            </div>
+            <div>
+              <span className="text-white font-semibold text-sm block">Local support</span>
+              <span className="text-slate-400 text-xs">WhatsApp &amp; email help</span>
+            </div>
+          </div>
         </div>
       </section>
 
