@@ -233,11 +233,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Auto-scrolling product image strip */}
-      <section className="mt-4">
-        <ProductMarquee />
-      </section>
-
       {/* Promotional Strip Banner — E-commerce standard */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -320,6 +315,11 @@ export default function HomePage() {
             ))}
           </div>
         )}
+      </section>
+
+      {/* Auto-scrolling product image strip — below products */}
+      <section>
+        <ProductMarquee />
       </section>
 
       {/* Trust Badges — Delivery, Genuine, Returns, Support */}

@@ -57,16 +57,16 @@ export const ProductMarquee: React.FC = () => {
             href={`/products/${product.slug || product.id}`}
             className="group shrink-0 flex flex-col items-center gap-1.5 transition-all hover:scale-110"
           >
-            <div className="w-16 h-16 rounded-xl overflow-hidden border-2 border-slate-800 group-hover:border-emerald-500/60 transition-all shadow-md group-hover:shadow-lg group-hover:shadow-emerald-500/20">
+            <div className="w-20 h-20 rounded-xl overflow-hidden border-2 border-slate-800 group-hover:border-emerald-500/60 transition-all shadow-md group-hover:shadow-lg group-hover:shadow-emerald-500/20">
               <Image
                 src={product.image}
                 alt={product.name}
-                width={64}
-                height={64}
+                width={80}
+                height={80}
                 className="w-full h-full object-cover"
               />
             </div>
-            <span className="text-[10px] text-slate-500 group-hover:text-emerald-400 transition-colors text-center leading-tight w-16 truncate">
+            <span className="text-[10px] text-slate-500 group-hover:text-emerald-400 transition-colors text-center leading-tight w-20 truncate">
               {product.name.split(' ').slice(0, 2).join(' ')}
             </span>
           </Link>
