@@ -194,7 +194,7 @@ export default function HomePage() {
 
                 {/* Right: Featured product showcase — hidden on mobile */}
                 <div className="hidden lg:flex flex-col gap-2 shrink-0">
-                  {products.filter(p => p.isFeatured).slice(0, 3).map((product, idx) => {
+                  {products.filter(p => p.isFeatured).slice(0, 5).map((product, idx) => {
                     const discount = product.originalPrice
                       ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
                       : 0;
