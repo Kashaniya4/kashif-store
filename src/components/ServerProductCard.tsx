@@ -15,7 +15,7 @@ export const ServerProductCard: React.FC<{ product: Product }> = ({ product }) =
     : 0;
 
   return (
-    <article className="bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/5">
+    <article className="group bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/5">
       <Link href={`/products/${product.slug || product.id}`} className="block relative aspect-square overflow-hidden bg-slate-950">
         <Image
           src={product.image}

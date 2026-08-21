@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useStore } from '@/context/StoreContext';
@@ -66,7 +66,7 @@ export default function CheckoutPage() {
     isGuest: !user
   });
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (user) {
       setCustomer(prev => ({
         ...prev,
