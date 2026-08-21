@@ -35,16 +35,13 @@ export const Header: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24 gap-4">
-          {/* Logo + brand name */}
-          <Link href="/" className="flex items-center gap-2.5 shrink-0 group" title="sastamaal.net - Home">
+          {/* Logo — wide format, brand name included in image */}
+          <Link href="/" className="shrink-0 group flex items-center" title="sastamaal.net - Home">
             <img
               src="/brand/sastamaal-logo.png"
               alt="sastamaal.net"
-              className="h-12 sm:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+              className="h-14 sm:h-[72px] w-auto object-contain group-hover:scale-105 transition-transform duration-300"
             />
-            <span className="text-sm sm:text-lg font-bold text-white tracking-tight group-hover:text-emerald-400 transition-colors hidden sm:inline">
-              sastamaal<span className="text-emerald-400">.net</span>
-            </span>
           </Link>
 
           {/* Live Search */}
