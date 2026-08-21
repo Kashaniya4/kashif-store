@@ -40,7 +40,7 @@ export const Header: React.FC = () => {
             <img
               src="/brand/sastamaal-logo.png"
               alt="sastamaal.net"
-              className="h-20 w-20 sm:h-24 sm:w-24 object-contain group-hover:scale-105 transition-transform duration-300"
+              className="h-12 sm:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
             />
             <span className="text-sm sm:text-lg font-bold text-white tracking-tight group-hover:text-emerald-400 transition-colors hidden sm:inline">
               sastamaal<span className="text-emerald-400">.net</span>
