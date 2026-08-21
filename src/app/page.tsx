@@ -247,7 +247,7 @@ export default function HomePage() {
             images={[
               'voltx-max-65w-gan-fast-charger',
               'swiftlink-5a-braided-usb-c-cable',
-              'shieldview-ultra-clear-screen-protector',
+              'shieldview-privacy-anti-peep-screen-protector',
               'powercore-30000mah-power-bank',
             ].map(slug => {
               const p = products.find(x => x.slug === slug);

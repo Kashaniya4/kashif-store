@@ -85,7 +85,7 @@ export const PromoBanner: React.FC<PromoBannerProps> = ({
           {images.slice(0, 4).map((img, i) => (
             <div
               key={i}
-              className="relative aspect-square rounded-lg overflow-hidden border border-white/10 hover:border-white/30 transition-all bg-black/40"
+              className="relative aspect-square rounded-full overflow-hidden border border-white/10 hover:border-white/30 transition-all bg-black/40"
             >
               <img
                 src={img.src}
