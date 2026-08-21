@@ -106,6 +106,19 @@ export const Header: React.FC = () => {
           </div>
         </div>
 
+        {/* Mobile-only search bar */}
+        <div className="md:hidden pb-3">
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Search products..."
+              value={searchQuery}
+              onChange={e => setSearchQuery(e.target.value)}
+              className="w-full bg-slate-800 text-white placeholder-slate-400 text-xs rounded-lg py-2 pl-8 pr-3 border border-slate-700 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
+            />
+            <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" />
+          </div>
+        </div>
       </div>
     </header>
   );

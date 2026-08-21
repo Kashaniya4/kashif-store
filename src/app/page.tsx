@@ -174,20 +174,16 @@ export default function HomePage() {
                     </Link>
                   </div>
 
-                  {/* Categories — inline in hero */}
+                  {/* Categories — inline in hero, link to category pages */}
                   <div className="mt-6 sm:mt-8 flex flex-wrap gap-2">
-                    {categories.map((cat) => (
-                      <button
+                    {categories.filter(c => c !== 'All').map((cat) => (
+                      <Link
                         key={cat}
-                        onClick={() => setSelectedCategory(cat)}
-                        className={`px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-semibold whitespace-nowrap transition backdrop-blur-sm ${
-                          selectedCategory === cat
-                            ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40'
-                            : 'bg-white/5 text-slate-400 border border-white/10 hover:border-emerald-500/30 hover:text-white'
-                        }`}
+                        href={`/category/${toCategorySlug(cat)}`}
+                        className="px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-semibold whitespace-nowrap transition backdrop-blur-sm bg-white/5 text-slate-300 border border-white/10 hover:border-emerald-500/40 hover:bg-emerald-500/10 hover:text-emerald-400"
                       >
                         {cat}
-                      </button>
+                      </Link>
                     ))}
                   </div>
                 </div>

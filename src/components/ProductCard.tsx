@@ -26,8 +26,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <div className="group bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/5 flex flex-col justify-between">
       
-      {/* Product Image & Badges */}
-      <div className="relative aspect-square overflow-hidden bg-slate-950">
+      {/* Product Image & Badges — clickable */}
+      <Link href={`/products/${product.slug || product.id}`} className="relative block aspect-square overflow-hidden bg-slate-950">
         <Image
           src={product.image}
           alt={product.name}
@@ -64,7 +64,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             </span>
           )}
         </div>
-      </div>
+      </Link>
 
       {/* Content */}
       <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
@@ -78,9 +78,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             </div>
           </div>
 
-          <h3 className="font-bold text-base text-white line-clamp-2 leading-snug">
-            {product.name}
-          </h3>
+          <Link href={`/products/${product.slug || product.id}`}>
+            <h3 className="font-bold text-base text-white line-clamp-2 leading-snug group-hover:text-emerald-400 transition-colors">
+              {product.name}
+            </h3>
+          </Link>
 
           <p className="text-xs text-slate-400 line-clamp-2 mt-2 leading-relaxed">
             {product.description}
