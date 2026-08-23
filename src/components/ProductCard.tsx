@@ -5,27 +5,46 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Product } from '@/types/store';
 import { useStore } from '@/context/StoreContext';
-import { Star, ShoppingCart, Check, Tag } from 'lucide-react';
+import { Star, ShoppingCart, Check, Tag, Heart } from 'lucide-react';
 
 interface ProductCardProps {
   product: Product;
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  const { addToCart, cart, getStock } = useStore();
+  const { addToCart, cart, getStock, toggleWishlist, isInWishlist } = useStore();
   const isInCart = cart.some(item => item.product.id === product.id);
   const liveStock = getStock(product.id);
   const inCartQty = cart.find(item => item.product.id === product.id)?.quantity ?? 0;
   const isSoldOut = liveStock <= 0;
   const isMaxed = inCartQty >= liveStock;
+  const isWishlisted = isInWishlist(product.id);
 
   const discountPercent = product.originalPrice
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
     : 0;
 
   return (
-    <div className="group bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/5 flex flex-col justify-between">
-      
+    <div className="group bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/5 flex flex-col justify-between relative">
+
+      {/* Wishlist Button */}
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleWishlist(product.id);
+        }}
+        className={`absolute top-3 right-3 z-20 p-2 rounded-full backdrop-blur-md border transition-all duration-200 ${
+          isWishlisted
+            ? 'bg-rose-500/20 border-rose-500/50 text-rose-400'
+            : 'bg-slate-900/70 border-slate-700/60 text-slate-400 hover:text-white hover:scale-110'
+        }`}
+        title={isWishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
+        aria-label="Wishlist"
+      >
+        <Heart className={`w-3.5 h-3.5 ${isWishlisted ? 'fill-rose-500 text-rose-400' : ''}`} />
+      </button>
+
       {/* Product Image & Badges — clickable */}
       <Link href={`/products/${product.slug || product.id}`} className="relative block aspect-square overflow-hidden bg-slate-950">
         <Image

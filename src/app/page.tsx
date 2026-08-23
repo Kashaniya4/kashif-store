@@ -29,6 +29,7 @@ import {
 } from '@/lib/seo';
 import { CustomerReviewsCarousel } from '@/components/CustomerReviewsCarousel';
 import { ProductMarquee } from '@/components/ProductMarquee';
+import { RecentlyViewed } from '@/components/RecentlyViewed';
 
 const FAQS = [
   {
@@ -235,16 +236,16 @@ export default function HomePage() {
           <PromoBanner
             href="/products"
             title="Flash Sale — Up to 40% OFF"
-            subtitle="Limited-time deals on chargers, cables, screen glass &amp; power banks."
+            subtitle="Limited-time deals on chargers, cables, earbuds &amp; power banks."
             cta="Shop Deals Now"
             icon={Zap}
             variant="emerald"
             accentText="Hot Deals"
             images={[
-              'voltx-max-65w-gan-fast-charger',
-              'swiftlink-5a-braided-usb-c-cable',
-              'shieldview-privacy-anti-peep-screen-protector',
-              'powercore-30000mah-power-bank',
+              'ronin-axis-bar-rgb-soundbar-speaker',
+              'romoss-pct10-10000mah-fast-charge-power-bank',
+              'octo-oc502-50000mah-22-5w-mega-power-bank',
+              'google-pixel-30w-usb-c-charging-cable',
             ].map(slug => {
               const p = products.find(x => x.slug === slug);
               return p ? { src: p.image, alt: p.name, href: `/products/${p.slug}` } : null;
@@ -259,10 +260,10 @@ export default function HomePage() {
             variant="violet"
             accentText="Trending"
             images={[
-              'acoustics-soundflow-pro-anc-wireless-earbuds',
-              'bassboom-x-wireless-bluetooth-speaker',
-              'bassboom-mini-bluetooth-speaker',
-              'snapmount-15w-magsafe-wireless-charger',
+              'buds3-pro-anc-wireless-earbuds',
+              'apple-airpods-pro-wireless-earbuds-premium',
+              'lunar-ultrapods-pro-tws-transparent-earbuds',
+              'octo-music-bar-m750-rgb-bluetooth-speaker',
             ].map(slug => {
               const p = products.find(x => x.slug === slug);
               return p ? { src: p.image, alt: p.name, href: `/products/${p.slug}` } : null;
@@ -316,6 +317,11 @@ export default function HomePage() {
       {/* Auto-scrolling product image strip — below products */}
       <section>
         <ProductMarquee />
+      </section>
+
+      {/* Recently Viewed */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <RecentlyViewed />
       </section>
 
       {/* Trust Badges — Delivery, Genuine, Returns, Support */}

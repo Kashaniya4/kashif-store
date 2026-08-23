@@ -7,6 +7,7 @@ import { Footer } from '@/components/Footer';
 import { CartDrawer } from '@/components/CartDrawer';
 import { SocialAuthModal } from '@/components/SocialAuthModal';
 import { FloatingWhatsApp } from '@/components/FloatingWhatsApp';
+import { ToastContainer } from '@/components/ToastContainer';
 import { SITE_CONFIG } from '@/lib/seo';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -121,6 +122,7 @@ export default function RootLayout({
           <CartDrawer />
           <SocialAuthModal />
           <FloatingWhatsApp />
+          <ToastContainer />
         </StoreProvider>
       </body>
     </html>

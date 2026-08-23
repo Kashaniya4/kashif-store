@@ -1,23 +1,51 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useStore } from '@/context/StoreContext';
-import { ShoppingBag, Search, User as UserIcon, LogOut, Sparkles, Truck, Globe } from 'lucide-react';
+import { ShoppingBag, Search, User as UserIcon, LogOut, Sparkles, Truck, Globe, Heart, X, ArrowRight, Star } from 'lucide-react';
 
 export const Header: React.FC = () => {
   const {
+    products,
     user,
     setUser,
     setIsCartOpen,
     setIsAuthModalOpen,
     searchQuery,
     setSearchQuery,
-    getCartItemsCount
+    getCartItemsCount,
+    wishlist,
   } = useStore();
 
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const searchContainerRef = useRef<HTMLDivElement>(null);
+
   const cartCount = getCartItemsCount();
+  const wishlistCount = wishlist.length;
+
+  // Search suggestions: top 4 matching products
+  const suggestions = searchQuery.trim()
+    ? products
+        .filter(p =>
+          p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          p.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          p.tags.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()))
+        )
+        .slice(0, 4)
+    : [];
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (searchContainerRef.current && !searchContainerRef.current.contains(e.target as Node)) {
+        setIsSearchFocused(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
     <header className="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 text-white shadow-xl">
@@ -34,30 +62,116 @@ export const Header: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-24 gap-4">
+        <div className="flex items-center justify-between h-20 sm:h-24 gap-4">
           {/* Logo — wide format, brand name included in image */}
           <Link href="/" className="shrink-0 group flex items-center" title="sastamaal.net - Home">
             <img
               src="/brand/sastamaal-logo.png"
               alt="sastamaal.net"
-              className="h-14 sm:h-[72px] w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+              className="h-12 sm:h-16 w-auto max-w-[220px] sm:max-w-[280px] object-contain group-hover:scale-105 transition-transform duration-300"
             />
           </Link>
 
-          {/* Live Search */}
-          <div className="hidden md:flex flex-1 max-w-xs mx-4 relative">
-            <input
-              type="text"
-              placeholder="Search..."
-              value={searchQuery}
-              onChange={e => setSearchQuery(e.target.value)}
-              className="w-full bg-slate-800/80 text-white placeholder-slate-400 text-xs rounded-full py-2 pl-9 pr-3 border border-slate-700 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition"
-            />
-            <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-2.5" />
+          {/* Live Search with Dropdown Suggestions */}
+          <div ref={searchContainerRef} className="hidden md:flex flex-1 max-w-md mx-4 relative">
+            <div className="relative w-full">
+              <input
+                type="text"
+                placeholder="Search chargers, earbuds, power banks..."
+                value={searchQuery}
+                onFocus={() => setIsSearchFocused(true)}
+                onChange={e => {
+                  setSearchQuery(e.target.value);
+                  setIsSearchFocused(true);
+                }}
+                className="w-full bg-slate-800/90 text-white placeholder-slate-400 text-xs rounded-full py-2.5 pl-10 pr-8 border border-slate-700 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition"
+              />
+              <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-3 top-3 text-slate-400 hover:text-white"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              )}
+            </div>
+
+            {/* Dropdown Suggestions */}
+            {isSearchFocused && searchQuery.trim().length > 0 && (
+              <div className="absolute top-full left-0 right-0 mt-2 bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden z-50 animate-in fade-in-0 duration-200">
+                <div className="p-2 space-y-1">
+                  {suggestions.length === 0 ? (
+                    <div className="p-4 text-center text-xs text-slate-400">
+                      No gadgets found matching &quot;{searchQuery}&quot;
+                    </div>
+                  ) : (
+                    <>
+                      <div className="px-3 py-1 text-[10px] font-bold uppercase text-slate-400 tracking-wider">
+                        Products ({suggestions.length})
+                      </div>
+                      {suggestions.map(item => (
+                        <Link
+                          key={item.id}
+                          href={`/products/${item.slug || item.id}`}
+                          onClick={() => setIsSearchFocused(false)}
+                          className="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-800/80 transition group"
+                        >
+                          <div className="w-10 h-10 rounded-lg overflow-hidden bg-slate-950 shrink-0 relative">
+                            <Image
+                              src={item.image}
+                              alt={item.name}
+                              fill
+                              sizes="40px"
+                              className="object-cover"
+                            />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="text-xs font-semibold text-white truncate group-hover:text-emerald-400 transition-colors">
+                              {item.name}
+                            </div>
+                            <div className="flex items-center gap-2 text-[11px]">
+                              <span className="text-emerald-400 font-bold">₨ {item.price.toLocaleString()}</span>
+                              <span className="text-slate-500">•</span>
+                              <span className="text-slate-400">{item.category}</span>
+                            </div>
+                          </div>
+                          <ArrowRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-emerald-400 transition shrink-0" />
+                        </Link>
+                      ))}
+                      <div className="pt-1 border-t border-slate-800">
+                        <Link
+                          href="/products"
+                          onClick={() => setIsSearchFocused(false)}
+                          className="block text-center py-2 text-xs font-bold text-emerald-400 hover:text-emerald-300 transition"
+                        >
+                          View all catalog results →
+                        </Link>
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Right Navigation */}
           <div className="flex items-center gap-2 sm:gap-3">
+            {/* Wishlist Link */}
+            <Link
+              href="/wishlist"
+              className="relative p-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 text-slate-300 hover:text-rose-400 transition flex items-center justify-center min-w-[38px] min-h-[38px]"
+              title="My Wishlist"
+              aria-label="Wishlist"
+            >
+              <Heart className={`w-4 h-4 ${wishlistCount > 0 ? 'fill-rose-500 text-rose-500' : ''}`} />
+              {wishlistCount > 0 && (
+                <span className="absolute -top-1.5 -right-1.5 bg-rose-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                  {wishlistCount}
+                </span>
+              )}
+            </Link>
+
             {/* Auth Button */}
             {user ? (
               <div className="flex items-center gap-2 bg-slate-800/80 border border-slate-700 rounded-full py-1.5 px-3">
@@ -90,7 +204,7 @@ export const Header: React.FC = () => {
             {/* Cart Button */}
             <button
               onClick={() => setIsCartOpen(true)}
-              className="relative rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 hover:from-emerald-400 hover:to-teal-400 font-bold transition shadow-lg shadow-emerald-500/20 py-2.5 px-3 flex items-center justify-center min-w-[36px] min-h-[36px]"
+              className="relative rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 hover:from-emerald-400 hover:to-teal-400 font-bold transition shadow-lg shadow-emerald-500/20 py-2.5 px-3 flex items-center justify-center min-w-[38px] min-h-[38px]"
               aria-label="Open Cart"
             >
               <ShoppingBag className="w-4 h-4" />

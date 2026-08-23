@@ -5,6 +5,13 @@ import { Product, CartItem, Order, User, PromoCode, OrderStatus, CourierName, Pa
 import productsData from '@/data/products.json';
 import promoCodesData from '@/data/promocodes.json';
 
+export interface Toast {
+  id: string;
+  message: string;
+  type: 'cart' | 'wishlist' | 'info';
+  productName?: string;
+}
+
 interface StoreContextType {
   products: Product[];
   cart: CartItem[];
@@ -17,6 +24,9 @@ interface StoreContextType {
   isAuthModalOpen: boolean;
   searchQuery: string;
   selectedCategory: string;
+  wishlist: string[];
+  recentlyViewed: Product[];
+  toasts: Toast[];
   // Actions
   setSearchQuery: (query: string) => void;
   setSelectedCategory: (category: string) => void;
@@ -39,6 +49,10 @@ interface StoreContextType {
   getShippingFee: () => number;
   getCartTotal: () => number;
   getCartItemsCount: () => number;
+  toggleWishlist: (productId: string) => void;
+  isInWishlist: (productId: string) => boolean;
+  trackRecentlyViewed: (product: Product) => void;
+  dismissToast: (id: string) => void;
 }
 
 const StoreContext = createContext<StoreContextType | undefined>(undefined);
@@ -59,10 +73,10 @@ const INITIAL_SAMPLE_ORDERS: Order[] = [
       address: 'House 42, Block C, DHA Phase 5',
       isGuest: false
     },
-    subtotal: 12500,
-    discount: 1250,
+    subtotal: 7000,
+    discount: 700,
     shippingFee: 0,
-    total: 11250,
+    total: 6300,
     paymentMethod: 'jazzcash',
     paymentStatus: 'paid',
     transactionId: 'JC-88349120',
@@ -86,10 +100,10 @@ const INITIAL_SAMPLE_ORDERS: Order[] = [
       address: 'Apartment 4B, Clifton Block 2',
       isGuest: true
     },
-    subtotal: 15998,
+    subtotal: 6398,
     discount: 500,
     shippingFee: 250,
-    total: 15748,
+    total: 6148,
     paymentMethod: 'easypaisa',
     paymentStatus: 'paid',
     transactionId: 'EP-7741902',
@@ -129,6 +143,9 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [wishlist, setWishlist] = useState<string[]>([]);
+  const [recentlyViewed, setRecentlyViewed] = useState<Product[]>([]);
+  const [toasts, setToasts] = useState<Toast[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
   // Load cart, user, orders, products (with stock overrides) from localStorage
@@ -149,6 +166,12 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         setOrders(INITIAL_SAMPLE_ORDERS);
         localStorage.setItem('pk_store_orders', JSON.stringify(INITIAL_SAMPLE_ORDERS));
       }
+
+      const savedWishlist = localStorage.getItem('pk_store_wishlist');
+      if (savedWishlist) setWishlist(JSON.parse(savedWishlist));
+
+      const savedRecents = localStorage.getItem('pk_store_recent');
+      if (savedRecents) setRecentlyViewed(JSON.parse(savedRecents));
     } catch (e) {
       console.error('LocalStorage load error:', e);
       setOrders(INITIAL_SAMPLE_ORDERS);
@@ -187,6 +210,57 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }
   }, [orders, isLoaded]);
 
+  // Save Wishlist updates
+  useEffect(() => {
+    if (isLoaded) {
+      localStorage.setItem('pk_store_wishlist', JSON.stringify(wishlist));
+    }
+  }, [wishlist, isLoaded]);
+
+  // Save Recently Viewed updates
+  useEffect(() => {
+    if (isLoaded) {
+      localStorage.setItem('pk_store_recent', JSON.stringify(recentlyViewed));
+    }
+  }, [recentlyViewed, isLoaded]);
+
+  const showToast = useCallback((message: string, type: 'cart' | 'wishlist' | 'info' = 'info', productName?: string) => {
+    const id = `toast-${Date.now()}-${Math.random().toString(36).substr(2, 4)}`;
+    setToasts(prev => [...prev.slice(-3), { id, message, type, productName }]);
+    setTimeout(() => {
+      setToasts(prev => prev.filter(t => t.id !== id));
+    }, 3500);
+  }, []);
+
+  const dismissToast = useCallback((id: string) => {
+    setToasts(prev => prev.filter(t => t.id !== id));
+  }, []);
+
+  const toggleWishlist = useCallback((productId: string) => {
+    const targetProduct = products.find(p => p.id === productId);
+    setWishlist(prev => {
+      const exists = prev.includes(productId);
+      if (exists) {
+        showToast('Removed from wishlist', 'wishlist', targetProduct?.name);
+        return prev.filter(id => id !== productId);
+      } else {
+        showToast('Added to wishlist', 'wishlist', targetProduct?.name);
+        return [...prev, productId];
+      }
+    });
+  }, [products, showToast]);
+
+  const isInWishlist = useCallback((productId: string): boolean => {
+    return wishlist.includes(productId);
+  }, [wishlist]);
+
+  const trackRecentlyViewed = useCallback((product: Product) => {
+    setRecentlyViewed(prev => {
+      const filtered = prev.filter(p => p.id !== product.id);
+      return [product, ...filtered].slice(0, 8);
+    });
+  }, []);
+
   const getStock = useCallback((productId: string): number => {
     return products.find(p => p.id === productId)?.stock ?? 0;
   }, [products]);
@@ -210,9 +284,10 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       }
       return [...prev, { product, quantity }];
     });
+    showToast('Added to cart', 'cart', product.name);
     setIsCartOpen(true);
     return true;
-  }, [products, cart]);
+  }, [products, cart, showToast]);
 
   const removeFromCart = useCallback((productId: string) => {
     setCart(prev => prev.filter(item => item.product.id !== productId));
@@ -398,6 +473,9 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         setSelectedCategory,
         setIsCartOpen,
         setIsAuthModalOpen,
+        wishlist,
+        recentlyViewed,
+        toasts,
         addToCart,
         removeFromCart,
         updateQuantity,
@@ -414,7 +492,11 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         getDiscountAmount,
         getShippingFee,
         getCartTotal,
-        getCartItemsCount
+        getCartItemsCount,
+        toggleWishlist,
+        isInWishlist,
+        trackRecentlyViewed,
+        dismissToast
       }}
     >
       {children}

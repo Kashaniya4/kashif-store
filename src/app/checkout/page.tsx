@@ -173,7 +173,49 @@ export default function CheckoutPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
-      
+
+      {/* Checkout Progress Stepper */}
+      <div className="max-w-2xl mx-auto mb-4">
+        <div className="flex items-center justify-between relative">
+          {/* Connector Line */}
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 h-0.5 bg-slate-800 w-full z-0" />
+          <div
+            className="absolute left-0 top-1/2 -translate-y-1/2 h-0.5 bg-emerald-500 z-0 transition-all duration-500"
+            style={{ width: isPaymentModalOpen ? '66%' : '33%' }}
+          />
+
+          {/* Step 1 */}
+          <div className="relative z-10 flex flex-col items-center gap-1.5">
+            <div className="w-8 h-8 rounded-full bg-emerald-500 text-slate-950 font-bold text-xs flex items-center justify-center shadow-lg shadow-emerald-500/20">
+              1
+            </div>
+            <span className="text-[11px] font-bold text-white">Shipping Details</span>
+          </div>
+
+          {/* Step 2 */}
+          <div className="relative z-10 flex flex-col items-center gap-1.5">
+            <div className={`w-8 h-8 rounded-full font-bold text-xs flex items-center justify-center transition-colors ${
+              isPaymentModalOpen
+                ? 'bg-emerald-500 text-slate-950 shadow-lg shadow-emerald-500/20'
+                : 'bg-slate-800 border border-slate-700 text-slate-400'
+            }`}>
+              2
+            </div>
+            <span className={`text-[11px] font-bold transition-colors ${isPaymentModalOpen ? 'text-white' : 'text-slate-400'}`}>
+              Payment Method
+            </span>
+          </div>
+
+          {/* Step 3 */}
+          <div className="relative z-10 flex flex-col items-center gap-1.5">
+            <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 text-slate-500 font-bold text-xs flex items-center justify-center">
+              3
+            </div>
+            <span className="text-[11px] font-bold text-slate-500">Order Confirmed</span>
+          </div>
+        </div>
+      </div>
+
       <div className="flex items-center justify-between border-b border-slate-800 pb-6">
         <div>
           <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">Secure Order</span>

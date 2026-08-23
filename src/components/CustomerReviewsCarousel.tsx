@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Star, MessageCircle, ChevronLeft, ChevronRight, ShieldCheck } from 'lucide-react';
+import { Star, MessageCircle, ChevronLeft, ChevronRight, ShieldCheck, Plus, X, Check } from 'lucide-react';
 
 interface Review {
   id: number;
@@ -15,7 +15,7 @@ interface Review {
   verified: boolean;
 }
 
-const reviews: Review[] = [
+const INITIAL_REVIEWS: Review[] = [
   {
     id: 1,
     name: 'Ahmed Raza',
@@ -85,9 +85,29 @@ const reviews: Review[] = [
 ];
 
 export const CustomerReviewsCarousel: React.FC = () => {
+  const [reviewsList, setReviewsList] = useState<Review[]>(INITIAL_REVIEWS);
   const [currentIndex, setCurrentIndex] = useState(0);
   const animatingRef = useRef(false);
   const [reviewsPerView, setReviewsPerView] = useState(1);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  // Form State
+  const [formName, setFormName] = useState('');
+  const [formCity, setFormCity] = useState('Lahore');
+  const [formProduct, setFormProduct] = useState('');
+  const [formRating, setFormRating] = useState(5);
+  const [formText, setFormText] = useState('');
+
+  // Load custom reviews from localStorage
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('pk_store_reviews');
+      if (saved) {
+        setReviewsList([...JSON.parse(saved), ...INITIAL_REVIEWS]);
+      }
+    } catch (e) { /* ignore */ }
+  }, []);
 
   // Responsive reviews per view
   useEffect(() => {
@@ -99,19 +119,19 @@ export const CustomerReviewsCarousel: React.FC = () => {
     return () => window.removeEventListener('resize', updatePerView);
   }, []);
 
-  const maxIndex = Math.max(0, reviews.length - reviewsPerView);
+  const maxIndex = Math.max(0, reviewsList.length - reviewsPerView);
 
   // Auto-rotate every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      if (!animatingRef.current && maxIndex > 0) {
+      if (!animatingRef.current && maxIndex > 0 && !isModalOpen) {
         animatingRef.current = true;
         setCurrentIndex(prev => (prev + 1 > maxIndex ? 0 : prev + 1));
         setTimeout(() => { animatingRef.current = false; }, 500);
       }
     }, 5000);
     return () => clearInterval(interval);
-  }, [maxIndex]);
+  }, [maxIndex, isModalOpen]);
 
   const goToPrev = useCallback(() => {
     if (!animatingRef.current) {
@@ -129,6 +149,42 @@ export const CustomerReviewsCarousel: React.FC = () => {
     }
   }, [maxIndex]);
 
+  const handleReviewSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formName.trim() || !formText.trim()) return;
+
+    const initials = formName.trim().split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+    const newReview: Review = {
+      id: Date.now(),
+      name: formName.trim(),
+      city: formCity,
+      avatar: initials || 'PK',
+      rating: formRating,
+      text: formText.trim(),
+      product: formProduct.trim() || 'Verified Purchase',
+      date: 'Just now',
+      verified: true,
+    };
+
+    const updated = [newReview, ...reviewsList];
+    setReviewsList(updated);
+
+    try {
+      const existing = JSON.parse(localStorage.getItem('pk_store_reviews') || '[]');
+      localStorage.setItem('pk_store_reviews', JSON.stringify([newReview, ...existing]));
+    } catch (err) { /* ignore */ }
+
+    setSubmitted(true);
+    setTimeout(() => {
+      setSubmitted(false);
+      setIsModalOpen(false);
+      setFormName('');
+      setFormText('');
+      setFormProduct('');
+      setCurrentIndex(0);
+    }, 1200);
+  };
+
   const slideWidthPercent = 100 / reviewsPerView;
 
   return (
@@ -139,10 +195,18 @@ export const CustomerReviewsCarousel: React.FC = () => {
           <MessageCircle className="w-5 h-5 text-emerald-400" />
           <h3 className="text-white font-bold text-lg">Customer Reviews</h3>
         </div>
-        <div className="flex items-center gap-1">
-          <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-          <span className="text-xs text-amber-300 font-bold">4.9/5</span>
-          <span className="text-[10px] text-slate-500">({reviews.length}+ reviews)</span>
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1">
+            <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+            <span className="text-xs text-amber-300 font-bold">4.9/5</span>
+            <span className="text-[10px] text-slate-500">({reviewsList.length}+ reviews)</span>
+          </div>
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-semibold transition"
+          >
+            <Plus className="w-3.5 h-3.5" /> Write a Review
+          </button>
         </div>
       </div>
 
@@ -152,7 +216,7 @@ export const CustomerReviewsCarousel: React.FC = () => {
           className="flex transition-transform duration-500 ease-out"
           style={{ transform: `translateX(-${currentIndex * slideWidthPercent}%)` }}
         >
-          {reviews.map((review, index) => {
+          {reviewsList.map((review, index) => {
             const isVisible = index >= currentIndex && index < currentIndex + reviewsPerView;
             return (
               <div
@@ -201,7 +265,7 @@ export const CustomerReviewsCarousel: React.FC = () => {
                   <div className="text-emerald-400 text-xs font-medium mb-2">{review.product}</div>
 
                   {/* Review Text */}
-                  <p className="text-slate-200 text-sm leading-relaxed flex-1">
+                  <p className="text-slate-200 text-sm leading-relaxed flex-1 line-clamp-3">
                     {review.text}
                   </p>
                 </div>
@@ -214,7 +278,7 @@ export const CustomerReviewsCarousel: React.FC = () => {
         <button
           onClick={goToPrev}
           disabled={maxIndex === 0}
-          className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-slate-900/80 border border-slate-700 text-white hover:bg-slate-800 hover:border-emerald-500/50 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+          className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-slate-900/80 border border-slate-700 text-white hover:bg-slate-800 hover:border-emerald-500/50 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed z-10"
           aria-label="Previous review"
         >
           <ChevronLeft className="w-5 h-5" />
@@ -222,7 +286,7 @@ export const CustomerReviewsCarousel: React.FC = () => {
         <button
           onClick={goToNext}
           disabled={maxIndex === 0}
-          className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-slate-900/80 border border-slate-700 text-white hover:bg-slate-800 hover:border-emerald-500/50 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+          className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-slate-900/80 border border-slate-700 text-white hover:bg-slate-800 hover:border-emerald-500/50 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed z-10"
           aria-label="Next review"
         >
           <ChevronRight className="w-5 h-5" />
@@ -230,7 +294,7 @@ export const CustomerReviewsCarousel: React.FC = () => {
 
         {/* Dots Indicator */}
         {maxIndex > 0 && (
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5">
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10">
             {Array.from({ length: maxIndex + 1 }, (_, i) => (
               <button
                 key={i}
@@ -252,6 +316,118 @@ export const CustomerReviewsCarousel: React.FC = () => {
           </div>
         )}
       </div>
+
+      {/* Write a Review Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-md p-4 animate-in fade-in-0 duration-200">
+          <div className="bg-slate-900 border border-slate-800 w-full max-w-lg rounded-3xl p-6 sm:p-8 shadow-2xl relative">
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-5 right-5 text-slate-400 hover:text-white p-1"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {submitted ? (
+              <div className="py-12 text-center space-y-3">
+                <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto">
+                  <Check className="w-6 h-6" />
+                </div>
+                <h4 className="text-xl font-bold text-white">Review Submitted!</h4>
+                <p className="text-xs text-slate-400">Thank you for sharing your feedback with the community.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleReviewSubmit} className="space-y-4">
+                <div>
+                  <h4 className="text-xl font-black text-white">Write a Customer Review</h4>
+                  <p className="text-xs text-slate-400 mt-1">Share your experience with fellow shoppers across Pakistan.</p>
+                </div>
+
+                {/* Star Rating */}
+                <div>
+                  <label className="block text-xs font-semibold text-slate-300 mb-1.5">Rating</label>
+                  <div className="flex gap-1.5">
+                    {[1, 2, 3, 4, 5].map(star => (
+                      <button
+                        type="button"
+                        key={star}
+                        onClick={() => setFormRating(star)}
+                        className="p-1 hover:scale-110 transition"
+                      >
+                        <Star
+                          className={`w-6 h-6 ${
+                            star <= formRating
+                              ? 'fill-amber-400 text-amber-400'
+                              : 'text-slate-600'
+                          }`}
+                        />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Name & City */}
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-300 mb-1">Your Name</label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="e.g. Usman Ali"
+                      value={formName}
+                      onChange={e => setFormName(e.target.value)}
+                      className="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-300 mb-1">City</label>
+                    <input
+                      type="text"
+                      placeholder="e.g. Lahore, Karachi"
+                      value={formCity}
+                      onChange={e => setFormCity(e.target.value)}
+                      className="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
+                    />
+                  </div>
+                </div>
+
+                {/* Product Name */}
+                <div>
+                  <label className="block text-xs font-semibold text-slate-300 mb-1">Product Purchased (Optional)</label>
+                  <input
+                    type="text"
+                    placeholder="e.g. VoltX Max 65W GaN Fast Charger"
+                    value={formProduct}
+                    onChange={e => setFormProduct(e.target.value)}
+                    className="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
+                  />
+                </div>
+
+                {/* Review Text */}
+                <div>
+                  <label className="block text-xs font-semibold text-slate-300 mb-1">Review</label>
+                  <textarea
+                    required
+                    rows={3}
+                    placeholder="Tell us about the delivery, build quality, and performance..."
+                    value={formText}
+                    onChange={e => setFormText(e.target.value)}
+                    className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
+                  />
+                </div>
+
+                {/* Submit button */}
+                <button
+                  type="submit"
+                  className="w-full py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition shadow-lg shadow-emerald-500/20"
+                >
+                  Submit Review
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

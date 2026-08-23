@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Product } from '@/types/store';
@@ -21,15 +21,23 @@ import {
   BadgeCheck,
   Package,
   Sparkles,
+  Heart,
 } from 'lucide-react';
+import { RecentlyViewed } from '@/components/RecentlyViewed';
 
 export default function ProductView({ product }: { product: Product }) {
-  const { addToCart, cart, getStock } = useStore();
+  const { addToCart, cart, getStock, toggleWishlist, isInWishlist, trackRecentlyViewed } = useStore();
   const [quantity, setQuantity] = useState(1);
+  const isWishlisted = isInWishlist(product.id);
 
   const liveStock = getStock(product.id);
   const isInCart = cart.some(item => item.product.id === product.id);
   const inCartQty = cart.find(item => item.product.id === product.id)?.quantity ?? 0;
+
+  // Track recently viewed on mount
+  useEffect(() => {
+    trackRecentlyViewed(product);
+  }, [product, trackRecentlyViewed]);
 
   const discountPercent = product.originalPrice
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
@@ -149,8 +157,8 @@ export default function ProductView({ product }: { product: Product }) {
             </div>
           </div>
 
-          {/* Quantity Selector & Add to Cart */}
-          <div className="flex items-center gap-4 pt-4 border-t border-slate-800">
+          {/* Quantity Selector & Add to Cart & Wishlist */}
+          <div className="flex items-center gap-3 pt-4 border-t border-slate-800">
             <div className="flex items-center bg-slate-900 border border-slate-700 rounded-xl p-1">
               <button
                 onClick={() => handleQuantity(-1)}
@@ -179,6 +187,20 @@ export default function ProductView({ product }: { product: Product }) {
               <ShoppingCart className="w-5 h-5" />
               <span>Add {quantity} to Cart</span>
               {isInCart && <Check className="w-4 h-4 text-emerald-200" />}
+            </button>
+
+            {/* Wishlist Button */}
+            <button
+              onClick={() => toggleWishlist(product.id)}
+              className={`p-4 rounded-2xl border transition flex items-center justify-center ${
+                isWishlisted
+                  ? 'bg-rose-500/20 border-rose-500/50 text-rose-400'
+                  : 'bg-slate-900 border-slate-700 text-slate-400 hover:text-white hover:border-slate-600'
+              }`}
+              title={isWishlisted ? 'Remove from wishlist' : 'Save to wishlist'}
+              aria-label="Wishlist"
+            >
+              <Heart className={`w-5 h-5 ${isWishlisted ? 'fill-rose-500 text-rose-400' : ''}`} />
             </button>
           </div>
 
@@ -248,6 +270,9 @@ export default function ProductView({ product }: { product: Product }) {
           </p>
         </div>
       </section>
+
+      {/* Recently Viewed */}
+      <RecentlyViewed />
 
       {/* Related discovery */}
       <section className="rounded-3xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
