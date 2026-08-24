@@ -33,6 +33,14 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# Ignore raw capture files to prevent large commits
+public/products/Android/
+public/products/DCIM/
+public/products/Download/Quick Share/**/*.jpg
+public/products/Download/Quick Share/**/*.jpeg
+public/products/Download/Quick Share/**/*.png
+!public/products/Download/Quick Share/**/generated_product.png
+
 # vercel
 .vercel
 

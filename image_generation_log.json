@@ -1,0 +1,78 @@
+{
+  "ronin-axis-bar-soundbar.png": {
+    "success": true,
+    "reason": "generated_b64"
+  },
+  "romoss-pct10-powerbank-10000mah.png": {
+    "success": true,
+    "reason": "generated_b64"
+  },
+  "lunar-anc-enc-earbuds-max.png": {
+    "success": false,
+    "reason": "max_retries_exceeded"
+  },
+  "apple-airpods-high-quality.png": {
+    "success": false,
+    "reason": "max_retries_exceeded"
+  },
+  "octo-airbuds-pro2.png": {
+    "success": false,
+    "reason": "max_retries_exceeded"
+  },
+  "apple-earpods-usbc-1.png": {
+    "success": false,
+    "reason": "max_retries_exceeded"
+  },
+  "apple-earpods-usbc-2.png": {
+    "success": false,
+    "reason": "max_retries_exceeded"
+  },
+  "apple-earpods-usbc-3.png": {
+    "success": false,
+    "reason": "max_retries_exceeded"
+  },
+  "lunar-ultrapods-max-1.png": {
+    "success": false,
+    "reason": "max_retries_exceeded"
+  },
+  "lunar-ultrapods-max-2.png": {
+    "success": false,
+    "reason": "max_retries_exceeded"
+  },
+  "apple-25w-power-adapter-1.png": {
+    "success": false,
+    "reason": "max_retries_exceeded"
+  },
+  "apple-25w-power-adapter-2.png": {
+    "success": false,
+    "reason": "max_retries_exceeded"
+  },
+  "apple-earbuds-high-quality-1.png": {
+    "success": false,
+    "reason": "max_retries_exceeded"
+  },
+  "apple-earbuds-high-quality-2.png": {
+    "success": false,
+    "reason": "max_retries_exceeded"
+  },
+  "octo-music-bar-750.png": {
+    "success": false,
+    "reason": "max_retries_exceeded"
+  },
+  "octo-4usb-powerbank-50000mah.png": {
+    "success": false,
+    "reason": "max_retries_exceeded"
+  },
+  "octo-wireless-airbuds-pro.png": {
+    "success": false,
+    "reason": "max_retries_exceeded"
+  },
+  "wiwu-35w-charger.png": {
+    "success": false,
+    "reason": "max_retries_exceeded"
+  },
+  "google-pixel-usbc-cable.png": {
+    "success": true,
+    "reason": "already_exists"
+  }
+}

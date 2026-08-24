@@ -220,7 +220,25 @@ PRODUCTS = [
 def generate_image_call(filename, prompt):
     out_path = os.path.join(GENERATED_DIR, filename)
 
-    if os.path.exists(out_path) and os.path.getsize(out_path) > 1000:
+    # Force overwrite/regeneration for fallback files
+    force_regenerate = [
+        "octo-music-bar-750.png",
+        "octo-wireless-airbuds-pro.png",
+        "romoss-pct10-powerbank-10000mah.png",
+        "ronin-axis-bar-soundbar.png",
+        "wiwu-35w-charger.png",
+        "samsung-25w-power-adapter-1.png",
+        "samsung-25w-power-adapter-2.png"
+    ]
+
+    if filename in force_regenerate:
+        if os.path.exists(out_path):
+            try:
+                os.remove(out_path)
+                print(f"[FORCE REGENERATE] Removed old fallback copy: {filename}", flush=True)
+            except Exception as e:
+                print(f"[WARNING] Could not remove old file: {e}", flush=True)
+    elif os.path.exists(out_path) and os.path.getsize(out_path) > 1000:
         print(f"[SKIP] Already exists: {filename}", flush=True)
         return True, "already_exists"
 

@@ -18,7 +18,16 @@
       "Lighting": "Dynamic RGB with 7 Modes",
       "Battery": "2400mAh (Up to 8 Hours)"
     },
-    "tags": ["Soundbar", "RGB", "Speaker", "Ronin", "Bluetooth"]
+    "tags": [
+      "Soundbar",
+      "RGB",
+      "Speaker",
+      "Ronin",
+      "Bluetooth"
+    ],
+    "images": [
+      "/products/generated-images/ronin-axis-bar-soundbar.png"
+    ]
   },
   {
     "id": "prod-2",
@@ -39,7 +48,16 @@
       "Input": "18W USB-C PD Fast Recharge",
       "Dimensions": "142 x 68 x 15mm"
     },
-    "tags": ["Power Bank", "Romoss", "20W PD", "Fast Charge", "Portable"]
+    "tags": [
+      "Power Bank",
+      "Romoss",
+      "20W PD",
+      "Fast Charge",
+      "Portable"
+    ],
+    "images": [
+      "/products/generated-images/romoss-pct10-powerbank-10000mah.png"
+    ]
   },
   {
     "id": "prod-3",
@@ -53,14 +71,23 @@
     "stock": 29,
     "isFeatured": true,
     "description": "Next-gen true wireless earbuds with Active Noise Cancellation, high-res audio codec support, and ultra-comfortable ergonomic design. Features 30 hours of total playback with the case.",
-    "image": "/products/generated-images/lunar-ultrapods-max-2.png",
+    "image": "/products/generated-images/lunar-anc-enc-earbuds-max.png",
     "specs": {
       "Driver": "10mm Graphene Dynamic Drivers",
       "ANC": "Up to -35dB Active Noise Cancellation",
       "Battery": "6h Earbuds + 24h Charging Case",
       "Water Resistance": "IPX5 Splashproof"
     },
-    "tags": ["Earbuds", "ANC", "Wireless", "Buds3 Pro", "Audio"]
+    "tags": [
+      "Earbuds",
+      "ANC",
+      "Wireless",
+      "Buds3 Pro",
+      "Audio"
+    ],
+    "images": [
+      "/products/generated-images/lunar-anc-enc-earbuds-max.png"
+    ]
   },
   {
     "id": "prod-4",
@@ -81,7 +108,16 @@
       "Case": "MagSafe & Wireless Charging",
       "Battery": "4.5h per charge + 20h case"
     },
-    "tags": ["AirPods", "Apple", "Earbuds", "Wireless", "ANC"]
+    "tags": [
+      "AirPods",
+      "Apple",
+      "Earbuds",
+      "Wireless",
+      "ANC"
+    ],
+    "images": [
+      "/products/generated-images/apple-airpods-high-quality.png"
+    ]
   },
   {
     "id": "prod-5",
@@ -102,7 +138,16 @@
       "Playtime": "7 Hours (35 Hours with Case)",
       "Charging": "Type-C Fast Charge (10min = 2h)"
     },
-    "tags": ["Earbuds", "Octo", "Air Buds", "ENC", "Gaming"]
+    "tags": [
+      "Earbuds",
+      "Octo",
+      "Air Buds",
+      "ENC",
+      "Gaming"
+    ],
+    "images": [
+      "/products/generated-images/octo-airbuds-pro2.png"
+    ]
   },
   {
     "id": "prod-6",
@@ -123,7 +168,18 @@
       "Design": "Geometric Ergonomic Fit",
       "Compatibility": "iPhone 15/16 Series, iPads, Android, Mac"
     },
-    "tags": ["EarPods", "Apple", "USB-C", "Wired", "Lossless"]
+    "tags": [
+      "EarPods",
+      "Apple",
+      "USB-C",
+      "Wired",
+      "Lossless"
+    ],
+    "images": [
+      "/products/generated-images/apple-earpods-usbc-1.png",
+      "/products/generated-images/apple-earpods-usbc-2.png",
+      "/products/generated-images/apple-earpods-usbc-3.png"
+    ]
   },
   {
     "id": "prod-7",
@@ -144,7 +200,17 @@
       "Bluetooth": "v5.3",
       "Battery": "5h Earbuds + 20h Case"
     },
-    "tags": ["Lunar", "Ultrapods", "Transparent", "LED", "Earbuds"]
+    "tags": [
+      "Lunar",
+      "Ultrapods",
+      "Transparent",
+      "LED",
+      "Earbuds"
+    ],
+    "images": [
+      "/products/generated-images/lunar-ultrapods-max-1.png",
+      "/products/generated-images/lunar-ultrapods-max-2.png"
+    ]
   },
   {
     "id": "prod-8",
@@ -165,7 +231,17 @@
       "Safety": "Over-voltage and short-circuit protection",
       "Plug": "Type C (Euro/Pakistan standard)"
     },
-    "tags": ["Apple", "Charger", "25W", "Fast Charge", "Power Adapter"]
+    "tags": [
+      "Apple",
+      "Charger",
+      "25W",
+      "Fast Charge",
+      "Power Adapter"
+    ],
+    "images": [
+      "/products/generated-images/apple-25w-power-adapter-1.png",
+      "/products/generated-images/apple-25w-power-adapter-2.png"
+    ]
   },
   {
     "id": "prod-9",
@@ -186,7 +262,16 @@
       "Control": "Smart Touch Sensor on Stems",
       "Charging": "Lightning / USB-C Port"
     },
-    "tags": ["AirPods", "Budget Earbuds", "Wireless", "Audio"]
+    "tags": [
+      "AirPods",
+      "Budget Earbuds",
+      "Wireless",
+      "Audio"
+    ],
+    "images": [
+      "/products/generated-images/apple-earbuds-high-quality-1.png",
+      "/products/generated-images/apple-earbuds-high-quality-2.png"
+    ]
   },
   {
     "id": "prod-10",
@@ -207,7 +292,16 @@
       "Inputs": "Bluetooth, AUX, TF Card, USB Drive, FM",
       "Battery": "1800mAh Rechargeable"
     },
-    "tags": ["Octo", "Speaker", "Soundbar", "RGB", "20W"]
+    "tags": [
+      "Octo",
+      "Speaker",
+      "Soundbar",
+      "RGB",
+      "20W"
+    ],
+    "images": [
+      "/products/generated-images/octo-music-bar-750.png"
+    ]
   },
   {
     "id": "prod-11",
@@ -228,7 +322,17 @@
       "Ports": "4x USB-A + 1x USB-C PD Input/Output",
       "Features": "Ultra-Bright LED Torch/Lamp, Carry Strap"
     },
-    "tags": ["Power Bank", "50000mAh", "Octo", "Heavy Duty", "Camping", "Fast Charge"]
+    "tags": [
+      "Power Bank",
+      "50000mAh",
+      "Octo",
+      "Heavy Duty",
+      "Camping",
+      "Fast Charge"
+    ],
+    "images": [
+      "/products/generated-images/octo-4usb-powerbank-50000mah.png"
+    ]
   },
   {
     "id": "prod-12",
@@ -242,14 +346,23 @@
     "stock": 8,
     "isFeatured": true,
     "description": "Flagship Lunar earbuds with hybrid ANC up to -40dB, 4-mic ENC system for wind-noise reduction, 13mm composite diaphragm drivers, and premium matte metallic finish.",
-    "image": "/products/generated-images/lunar-anc-enc-earbuds-max.png",
+    "image": "/products/generated-images/octo-wireless-airbuds-pro.png",
     "specs": {
       "ANC": "Hybrid Active Noise Cancellation (-40dB)",
       "Mics": "Quad AI ENC System",
       "Driver Size": "13mm Titanium Composite",
       "Battery": "8h Earbuds (ANC Off) / 36h Total"
     },
-    "tags": ["Lunar", "Ultrapods Max", "ANC", "Earbuds", "Flagship"]
+    "tags": [
+      "Lunar",
+      "Ultrapods Max",
+      "ANC",
+      "Earbuds",
+      "Flagship"
+    ],
+    "images": [
+      "/products/generated-images/octo-wireless-airbuds-pro.png"
+    ]
   },
   {
     "id": "prod-13",
@@ -270,7 +383,16 @@
       "Prongs": "Foldable US/EU Prongs",
       "Protection": "Smart Temp Control & Surge Protect"
     },
-    "tags": ["WiWU", "Power Bank", "35W", "Hybrid", "Travel"]
+    "tags": [
+      "WiWU",
+      "Power Bank",
+      "35W",
+      "Hybrid",
+      "Travel"
+    ],
+    "images": [
+      "/products/generated-images/wiwu-35w-charger.png"
+    ]
   },
   {
     "id": "prod-14",
@@ -291,6 +413,15 @@
       "Length": "1.0 Meter",
       "Compatibility": "Pixel, Samsung Galaxy, MacBook, iPad"
     },
-    "tags": ["Google Pixel", "USB-C Cable", "Type-C", "Fast Charging", "Cable"]
+    "tags": [
+      "Google Pixel",
+      "USB-C Cable",
+      "Type-C",
+      "Fast Charging",
+      "Cable"
+    ],
+    "images": [
+      "/products/generated-images/google-pixel-usbc-cable.png"
+    ]
   }
 ]
