@@ -22,12 +22,16 @@ import {
   Package,
   Sparkles,
   Heart,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
 import { RecentlyViewed } from '@/components/RecentlyViewed';
 
 export default function ProductView({ product }: { product: Product }) {
   const { addToCart, cart, getStock, toggleWishlist, isInWishlist, trackRecentlyViewed } = useStore();
   const [quantity, setQuantity] = useState(1);
+  const [selectedImage, setSelectedImage] = useState(product.image);
+  const touchStartX = React.useRef(0);
   const isWishlisted = isInWishlist(product.id);
 
   const liveStock = getStock(product.id);
@@ -80,19 +84,95 @@ export default function ProductView({ product }: { product: Product }) {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
         {/* Product Image Showcase */}
-        <div className="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden relative aspect-square">
-          <Image
-            src={product.image}
-            alt={product.name}
-            fill
-            priority
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover"
-          />
-          {discountPercent > 0 && (
-            <div className="absolute top-4 left-4 bg-rose-500 text-white font-extrabold text-xs px-3 py-1 rounded-lg shadow-lg flex items-center gap-1">
-              <Tag className="w-3.5 h-3.5" />
-              <span>SAVE {discountPercent}%</span>
+        <div className="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden relative">
+          {/* Main Image with Swipe */}
+          <div
+            className="aspect-square relative overflow-hidden select-none touch-pan-y"
+            onTouchStart={(e) => {
+              touchStartX.current = e.touches[0].clientX;
+            }}
+            onTouchEnd={(e) => {
+              const dx = e.changedTouches[0].clientX - touchStartX.current;
+              if (Math.abs(dx) > 50 && product.images && product.images.length > 1) {
+                const cur = product.images.indexOf(selectedImage);
+                if (dx < 0) {
+                  // swipe left -> next
+                  setSelectedImage(product.images[(cur + 1) % product.images.length]);
+                } else {
+                  // swipe right -> prev
+                  setSelectedImage(product.images[(cur - 1 + product.images.length) % product.images.length]);
+                }
+              }
+            }}
+          >
+            <Image
+              src={selectedImage}
+              alt={product.name}
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 60vw"
+              className="object-contain transition-opacity duration-300"
+            />
+            {discountPercent > 0 && (
+              <div className="absolute top-4 left-4 bg-rose-500 text-white font-extrabold text-xs px-3 py-1 rounded-lg shadow-lg flex items-center gap-1">
+                <Tag className="w-3.5 h-3.5" />
+                <span>SAVE {discountPercent}%</span>
+              </div>
+            )}
+            {/* Swipe arrows */}
+            {product.images && product.images.length > 1 && (
+              <>
+                <button
+                  onClick={() => {
+                    const cur = product.images!.indexOf(selectedImage);
+                    setSelectedImage(product.images![(cur - 1 + product.images!.length) % product.images!.length]);
+                  }}
+                  className="absolute left-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 hover:bg-black/70 text-white transition"
+                  aria-label="Previous image"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+                <button
+                  onClick={() => {
+                    const cur = product.images!.indexOf(selectedImage);
+                    setSelectedImage(product.images![(cur + 1) % product.images!.length]);
+                  }}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 hover:bg-black/70 text-white transition"
+                  aria-label="Next image"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+                {/* counter */}
+                <div className="absolute bottom-3 right-3 text-xs font-bold text-white bg-black/60 px-2 py-1 rounded-lg">
+                  {product.images.indexOf(selectedImage) + 1} / {product.images.length}
+                </div>
+              </>
+            )}
+          </div>
+          {/* Thumbnail Gallery */}
+          {(product.images && product.images.length > 1) && (
+            <div className="flex gap-2 mt-4 overflow-x-auto pb-2 px-2" role="list" aria-label="Product images">
+              {product.images.map((img, idx) => (
+                <button
+                  key={img}
+                  onClick={() => setSelectedImage(img)}
+                  className={`relative flex-shrink-0 w-20 h-20 rounded-xl overflow-hidden border-2 transition-all ${
+                    selectedImage === img
+                      ? 'border-emerald-400 shadow-lg shadow-emerald-500/20'
+                      : 'border-slate-700 hover:border-slate-500'
+                  }`}
+                  aria-label={`View image ${idx + 1}`}
+                  aria-current={selectedImage === img ? 'true' : 'false'}
+                >
+                  <Image
+                    src={img}
+                    alt={`${product.name} - view ${idx + 1}`}
+                    fill
+                    sizes="80px"
+                    className="object-cover"
+                  />
+                </button>
+              ))}
             </div>
           )}
         </div>

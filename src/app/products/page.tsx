@@ -14,6 +14,8 @@ import {
   X,
   ChevronDown,
   Filter,
+  ShieldCheck,
+  RotateCcw,
 } from 'lucide-react';
 
 const SORT_OPTIONS = [
@@ -80,11 +82,15 @@ export default function AllProductsPage() {
       {/* Header */}
       <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <nav className="flex items-center gap-2 text-xs text-slate-500 mb-4">
+          <div className="flex items-center gap-2 text-xs mb-4">
             <Link href="/" className="hover:text-emerald-400 transition">Home</Link>
             <span>/</span>
             <span className="text-slate-300">All Products</span>
-          </nav>
+            <div className="ml-auto flex items-center gap-3">
+              <Link href="/warranty-claim" className="hover:text-emerald-400 transition text-xs">Warranty Claim</Link>
+              <Link href="/return-policy" className="hover:text-emerald-400 transition text-xs">Return Policy</Link>
+            </div>
+          </div>
           <h1 className="text-3xl sm:text-4xl font-black text-white">All Products</h1>
           <p className="text-sm text-slate-400 mt-2">{filtered.length} of {products.length} products — nationwide delivery, local payments</p>
         </div>
@@ -124,7 +130,38 @@ export default function AllProductsPage() {
                 <input type="text" placeholder="Search..." value={search} onChange={e => setSearch(e.target.value)} className="w-full bg-slate-800 text-white placeholder-slate-400 text-xs rounded-lg py-2 pl-8 pr-3 border border-slate-700 focus:outline-none focus:border-emerald-500 transition" />
               </div>
 
+              {/* Categories */}
+              <div className="space-y-2">
+                <h4 className="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2">Categories</h4>
+                <div className="flex flex-wrap gap-1.5">
+                  {categories.map(cat => (
+                    <button
+                      key={cat}
+                      onClick={() => setSelectedCategory(cat)}
+                      className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition ${selectedCategory === cat ? 'bg-emerald-500 text-slate-950' : 'bg-slate-800 text-slate-400 border border-slate-700 hover:border-emerald-500/30'}`}
+                    >
+                      {cat}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               <SidebarFilters categories={categories} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} priceRange={priceRange} setPriceRange={setPriceRange} minRating={minRating} setMinRating={setMinRating} inStockOnly={inStockOnly} setInStockOnly={setInStockOnly} sortBy={sortBy} setSortBy={setSortBy} resetFilters={resetFilters} />
+
+              {/* Customer Care */}
+              <div className="pt-4 border-t border-slate-800 space-y-2">
+                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Customer Care</h4>
+                <div className="space-y-1">
+                  <Link href="/warranty-claim" className="flex items-center gap-2 text-xs text-slate-300 hover:text-emerald-400 py-1 transition">
+                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>Warranty Claim</span>
+                  </Link>
+                  <Link href="/return-policy" className="flex items-center gap-2 text-xs text-slate-300 hover:text-emerald-400 py-1 transition">
+                    <RotateCcw className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>Return Policy</span>
+                  </Link>
+                </div>
+              </div>
             </div>
           </aside>
 

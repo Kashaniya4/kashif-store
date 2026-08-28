@@ -27,47 +27,51 @@ export const Footer: React.FC = () => {
     <footer className="bg-slate-950 text-slate-400 border-t border-slate-800 pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Pakistani Value Propositions Banner */}
+        {/* Pakistani Value Propositions Banner — clickable cards with rich descriptions */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-12 border-b border-slate-800">
-          <div className="flex items-center gap-4 p-4 rounded-xl bg-slate-900/60 border border-slate-800">
-            <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+          <Link href="/shipping-policy" className="group flex items-center gap-4 p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-emerald-500/50 hover:bg-slate-900/80 transition-all duration-300">
+            <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-transform duration-300">
               <Truck className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-white text-sm font-semibold">Fast Express Shipping</h4>
-              <p className="text-xs text-slate-400">TCS, Leopards & Trax 24-48h Delivery</p>
+              <h4 className="text-white text-sm font-semibold group-hover:text-emerald-400 transition-colors">Fast Express Shipping</h4>
+              <p className="text-xs text-slate-400">TCS, Leopards & Trax courier partners across Pakistan</p>
+              <p className="text-[10px] text-emerald-400/80 mt-1">Free delivery on orders over ₨15,000</p>
             </div>
-          </div>
+          </Link>
 
-          <div className="flex items-center gap-4 p-4 rounded-xl bg-slate-900/60 border border-slate-800">
-            <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+          <Link href="/warranty-claim" className="group flex items-center gap-4 p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-emerald-500/50 hover:bg-slate-900/80 transition-all duration-300">
+            <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-transform duration-300">
               <ShieldCheck className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-white text-sm font-semibold">100% Genuine Products</h4>
-              <p className="text-xs text-slate-400">Verified Quality & Warranty</p>
+              <h4 className="text-white text-sm font-semibold group-hover:text-emerald-400 transition-colors">100% Genuine Products</h4>
+              <p className="text-xs text-slate-400">Official warranty on every item — verified quality</p>
+              <p className="text-[10px] text-emerald-400/80 mt-1">File claims in 2 minutes via WhatsApp</p>
             </div>
-          </div>
+          </Link>
 
-          <div className="flex items-center gap-4 p-4 rounded-xl bg-slate-900/60 border border-slate-800">
-            <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+          <Link href="/contact" className="group flex items-center gap-4 p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-emerald-500/50 hover:bg-slate-900/80 transition-all duration-300">
+            <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-transform duration-300">
               <MessageCircle className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-white text-sm font-semibold">Pakistani Local Support</h4>
-              <p className="text-xs text-slate-400">JazzCash, EasyPaisa & COD Accepted</p>
+              <h4 className="text-white text-sm font-semibold group-hover:text-emerald-400 transition-colors">Pakistani Local Support</h4>
+              <p className="text-xs text-slate-400">WhatsApp, email & phone — real humans, no bots</p>
+              <p className="text-[10px] text-emerald-400/80 mt-1">Mon–Sat 10 AM – 7 PM PKT</p>
             </div>
-          </div>
+          </Link>
 
-          <div className="flex items-center gap-4 p-4 rounded-xl bg-slate-900/60 border border-slate-800">
-            <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+          <Link href="/return-policy" className="group flex items-center gap-4 p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-emerald-500/50 hover:bg-slate-900/80 transition-all duration-300">
+            <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-transform duration-300">
               <RefreshCw className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-white text-sm font-semibold">Easy 7-Day Returns</h4>
-              <p className="text-xs text-slate-400">Hassle-Free Replacement Policy</p>
+              <h4 className="text-white text-sm font-semibold group-hover:text-emerald-400 transition-colors">Easy 7-Day Returns</h4>
+              <p className="text-xs text-slate-400">Hassle-free replacement or refund — no questions</p>
+              <p className="text-[10px] text-emerald-400/80 mt-1">Pickup arranged from your doorstep</p>
             </div>
-          </div>
+          </Link>
         </div>
 
         {/* Footer Navigation Columns */}

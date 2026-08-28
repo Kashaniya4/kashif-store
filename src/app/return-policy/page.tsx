@@ -14,6 +14,7 @@ export default function ReturnPolicyPage() {
       <div className="space-y-3">
         <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">Return Policy</span>
         <h1 className="text-3xl font-black text-white">Return & Replacement Policy</h1>
+        <p className="text-xl font-bold text-emerald-400 mt-2 tracking-wide" dir="rtl">اب خریدا ہوا سامان واپس بھی ہوگا، تبدیل بھی۔</p>
         <p className="text-sm text-slate-300 leading-relaxed">
           We want every sastamaal.net customer to be happy with their order. If something is wrong, we make returns and replacements simple.
         </p>

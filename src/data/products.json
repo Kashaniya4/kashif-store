@@ -1,427 +1,1225 @@
 [
   {
     "id": "prod-1",
-    "name": "Ronin Axis Bar RGB Soundbar Speaker",
-    "slug": "ronin-axis-bar-rgb-soundbar-speaker",
+    "name": "Ronin R-3010 Axis Bar Speaker",
+    "slug": "ronin-r-3010-axis-bar-speaker",
     "price": 7000,
     "originalPrice": 8999,
     "category": "Electronics & Audio",
-    "rating": 4.8,
-    "reviewsCount": 38,
-    "stock": 10,
+    "rating": 4.48,
+    "reviewsCount": 25,
+    "stock": 9,
     "isFeatured": true,
-    "description": "High-fidelity Bluetooth soundbar with dynamic RGB lighting, dual bass radiators, and multi-mode connectivity (AUX, USB, Bluetooth 5.3). Perfect for desktop setups and home entertainment.",
-    "image": "/products/generated-images/ronin-axis-bar-soundbar.png",
+    "description": "Ronin R-3010 axis bar Bluetooth speaker with punchy bass, RGB light modes, AUX and USB playback. Great desk and room filler.",
+    "image": "/products/Download/Quick%20Share/listed%20products/ronin-3010%20axis%20bar%20speaker/ronin-3010%20axis%20bar%20speaker.jpg",
     "specs": {
-      "Output Power": "20W RMS",
-      "Connectivity": "Bluetooth 5.3, AUX 3.5mm, USB",
-      "Lighting": "Dynamic RGB with 7 Modes",
-      "Battery": "2400mAh (Up to 8 Hours)"
+      "Connectivity": "Bluetooth, AUX, USB",
+      "Lighting": "RGB modes",
+      "Power": "Rechargeable battery"
     },
     "tags": [
-      "Soundbar",
-      "RGB",
-      "Speaker",
       "Ronin",
-      "Bluetooth"
+      "Speaker",
+      "Bar Speaker"
     ],
     "images": [
-      "/products/generated-images/ronin-axis-bar-soundbar.png"
+      "/products/Download/Quick%20Share/listed%20products/ronin-3010%20axis%20bar%20speaker/ronin-3010%20axis%20bar%20speaker.jpg",
+      "/products/Download/Quick%20Share/listed%20products/ronin-3010%20axis%20bar%20speaker/generated_product.png",
+      "/products/Download/Quick%20Share/listed%20products/ronin-3010%20axis%20bar%20speaker/IMG_20260823_215002.jpg",
+      "/products/Download/Quick%20Share/listed%20products/ronin-3010%20axis%20bar%20speaker/IMG_20260823_215010.jpg",
+      "/products/Download/Quick%20Share/listed%20products/ronin-3010%20axis%20bar%20speaker/IMG_20260823_215020.jpg",
+      "/products/Download/Quick%20Share/listed%20products/ronin-3010%20axis%20bar%20speaker/IMG_20260823_215102.jpg"
     ]
   },
   {
     "id": "prod-2",
-    "name": "Romoss PCT10 10000mAh 20W Fast Charge Power Bank",
-    "slug": "romoss-pct10-10000mah-fast-charge-power-bank",
-    "price": 3199,
-    "originalPrice": 6350,
-    "category": "Mobile Accessories",
-    "rating": 4.7,
-    "reviewsCount": 54,
-    "stock": 15,
+    "name": "Buds 3 Pro ANC Wireless Earbuds",
+    "slug": "buds-3-pro-anc-wireless-earbuds",
+    "price": 4000,
+    "originalPrice": 6000,
+    "category": "Electronics & Audio",
+    "rating": 4.56,
+    "reviewsCount": 32,
+    "stock": 12,
     "isFeatured": true,
-    "description": "Ultra-slim 10000mAh portable charger with 20W Power Delivery and Quick Charge 3.0. Built-in multi-protection system for safe, high-speed charging anywhere across Pakistan.",
-    "image": "/products/generated-images/romoss-pct10-powerbank-10000mah.png",
+    "description": "True wireless earbuds with Active Noise Cancellation, clear call mics and long battery life with charging case.",
+    "image": "/products/Download/Quick%20Share/listed%20products/buds%203%20pro%20anc%20wireless/buds%203%20pro%20anc%20wireless.png",
     "specs": {
-      "Capacity": "10000mAh / 37Wh",
-      "Output": "20W USB-C PD + 18W USB-A QC",
-      "Input": "18W USB-C PD Fast Recharge",
-      "Dimensions": "142 x 68 x 15mm"
+      "ANC": "Yes",
+      "Playback": "Up to 30 hours with case",
+      "Bluetooth": "5.3"
     },
     "tags": [
-      "Power Bank",
-      "Romoss",
-      "20W PD",
-      "Fast Charge",
-      "Portable"
+      "Earbuds",
+      "ANC",
+      "Wireless"
     ],
     "images": [
-      "/products/generated-images/romoss-pct10-powerbank-10000mah.png"
+      "/products/Download/Quick%20Share/listed%20products/buds%203%20pro%20anc%20wireless/buds%203%20pro%20anc%20wireless.png",
+      "/products/Download/Quick%20Share/listed%20products/buds%203%20pro%20anc%20wireless/IMG_20260823_215951.jpg",
+      "/products/Download/Quick%20Share/listed%20products/buds%203%20pro%20anc%20wireless/IMG_20260823_215957.jpg",
+      "/products/Download/Quick%20Share/listed%20products/buds%203%20pro%20anc%20wireless/IMG_20260823_220005.jpg"
     ]
   },
   {
     "id": "prod-3",
-    "name": "Buds3 Pro ANC Wireless Earbuds",
-    "slug": "buds3-pro-anc-wireless-earbuds",
-    "price": 4000,
-    "originalPrice": 6000,
-    "category": "Electronics & Audio",
-    "rating": 4.85,
-    "reviewsCount": 42,
-    "stock": 29,
+    "name": "Romoss PCT10 10000mAh 20W Fast Charging Power Bank",
+    "slug": "romoss-pct10-10000mah-20w-fast-charging-power-bank",
+    "price": 3199,
+    "originalPrice": 6350,
+    "category": "Mobile Accessories",
+    "rating": 4.64,
+    "reviewsCount": 39,
+    "stock": 15,
     "isFeatured": true,
-    "description": "Next-gen true wireless earbuds with Active Noise Cancellation, high-res audio codec support, and ultra-comfortable ergonomic design. Features 30 hours of total playback with the case.",
-    "image": "/products/generated-images/lunar-anc-enc-earbuds-max.png",
+    "description": "Ultra-slim 10000mAh power bank with 20W PD and QC 3.0 fast charging plus multi-layer protection.",
+    "image": "/products/Download/Quick%20Share/listed%20products/rumoss%20pct10%20fast%20charging%20power%20bank/romoss-pct10-powerbank.png",
     "specs": {
-      "Driver": "10mm Graphene Dynamic Drivers",
-      "ANC": "Up to -35dB Active Noise Cancellation",
-      "Battery": "6h Earbuds + 24h Charging Case",
-      "Water Resistance": "IPX5 Splashproof"
+      "Capacity": "10000mAh",
+      "Output": "20W PD / QC 3.0",
+      "Ports": "USB-C + USB-A"
     },
     "tags": [
-      "Earbuds",
-      "ANC",
-      "Wireless",
-      "Buds3 Pro",
-      "Audio"
+      "Romoss",
+      "Power Bank",
+      "Fast Charging"
     ],
     "images": [
-      "/products/generated-images/lunar-anc-enc-earbuds-max.png"
+      "/products/Download/Quick%20Share/listed%20products/rumoss%20pct10%20fast%20charging%20power%20bank/romoss-pct10-powerbank.png",
+      "/products/Download/Quick%20Share/listed%20products/rumoss%20pct10%20fast%20charging%20power%20bank/IMG_20260823_220054.jpg",
+      "/products/Download/Quick%20Share/listed%20products/rumoss%20pct10%20fast%20charging%20power%20bank/IMG_20260823_220101.jpg",
+      "/products/Download/Quick%20Share/listed%20products/rumoss%20pct10%20fast%20charging%20power%20bank/IMG_20260823_220116.jpg"
     ]
   },
   {
     "id": "prod-4",
-    "name": "Apple AirPods Pro Wireless Earbuds (Premium)",
-    "slug": "apple-airpods-pro-wireless-earbuds-premium",
-    "price": 3500,
-    "originalPrice": 5000,
-    "category": "Electronics & Audio",
-    "rating": 4.7,
-    "reviewsCount": 63,
-    "stock": 8,
-    "isFeatured": true,
-    "description": "High-grade AirPods Pro model with seamless iOS pop-up pairing, spatial audio simulation, silicone ear tips in 3 sizes, and MagSafe compatible wireless charging case.",
-    "image": "/products/generated-images/apple-airpods-high-quality.png",
+    "name": "60W Fast Charge Cable",
+    "slug": "60w-fast-charge-cable",
+    "price": 950,
+    "originalPrice": 1500,
+    "category": "Mobile Accessories",
+    "rating": 4.72,
+    "reviewsCount": 46,
+    "stock": 18,
+    "isFeatured": false,
+    "description": "Durable 60W fast charging cable supporting high-wattage PD charging for phones, tablets and laptops.",
+    "image": "/products/Download/Quick%20Share/listed%20products/60W%20charge%20cable/60W%20charge%20cable.png",
     "specs": {
-      "Connectivity": "Bluetooth 5.0 Instant Connect",
-      "Features": "Transparency Mode, Spatial Audio",
-      "Case": "MagSafe & Wireless Charging",
-      "Battery": "4.5h per charge + 20h case"
+      "Power": "Up to 60W",
+      "Type": "USB-C",
+      "Build": "Braided"
     },
     "tags": [
-      "AirPods",
-      "Apple",
-      "Earbuds",
-      "Wireless",
-      "ANC"
+      "Cable",
+      "60W",
+      "USB-C"
     ],
     "images": [
-      "/products/generated-images/apple-airpods-high-quality.png"
+      "/products/Download/Quick%20Share/listed%20products/60W%20charge%20cable/60W%20charge%20cable.png",
+      "/products/Download/Quick%20Share/listed%20products/60W%20charge%20cable/IMG_20260823_213711.jpg",
+      "/products/Download/Quick%20Share/listed%20products/60W%20charge%20cable/IMG_20260823_213716.jpg"
     ]
   },
   {
     "id": "prod-5",
-    "name": "Octo Air Buds Pro2 Bluetooth 5.3 Earbuds",
-    "slug": "octo-air-buds-pro2-bluetooth-earbuds",
-    "price": 4500,
-    "originalPrice": 6000,
-    "category": "Electronics & Audio",
-    "rating": 4.65,
-    "reviewsCount": 27,
-    "stock": 12,
-    "isFeatured": true,
-    "description": "Advanced Octo Air Buds Pro2 featuring Bluetooth 5.3 low-latency connection, quad-mic ENC for crystal-clear calls, and deep bass boost technology.",
-    "image": "/products/generated-images/octo-airbuds-pro2.png",
-    "specs": {
-      "Bluetooth": "v5.3 Low Latency (45ms)",
-      "Microphones": "Quad AI-ENC for Clear Calling",
-      "Playtime": "7 Hours (35 Hours with Case)",
-      "Charging": "Type-C Fast Charge (10min = 2h)"
-    },
-    "tags": [
-      "Earbuds",
-      "Octo",
-      "Air Buds",
-      "ENC",
-      "Gaming"
-    ],
-    "images": [
-      "/products/generated-images/octo-airbuds-pro2.png"
-    ]
-  },
-  {
-    "id": "prod-6",
-    "name": "Apple EarPods with USB-C Connector",
-    "slug": "apple-earpods-usb-c-connector",
-    "price": 1200,
-    "originalPrice": 2500,
-    "category": "Electronics & Audio",
-    "rating": 4.6,
-    "reviewsCount": 89,
-    "stock": 15,
-    "isFeatured": false,
-    "description": "Classic wired earphones with modern USB-C connector. Delivers crisp, lossless digital audio, built-in in-line remote for volume, music control, and high-quality microphone for calls.",
-    "image": "/products/generated-images/apple-earpods-usbc-1.png",
-    "specs": {
-      "Connector": "USB-C Digital Audio (Lossless)",
-      "Control": "Inline Remote (Volume/Playback/Mic)",
-      "Design": "Geometric Ergonomic Fit",
-      "Compatibility": "iPhone 15/16 Series, iPads, Android, Mac"
-    },
-    "tags": [
-      "EarPods",
-      "Apple",
-      "USB-C",
-      "Wired",
-      "Lossless"
-    ],
-    "images": [
-      "/products/generated-images/apple-earpods-usbc-1.png",
-      "/products/generated-images/apple-earpods-usbc-2.png",
-      "/products/generated-images/apple-earpods-usbc-3.png"
-    ]
-  },
-  {
-    "id": "prod-7",
-    "name": "Lunar Ultrapods Pro TWS Transparent Earbuds",
-    "slug": "lunar-ultrapods-pro-tws-transparent-earbuds",
-    "price": 4500,
-    "originalPrice": 6000,
-    "category": "Electronics & Audio",
-    "rating": 4.75,
-    "reviewsCount": 35,
-    "stock": 19,
-    "isFeatured": true,
-    "description": "Futuristic transparent-casing TWS earbuds with digital LED battery percentage display, touch controls, and high-fidelity punchy bass output. Stand out in any crowd.",
-    "image": "/products/generated-images/lunar-ultrapods-max-1.png",
-    "specs": {
-      "Design": "Cyberpunk Transparent Shell",
-      "Display": "Smart LED Battery Percentage Screen",
-      "Bluetooth": "v5.3",
-      "Battery": "5h Earbuds + 20h Case"
-    },
-    "tags": [
-      "Lunar",
-      "Ultrapods",
-      "Transparent",
-      "LED",
-      "Earbuds"
-    ],
-    "images": [
-      "/products/generated-images/lunar-ultrapods-max-1.png",
-      "/products/generated-images/lunar-ultrapods-max-2.png"
-    ]
-  },
-  {
-    "id": "prod-8",
-    "name": "Apple 25W USB-C Power Adapter",
+    "name": "Apple 20W USB-C Power Adapter",
     "slug": "apple-20w-usb-c-power-adapter",
-    "price": 2500,
-    "originalPrice": 5000,
+    "price": 3500,
+    "originalPrice": 4500,
     "category": "Mobile Accessories",
     "rating": 4.8,
-    "reviewsCount": 78,
-    "stock": 13,
-    "isFeatured": false,
-    "description": "Official-spec 25W USB-C power adapter offering fast, efficient charging at home, in the office, or on the go. Charges iPhone and Android fast.",
-    "image": "/products/generated-images/apple-25w-power-adapter-1.png",
+    "reviewsCount": 53,
+    "stock": 21,
+    "isFeatured": true,
+    "description": "Compact 20W USB-C power adapter for fast, efficient charging of iPhone, iPad and AirPods.",
+    "image": "/products/Download/Quick%20Share/listed%20products/apple%2020W%20power%20adapter%20usb-c/apple%2020W%20power%20adapter%20usb-c.png",
     "specs": {
-      "Output": "25W USB-C Power Delivery",
-      "Compatibility": "iPhone, iPad, Apple Watch, AirPods, Samsung",
-      "Safety": "Over-voltage and short-circuit protection",
-      "Plug": "Type C (Euro/Pakistan standard)"
+      "Output": "20W",
+      "Port": "USB-C",
+      "Use": "iPhone / iPad / AirPods"
     },
     "tags": [
       "Apple",
       "Charger",
-      "25W",
-      "Fast Charge",
-      "Power Adapter"
+      "20W"
     ],
     "images": [
-      "/products/generated-images/apple-25w-power-adapter-1.png",
-      "/products/generated-images/apple-25w-power-adapter-2.png"
+      "/products/Download/Quick%20Share/listed%20products/apple%2020W%20power%20adapter%20usb-c/apple%2020W%20power%20adapter%20usb-c.png",
+      "/products/Download/Quick%20Share/listed%20products/apple%2020W%20power%20adapter%20usb-c/IMG_20260823_213722.jpg",
+      "/products/Download/Quick%20Share/listed%20products/apple%2020W%20power%20adapter%20usb-c/IMG_20260823_213728.jpg",
+      "/products/Download/Quick%20Share/listed%20products/apple%2020W%20power%20adapter%20usb-c/IMG_20260823_213732.jpg"
+    ]
+  },
+  {
+    "id": "prod-6",
+    "name": "Apple 60W USB-C Charge Cable (1M)",
+    "slug": "apple-60w-usb-c-charge-cable-1m",
+    "price": 1200,
+    "originalPrice": 1800,
+    "category": "Mobile Accessories",
+    "rating": 4.4,
+    "reviewsCount": 60,
+    "stock": 24,
+    "isFeatured": false,
+    "description": "1 meter 60W USB-C charge cable with sturdy connectors, supports fast charging and data sync.",
+    "image": "/products/Download/Quick%20Share/listed%20products/apple%2060%20W%20charge%20%20cable%20(1M)/apple%2060%20W%20charge%20%20cable%20(1M).png",
+    "specs": {
+      "Length": "1 Meter",
+      "Power": "60W",
+      "Type": "USB-C to USB-C"
+    },
+    "tags": [
+      "Apple",
+      "Cable",
+      "USB-C"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/apple%2060%20W%20charge%20%20cable%20(1M)/apple%2060%20W%20charge%20%20cable%20(1M).png",
+      "/products/Download/Quick%20Share/listed%20products/apple%2060%20W%20charge%20%20cable%20(1M)/IMG_20260823_220348.jpg",
+      "/products/Download/Quick%20Share/listed%20products/apple%2060%20W%20charge%20%20cable%20(1M)/IMG_20260823_220352.jpg",
+      "/products/Download/Quick%20Share/listed%20products/apple%2060%20W%20charge%20%20cable%20(1M)/IMG_20260823_220359.jpg",
+      "/products/Download/Quick%20Share/listed%20products/apple%2060%20W%20charge%20%20cable%20(1M)/IMG_20260823_220403.jpg",
+      "/products/Download/Quick%20Share/listed%20products/apple%2060%20W%20charge%20%20cable%20(1M)/IMG_20260823_220405.jpg",
+      "/products/Download/Quick%20Share/listed%20products/apple%2060%20W%20charge%20%20cable%20(1M)/IMG_20260823_220410.jpg"
+    ]
+  },
+  {
+    "id": "prod-7",
+    "name": "Apple AirPods 3",
+    "slug": "apple-airpods-3",
+    "price": 5500,
+    "originalPrice": 7500,
+    "category": "Electronics & Audio",
+    "rating": 4.48,
+    "reviewsCount": 67,
+    "stock": 27,
+    "isFeatured": true,
+    "description": "AirPods 3 style wireless earbuds with rich sound, sweat resistance and long listening hours.",
+    "image": "/products/Download/Quick%20Share/listed%20products/apple%20airpods%203/apple%20airpods%203.png",
+    "specs": {
+      "Fit": "In-ear",
+      "Case": "Charging case included",
+      "Bluetooth": "5.x"
+    },
+    "tags": [
+      "AirPods",
+      "Earbuds",
+      "Wireless"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/apple%20airpods%203/apple%20airpods%203.png",
+      "/products/Download/Quick%20Share/listed%20products/apple%20airpods%203/IMG_20260823_213436.jpg",
+      "/products/Download/Quick%20Share/listed%20products/apple%20airpods%203/IMG_20260823_213443.jpg",
+      "/products/Download/Quick%20Share/listed%20products/apple%20airpods%203/IMG_20260823_213447.jpg"
+    ]
+  },
+  {
+    "id": "prod-8",
+    "name": "Buds Pro 3 High Quality Sound",
+    "slug": "buds-pro-3-high-quality-sound",
+    "price": 2500,
+    "originalPrice": 3500,
+    "category": "Electronics & Audio",
+    "rating": 4.56,
+    "reviewsCount": 74,
+    "stock": 30,
+    "isFeatured": false,
+    "description": "Budget-friendly TWS earbuds tuned for deep bass and clear highs with touch controls.",
+    "image": "/products/Download/Quick%20Share/listed%20products/buds%20pro%203%20high%20quality%20sound/buds%20pro%203%20high%20quality%20sound.png",
+    "specs": {
+      "Sound": "Bass boosted",
+      "Controls": "Touch",
+      "Case": "Charging case"
+    },
+    "tags": [
+      "Earbuds",
+      "TWS",
+      "Bass"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/buds%20pro%203%20high%20quality%20sound/buds%20pro%203%20high%20quality%20sound.png",
+      "/products/Download/Quick%20Share/listed%20products/buds%20pro%203%20high%20quality%20sound/IMG_20260823_220254.jpg",
+      "/products/Download/Quick%20Share/listed%20products/buds%20pro%203%20high%20quality%20sound/IMG_20260823_220257.jpg",
+      "/products/Download/Quick%20Share/listed%20products/buds%20pro%203%20high%20quality%20sound/IMG_20260823_220304.jpg"
     ]
   },
   {
     "id": "prod-9",
-    "name": "AirPods Pro 2nd Gen (Standard Edition)",
-    "slug": "airpods-pro-2nd-gen-standard-edition",
-    "price": 2500,
-    "originalPrice": 4000,
+    "name": "Buds Pro 4",
+    "slug": "buds-pro-4",
+    "price": 3000,
+    "originalPrice": 4200,
     "category": "Electronics & Audio",
-    "rating": 4.5,
-    "reviewsCount": 46,
+    "rating": 4.64,
+    "reviewsCount": 81,
     "stock": 8,
     "isFeatured": false,
-    "description": "Affordable AirPods Pro alternative with comfortable in-ear design, responsive touch controls, automatic pairing, and clear stereo audio for everyday Pakistani commute.",
-    "image": "/products/generated-images/apple-earbuds-high-quality-1.png",
+    "description": "Latest Buds Pro 4 with improved drivers, stable pairing and comfortable fit for all-day use.",
+    "image": "/products/Download/Quick%20Share/listed%20products/buds%20pro4/buds%20pro4.png",
     "specs": {
-      "Connectivity": "Bluetooth 5.1",
-      "Battery": "4 Hours + 16 Hours Case",
-      "Control": "Smart Touch Sensor on Stems",
-      "Charging": "Lightning / USB-C Port"
+      "Drivers": "Upgraded",
+      "Bluetooth": "5.3",
+      "Battery": "Long standby"
     },
     "tags": [
-      "AirPods",
-      "Budget Earbuds",
-      "Wireless",
-      "Audio"
+      "Earbuds",
+      "TWS"
     ],
     "images": [
-      "/products/generated-images/apple-earbuds-high-quality-1.png",
-      "/products/generated-images/apple-earbuds-high-quality-2.png"
+      "/products/Download/Quick%20Share/listed%20products/buds%20pro4/buds%20pro4.png",
+      "/products/Download/Quick%20Share/listed%20products/buds%20pro4/buds%20pro4.jpg",
+      "/products/Download/Quick%20Share/listed%20products/buds%20pro4/IMG_20260823_213543.jpg",
+      "/products/Download/Quick%20Share/listed%20products/buds%20pro4/IMG_20260823_213546.jpg",
+      "/products/Download/Quick%20Share/listed%20products/buds%20pro4/IMG_20260823_213552.jpg",
+      "/products/Download/Quick%20Share/listed%20products/buds%20pro4/IMG_20260823_213557.jpg",
+      "/products/Download/Quick%20Share/listed%20products/buds%20pro4/IMG_20260823_213601.jpg"
     ]
   },
   {
     "id": "prod-10",
-    "name": "Octo Music Bar M-750 20W RGB Bluetooth Speaker",
-    "slug": "octo-music-bar-m750-rgb-bluetooth-speaker",
-    "price": 3500,
-    "originalPrice": 6000,
-    "category": "Electronics & Audio",
-    "rating": 4.65,
-    "reviewsCount": 19,
-    "stock": 6,
-    "isFeatured": true,
-    "description": "Powerful 20W dual-speaker soundbar with pulsating RGB light strip, TF card / USB / FM radio support, and built-in mic for hands-free speakerphone calls.",
-    "image": "/products/generated-images/octo-music-bar-750.png",
+    "name": "Araimo Fast Charging Cable USB-C",
+    "slug": "araimo-fast-charging-cable-usb-c",
+    "price": 800,
+    "originalPrice": 1200,
+    "category": "Mobile Accessories",
+    "rating": 4.72,
+    "reviewsCount": 88,
+    "stock": 11,
+    "isFeatured": false,
+    "description": "Reliable Araimo USB-C cable built for daily fast charging with reinforced joints.",
+    "image": "/products/Download/Quick%20Share/listed%20products/araimo%20fast%20chaging%20cable%20usb-c/araimo%20fast%20chaging%20cable%20usb-c.png",
     "specs": {
-      "Output": "20W Dual Driver (2x 10W)",
-      "Lighting": "Multi-Color RGB Rhythm Sync",
-      "Inputs": "Bluetooth, AUX, TF Card, USB Drive, FM",
-      "Battery": "1800mAh Rechargeable"
+      "Type": "USB-C",
+      "Use": "Fast charging",
+      "Build": "Reinforced"
     },
     "tags": [
-      "Octo",
-      "Speaker",
-      "Soundbar",
-      "RGB",
-      "20W"
+      "Araimo",
+      "Cable",
+      "USB-C"
     ],
     "images": [
-      "/products/generated-images/octo-music-bar-750.png"
+      "/products/Download/Quick%20Share/listed%20products/araimo%20fast%20chaging%20cable%20usb-c/araimo%20fast%20chaging%20cable%20usb-c.png",
+      "/products/Download/Quick%20Share/listed%20products/araimo%20fast%20chaging%20cable%20usb-c/IMG_20260823_213827.jpg",
+      "/products/Download/Quick%20Share/listed%20products/araimo%20fast%20chaging%20cable%20usb-c/IMG_20260823_213848.jpg",
+      "/products/Download/Quick%20Share/listed%20products/araimo%20fast%20chaging%20cable%20usb-c/IMG_20260823_213853.jpg"
     ]
   },
   {
     "id": "prod-11",
-    "name": "Octo OC-502 50000mAh 22.5W Mega Power Bank",
-    "slug": "octo-oc502-50000mah-22-5w-mega-power-bank",
-    "price": 7999,
-    "originalPrice": 10999,
+    "name": "Araimo Lightning Cable 1 Meter",
+    "slug": "araimo-lightning-cable-1-meter",
+    "price": 800,
+    "originalPrice": 1200,
     "category": "Mobile Accessories",
-    "rating": 4.9,
-    "reviewsCount": 31,
-    "stock": 8,
-    "isFeatured": true,
-    "description": "Gigantic 50000mAh capacity monster power bank. Built-in LED emergency camp light, LED digital percentage display, and 22.5W multi-protocol super-fast charging. Power your devices for a whole week.",
-    "image": "/products/generated-images/octo-4usb-powerbank-50000mah.png",
+    "rating": 4.8,
+    "reviewsCount": 95,
+    "stock": 14,
+    "isFeatured": false,
+    "description": "1 meter Lightning cable for iPhones with fast charge support and tough outer jacket.",
+    "image": "/products/Download/Quick%20Share/listed%20products/araimo%20lighting%20cable%201meter/araimo%20lighting%20cable%201meter.png",
     "specs": {
-      "Capacity": "50000mAh / 185Wh Mega Battery",
-      "Fast Charging": "22.5W Huawei SCP / 20W PD / QC3.0",
-      "Ports": "4x USB-A + 1x USB-C PD Input/Output",
-      "Features": "Ultra-Bright LED Torch/Lamp, Carry Strap"
+      "Length": "1 Meter",
+      "Connector": "Lightning",
+      "Use": "Fast charging"
     },
     "tags": [
-      "Power Bank",
-      "50000mAh",
-      "Octo",
-      "Heavy Duty",
-      "Camping",
-      "Fast Charge"
+      "Araimo",
+      "Cable",
+      "Lightning"
     ],
     "images": [
-      "/products/generated-images/octo-4usb-powerbank-50000mah.png"
+      "/products/Download/Quick%20Share/listed%20products/araimo%20lighting%20cable%201meter/araimo%20lighting%20cable%201meter.png",
+      "/products/Download/Quick%20Share/listed%20products/araimo%20lighting%20cable%201meter/IMG_20260823_213811.jpg",
+      "/products/Download/Quick%20Share/listed%20products/araimo%20lighting%20cable%201meter/IMG_20260823_213816.jpg",
+      "/products/Download/Quick%20Share/listed%20products/araimo%20lighting%20cable%201meter/IMG_20260823_213820.jpg"
     ]
   },
   {
     "id": "prod-12",
-    "name": "Lunar Ultrapods Max Quad-Mic ANC+ENC Earbuds",
-    "slug": "lunar-ultrapods-max-quad-mic-earbuds",
-    "price": 4599,
-    "originalPrice": 6999,
+    "name": "Buds Wireless Earbuds",
+    "slug": "buds-wireless-earbuds",
+    "price": 1500,
+    "originalPrice": 2200,
     "category": "Electronics & Audio",
-    "rating": 4.85,
-    "reviewsCount": 23,
-    "stock": 8,
-    "isFeatured": true,
-    "description": "Flagship Lunar earbuds with hybrid ANC up to -40dB, 4-mic ENC system for wind-noise reduction, 13mm composite diaphragm drivers, and premium matte metallic finish.",
-    "image": "/products/generated-images/octo-wireless-airbuds-pro.png",
+    "rating": 4.4,
+    "reviewsCount": 102,
+    "stock": 17,
+    "isFeatured": false,
+    "description": "Simple everyday wireless buds with decent bass, easy pairing and pocket-size charging case.",
+    "image": "/products/Download/Quick%20Share/listed%20products/buds/BUDS.png",
     "specs": {
-      "ANC": "Hybrid Active Noise Cancellation (-40dB)",
-      "Mics": "Quad AI ENC System",
-      "Driver Size": "13mm Titanium Composite",
-      "Battery": "8h Earbuds (ANC Off) / 36h Total"
+      "Type": "TWS",
+      "Pairing": "Auto connect",
+      "Case": "Compact"
     },
     "tags": [
-      "Lunar",
-      "Ultrapods Max",
-      "ANC",
       "Earbuds",
-      "Flagship"
+      "TWS"
     ],
     "images": [
-      "/products/generated-images/octo-wireless-airbuds-pro.png"
+      "/products/Download/Quick%20Share/listed%20products/buds/BUDS.png",
+      "/products/Download/Quick%20Share/listed%20products/buds/IMG_20260823_214706.jpg",
+      "/products/Download/Quick%20Share/listed%20products/buds/IMG_20260823_214741.jpg",
+      "/products/Download/Quick%20Share/listed%20products/buds/IMG_20260823_214808.jpg",
+      "/products/Download/Quick%20Share/listed%20products/buds/IMG_20260823_214815.jpg"
     ]
   },
   {
     "id": "prod-13",
-    "name": "WiWU Noble 35W Power Bank & Dual-Port Charger",
-    "slug": "wiwu-noble-35w-power-bank-charger",
-    "price": 3999,
-    "originalPrice": 5999,
-    "category": "Mobile Accessories",
-    "rating": 4.7,
-    "reviewsCount": 18,
-    "stock": 13,
-    "isFeatured": false,
-    "description": "Premium 2-in-1 hybrid gadget by WiWU: wall charger and 35W high-speed portable battery in one sleek compact body. Foldable AC prongs for effortless portability.",
-    "image": "/products/generated-images/wiwu-35w-charger.png",
+    "name": "JBL by Harman M3 Mini Portable Speaker",
+    "slug": "jbl-by-harman-m3-mini-portable-speaker",
+    "price": 2500,
+    "originalPrice": 3500,
+    "category": "Electronics & Audio",
+    "rating": 4.48,
+    "reviewsCount": 19,
+    "stock": 20,
+    "isFeatured": true,
+    "description": "Pocket-size JBL M3 mini Bluetooth speaker with surprisingly loud output and long playtime.",
+    "image": "/products/Download/Quick%20Share/listed%20products/jbl%20by%20harman%20M3%20mini%20portable%20speaker/jbl%20by%20harman%20M3%20mini%20portable%20speaker.jpg",
     "specs": {
-      "Output": "35W GaN Max (USB-C PD + USB-A)",
-      "Functions": "Wall Charger + Portable Power Bank",
-      "Prongs": "Foldable US/EU Prongs",
-      "Protection": "Smart Temp Control & Surge Protect"
+      "Type": "Portable BT speaker",
+      "Playtime": "Hours of playback",
+      "Size": "Mini"
     },
     "tags": [
-      "WiWU",
-      "Power Bank",
-      "35W",
-      "Hybrid",
-      "Travel"
+      "JBL",
+      "Speaker",
+      "Bluetooth"
     ],
     "images": [
-      "/products/generated-images/wiwu-35w-charger.png"
+      "/products/Download/Quick%20Share/listed%20products/jbl%20by%20harman%20M3%20mini%20portable%20speaker/jbl%20by%20harman%20M3%20mini%20portable%20speaker.jpg",
+      "/products/Download/Quick%20Share/listed%20products/jbl%20by%20harman%20M3%20mini%20portable%20speaker/IMG_20260823_220023.jpg",
+      "/products/Download/Quick%20Share/listed%20products/jbl%20by%20harman%20M3%20mini%20portable%20speaker/IMG_20260823_220030.jpg",
+      "/products/Download/Quick%20Share/listed%20products/jbl%20by%20harman%20M3%20mini%20portable%20speaker/IMG_20260823_220041.jpg"
     ]
   },
   {
     "id": "prod-14",
-    "name": "Google Pixel 30W USB-C to USB-C Fast Charging Cable",
-    "slug": "google-pixel-30w-usb-c-charging-cable",
-    "price": 999,
-    "originalPrice": 2100,
-    "category": "Mobile Accessories",
-    "rating": 4.65,
-    "reviewsCount": 44,
-    "stock": 19,
+    "name": "Extreme Rock 715 ANC+ENC Earbuds",
+    "slug": "extreme-rock-715-ancplusenc-earbuds",
+    "price": 2800,
+    "originalPrice": 3800,
+    "category": "Electronics & Audio",
+    "rating": 4.56,
+    "reviewsCount": 26,
+    "stock": 23,
     "isFeatured": false,
-    "description": "Original-grade Google Pixel fast-charging USB-C cable supporting up to 60W PD charging and rapid data transfer. Premium matte silicone jacket that never tangles.",
-    "image": "/products/generated-images/google-pixel-usbc-cable.png",
+    "description": "Gaming-friendly earbuds with ANC+ENC dual noise handling and low-latency mode.",
+    "image": "/products/Download/Quick%20Share/listed%20products/extreme%20rock%20715%20anc+enc%20earbuds/extreme%20rock%20715%20anc+enc%20earbuds.png",
     "specs": {
-      "Connector": "USB-C to USB-C (Reversible)",
-      "Power Rating": "Supports up to 60W PD (3A/20V)",
-      "Length": "1.0 Meter",
-      "Compatibility": "Pixel, Samsung Galaxy, MacBook, iPad"
+      "Noise": "ANC + ENC",
+      "Mode": "Low latency gaming",
+      "Bluetooth": "5.3"
     },
     "tags": [
-      "Google Pixel",
-      "USB-C Cable",
-      "Type-C",
-      "Fast Charging",
-      "Cable"
+      "Extreme Rock",
+      "Earbuds",
+      "ANC"
     ],
     "images": [
-      "/products/generated-images/google-pixel-usbc-cable.png"
+      "/products/Download/Quick%20Share/listed%20products/extreme%20rock%20715%20anc+enc%20earbuds/extreme%20rock%20715%20anc+enc%20earbuds.png",
+      "/products/Download/Quick%20Share/listed%20products/extreme%20rock%20715%20anc+enc%20earbuds/IMG_20260823_214915.jpg",
+      "/products/Download/Quick%20Share/listed%20products/extreme%20rock%20715%20anc+enc%20earbuds/IMG_20260823_214921.jpg",
+      "/products/Download/Quick%20Share/listed%20products/extreme%20rock%20715%20anc+enc%20earbuds/IMG_20260823_214928.jpg"
+    ]
+  },
+  {
+    "id": "prod-15",
+    "name": "Extreme Rock 710 ENC+ANC Earbuds",
+    "slug": "extreme-rock-710-encplusanc-earbuds",
+    "price": 2600,
+    "originalPrice": 3600,
+    "category": "Electronics & Audio",
+    "rating": 4.64,
+    "reviewsCount": 33,
+    "stock": 26,
+    "isFeatured": false,
+    "description": "Rock 710 earbuds combining ENC call clarity with ANC listening in a compact shell.",
+    "image": "/products/Download/Quick%20Share/listed%20products/extreme%20rock710%20enc+anc%20earbuds/extreme%20rock710%20enc+anc%20earbuds.jpg",
+    "specs": {
+      "Noise": "ENC + ANC",
+      "Calls": "Quad clarity",
+      "Case": "Charging case"
+    },
+    "tags": [
+      "Extreme Rock",
+      "Earbuds"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/extreme%20rock710%20enc+anc%20earbuds/extreme%20rock710%20enc+anc%20earbuds.jpg",
+      "/products/Download/Quick%20Share/listed%20products/extreme%20rock710%20enc+anc%20earbuds/generated_product.png",
+      "/products/Download/Quick%20Share/listed%20products/extreme%20rock710%20enc+anc%20earbuds/IMG_20260823_220501.jpg",
+      "/products/Download/Quick%20Share/listed%20products/extreme%20rock710%20enc+anc%20earbuds/IMG_20260823_220507.jpg",
+      "/products/Download/Quick%20Share/listed%20products/extreme%20rock710%20enc+anc%20earbuds/IMG_20260823_220510.jpg"
+    ]
+  },
+  {
+    "id": "prod-16",
+    "name": "Apple 60W Charge Cable (High Quality)",
+    "slug": "apple-60w-charge-cable-high-quality",
+    "price": 1300,
+    "originalPrice": 1900,
+    "category": "Mobile Accessories",
+    "rating": 4.72,
+    "reviewsCount": 40,
+    "stock": 29,
+    "isFeatured": false,
+    "description": "Premium-grade 60W charge cable tested for full-speed PD laptop and phone charging.",
+    "image": "/products/Download/Quick%20Share/listed%20products/apple%2060w%20charg%20cable(high%20quality)/apple%2060w%20charg%20cable(high%20quality).png",
+    "specs": {
+      "Power": "60W",
+      "Quality": "High grade",
+      "Type": "USB-C"
+    },
+    "tags": [
+      "Apple",
+      "Cable",
+      "60W"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/apple%2060w%20charg%20cable(high%20quality)/apple%2060w%20charg%20cable(high%20quality).png",
+      "/products/Download/Quick%20Share/listed%20products/apple%2060w%20charg%20cable(high%20quality)/IMG_20260823_215833.jpg",
+      "/products/Download/Quick%20Share/listed%20products/apple%2060w%20charg%20cable(high%20quality)/IMG_20260823_215839.jpg",
+      "/products/Download/Quick%20Share/listed%20products/apple%2060w%20charg%20cable(high%20quality)/IMG_20260823_215849.jpg"
+    ]
+  },
+  {
+    "id": "prod-17",
+    "name": "Apple AirPods",
+    "slug": "apple-airpods",
+    "price": 4800,
+    "originalPrice": 6500,
+    "category": "Electronics & Audio",
+    "rating": 4.8,
+    "reviewsCount": 47,
+    "stock": 7,
+    "isFeatured": false,
+    "description": "Classic AirPods design with auto ear detection, clear audio and universal iPhone pairing.",
+    "image": "/products/Download/Quick%20Share/listed%20products/apple%20airpods/APPLE%20AIRPODS.png",
+    "specs": {
+      "Design": "Classic half in-ear",
+      "Detection": "Auto",
+      "Case": "Charging case"
+    },
+    "tags": [
+      "AirPods",
+      "Earbuds"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/apple%20airpods/APPLE%20AIRPODS.png",
+      "/products/Download/Quick%20Share/listed%20products/apple%20airpods/IMG_20260823_213505.jpg",
+      "/products/Download/Quick%20Share/listed%20products/apple%20airpods/IMG_20260823_213511.jpg",
+      "/products/Download/Quick%20Share/listed%20products/apple%20airpods/IMG_20260823_213516.jpg"
+    ]
+  },
+  {
+    "id": "prod-18",
+    "name": "Lunar AirPods Pro",
+    "slug": "lunar-airpods-pro",
+    "price": 3200,
+    "originalPrice": 4500,
+    "category": "Electronics & Audio",
+    "rating": 4.4,
+    "reviewsCount": 54,
+    "stock": 10,
+    "isFeatured": true,
+    "description": "Lunar AirPods Pro with noise reduction, transparency feel and glossy premium finish.",
+    "image": "/products/Download/Quick%20Share/listed%20products/lunar%20airpods%20pro/lunar%20airpods%20pro.jpg",
+    "specs": {
+      "Noise": "ENC",
+      "Finish": "Premium gloss",
+      "Bluetooth": "5.3"
+    },
+    "tags": [
+      "Lunar",
+      "Earbuds"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/lunar%20airpods%20pro/lunar%20airpods%20pro.jpg",
+      "/products/Download/Quick%20Share/listed%20products/lunar%20airpods%20pro/IMG_20260823_214517.jpg",
+      "/products/Download/Quick%20Share/listed%20products/lunar%20airpods%20pro/IMG_20260823_214521.jpg",
+      "/products/Download/Quick%20Share/listed%20products/lunar%20airpods%20pro/IMG_20260823_214526.jpg",
+      "/products/Download/Quick%20Share/listed%20products/lunar%20airpods%20pro/IMG_20260823_214531.jpg",
+      "/products/Download/Quick%20Share/listed%20products/lunar%20airpods%20pro/watermarked_img_7528957724555675894.jpg"
+    ]
+  },
+  {
+    "id": "prod-19",
+    "name": "Lunar ANC+ENC Quad Mic Earbuds",
+    "slug": "lunar-ancplusenc-quad-mic-earbuds",
+    "price": 3400,
+    "originalPrice": 4800,
+    "category": "Electronics & Audio",
+    "rating": 4.48,
+    "reviewsCount": 61,
+    "stock": 13,
+    "isFeatured": false,
+    "description": "Quad microphone earbuds engineered for crystal-clear calls plus ANC music mode.",
+    "image": "/products/Download/Quick%20Share/listed%20products/lunar%20anc+enc%20quad%20mic%20earbuds/lunar%20anc+enc%20quad%20mic%20earbuds.jpg",
+    "specs": {
+      "Mics": "Quad",
+      "Noise": "ANC + ENC",
+      "Use": "Calls + music"
+    },
+    "tags": [
+      "Lunar",
+      "Earbuds",
+      "Quad Mic"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/lunar%20anc+enc%20quad%20mic%20earbuds/lunar%20anc+enc%20quad%20mic%20earbuds.jpg",
+      "/products/Download/Quick%20Share/listed%20products/lunar%20anc+enc%20quad%20mic%20earbuds/generated_product.png",
+      "/products/Download/Quick%20Share/listed%20products/lunar%20anc+enc%20quad%20mic%20earbuds/IMG_20260823_214824.jpg",
+      "/products/Download/Quick%20Share/listed%20products/lunar%20anc+enc%20quad%20mic%20earbuds/IMG_20260823_214900.jpg",
+      "/products/Download/Quick%20Share/listed%20products/lunar%20anc+enc%20quad%20mic%20earbuds/IMG_20260823_214903.jpg",
+      "/products/Download/Quick%20Share/listed%20products/lunar%20anc+enc%20quad%20mic%20earbuds/IMG_20260823_214908.jpg"
+    ]
+  },
+  {
+    "id": "prod-20",
+    "name": "Magnetic Cooling Fan 15W Phone Cooler",
+    "slug": "magnetic-cooling-fan-15w-phone-cooler",
+    "price": 1800,
+    "originalPrice": 2600,
+    "category": "Mobile Accessories",
+    "rating": 4.56,
+    "reviewsCount": 68,
+    "stock": 16,
+    "isFeatured": false,
+    "description": "15W magnetic snap-on cooling fan that drops phone temperature instantly during gaming.",
+    "image": "/products/Download/Quick%20Share/listed%20products/magnatic%20cooling%20fan%2015w%20power%20freez%20instantly/magnatic%20cooling%20fan%2015w%20power%20freez%20instantly.jpg",
+    "specs": {
+      "Power": "15W",
+      "Mount": "Magnetic",
+      "Use": "Gaming cooling"
+    },
+    "tags": [
+      "Cooler",
+      "Fan",
+      "Magnetic"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/magnatic%20cooling%20fan%2015w%20power%20freez%20instantly/magnatic%20cooling%20fan%2015w%20power%20freez%20instantly.jpg",
+      "/products/Download/Quick%20Share/listed%20products/magnatic%20cooling%20fan%2015w%20power%20freez%20instantly/generated_product.png",
+      "/products/Download/Quick%20Share/listed%20products/magnatic%20cooling%20fan%2015w%20power%20freez%20instantly/IMG_20260823_215900.jpg",
+      "/products/Download/Quick%20Share/listed%20products/magnatic%20cooling%20fan%2015w%20power%20freez%20instantly/IMG_20260823_215906.jpg",
+      "/products/Download/Quick%20Share/listed%20products/magnatic%20cooling%20fan%2015w%20power%20freez%20instantly/IMG_20260823_215912.jpg",
+      "/products/Download/Quick%20Share/listed%20products/magnatic%20cooling%20fan%2015w%20power%20freez%20instantly/IMG_20260823_215934.jpg"
+    ]
+  },
+  {
+    "id": "prod-21",
+    "name": "Maixxinmax 406 Smart Watch Series 11",
+    "slug": "maixxinmax-406-smart-watch-series-11",
+    "price": 3500,
+    "originalPrice": 5000,
+    "category": "Smart Watches",
+    "rating": 4.64,
+    "reviewsCount": 75,
+    "stock": 19,
+    "isFeatured": true,
+    "description": "Series 11 look smart watch with big AMOLED-style display, health tracking and Bluetooth calling.",
+    "image": "/products/Download/Quick%20Share/listed%20products/maixxinmax%20406%20smart%20watch%20series%2011/maixxinmax%20406%20smart%20watch%20series%2011.jpg",
+    "specs": {
+      "Display": "Large HD",
+      "Calling": "Bluetooth calls",
+      "Tracking": "Heart rate, SpO2"
+    },
+    "tags": [
+      "Smart Watch",
+      "Series 11"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/maixxinmax%20406%20smart%20watch%20series%2011/maixxinmax%20406%20smart%20watch%20series%2011.jpg",
+      "/products/Download/Quick%20Share/listed%20products/maixxinmax%20406%20smart%20watch%20series%2011/generated_product.png",
+      "/products/Download/Quick%20Share/listed%20products/maixxinmax%20406%20smart%20watch%20series%2011/IMG_20260823_220540.jpg",
+      "/products/Download/Quick%20Share/listed%20products/maixxinmax%20406%20smart%20watch%20series%2011/IMG_20260823_220548.jpg",
+      "/products/Download/Quick%20Share/listed%20products/maixxinmax%20406%20smart%20watch%20series%2011/IMG_20260823_220556.jpg"
+    ]
+  },
+  {
+    "id": "prod-22",
+    "name": "Octo Power Bank 4 USB Ports 50000mAh",
+    "slug": "octo-power-bank-4-usb-ports-50000mah",
+    "price": 6500,
+    "originalPrice": 9000,
+    "category": "Mobile Accessories",
+    "rating": 4.72,
+    "reviewsCount": 82,
+    "stock": 22,
+    "isFeatured": true,
+    "description": "Massive 50000mAh power bank with four USB outputs to charge the whole family at once.",
+    "image": "/products/Download/Quick%20Share/listed%20products/octo%20power%20bank%204USB%20ports%2050000mAh/octo%20power%20bank%204USB%20ports%2050000mAh.jpg",
+    "specs": {
+      "Capacity": "50000mAh",
+      "Ports": "4x USB",
+      "Use": "Multi-device"
+    },
+    "tags": [
+      "Octo",
+      "Power Bank",
+      "50000mAh"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/octo%20power%20bank%204USB%20ports%2050000mAh/octo%20power%20bank%204USB%20ports%2050000mAh.jpg",
+      "/products/Download/Quick%20Share/listed%20products/octo%20power%20bank%204USB%20ports%2050000mAh/generated_product.png",
+      "/products/Download/Quick%20Share/listed%20products/octo%20power%20bank%204USB%20ports%2050000mAh/IMG_20260823_220331.jpg",
+      "/products/Download/Quick%20Share/listed%20products/octo%20power%20bank%204USB%20ports%2050000mAh/IMG_20260823_220337.jpg",
+      "/products/Download/Quick%20Share/listed%20products/octo%20power%20bank%204USB%20ports%2050000mAh/IMG_20260823_220342.jpg"
+    ]
+  },
+  {
+    "id": "prod-23",
+    "name": "Rays 6-A Silicon Cable",
+    "slug": "rays-6-a-silicon-cable",
+    "price": 700,
+    "originalPrice": 1000,
+    "category": "Mobile Accessories",
+    "rating": 4.8,
+    "reviewsCount": 89,
+    "stock": 25,
+    "isFeatured": false,
+    "description": "Flexible silicon-coated 6-A cable that stays tangle free and handles high current safely.",
+    "image": "/products/Download/Quick%20Share/listed%20products/rays%206-a%20silicon%20cable/rays%206-a%20silicon%20cable.jpg",
+    "specs": {
+      "Current": "6A",
+      "Material": "Silicon",
+      "Type": "USB-C"
+    },
+    "tags": [
+      "Rays",
+      "Cable",
+      "Silicon"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/rays%206-a%20silicon%20cable/rays%206-a%20silicon%20cable.jpg",
+      "/products/Download/Quick%20Share/listed%20products/rays%206-a%20silicon%20cable/generated_product.png",
+      "/products/Download/Quick%20Share/listed%20products/rays%206-a%20silicon%20cable/IMG_20260823_213747.jpg",
+      "/products/Download/Quick%20Share/listed%20products/rays%206-a%20silicon%20cable/IMG_20260823_213749.jpg",
+      "/products/Download/Quick%20Share/listed%20products/rays%206-a%20silicon%20cable/IMG_20260823_213753.jpg",
+      "/products/Download/Quick%20Share/listed%20products/rays%206-a%20silicon%20cable/IMG_20260823_213757.jpg"
+    ]
+  },
+  {
+    "id": "prod-24",
+    "name": "Samsung 45W PD Adapter USB-C",
+    "slug": "samsung-45w-pd-adapter-usb-c",
+    "price": 4200,
+    "originalPrice": 5500,
+    "category": "Mobile Accessories",
+    "rating": 4.4,
+    "reviewsCount": 96,
+    "stock": 28,
+    "isFeatured": true,
+    "description": "Genuine-style 45W Power Delivery adapter for super-fast Samsung and other USB-C device charging.",
+    "image": "/products/Download/Quick%20Share/listed%20products/samsung%20charger%2045W%20pd%20adapter%20usb-c/samsung%20charger%2045W%20pd%20adapter%20usb-c.jpg",
+    "specs": {
+      "Output": "45W PD",
+      "Standard": "USB-C PD",
+      "Brand fit": "Samsung / Universal"
+    },
+    "tags": [
+      "Samsung",
+      "Charger",
+      "45W"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/samsung%20charger%2045W%20pd%20adapter%20usb-c/samsung%20charger%2045W%20pd%20adapter%20usb-c.jpg",
+      "/products/Download/Quick%20Share/listed%20products/samsung%20charger%2045W%20pd%20adapter%20usb-c/IMG_20260823_213648.jpg",
+      "/products/Download/Quick%20Share/listed%20products/samsung%20charger%2045W%20pd%20adapter%20usb-c/IMG_20260823_213652.jpg",
+      "/products/Download/Quick%20Share/listed%20products/samsung%20charger%2045W%20pd%20adapter%20usb-c/IMG_20260823_213656.jpg",
+      "/products/Download/Quick%20Share/listed%20products/samsung%20charger%2045W%20pd%20adapter%20usb-c/IMG_20260823_213700.jpg",
+      "/products/Download/Quick%20Share/listed%20products/samsung%20charger%2045W%20pd%20adapter%20usb-c/IMG_20260823_213704.jpg"
+    ]
+  },
+  {
+    "id": "prod-25",
+    "name": "Samsung USB Cable (USB-C)",
+    "slug": "samsung-usb-cable-usb-c",
+    "price": 900,
+    "originalPrice": 1300,
+    "category": "Mobile Accessories",
+    "rating": 4.48,
+    "reviewsCount": 103,
+    "stock": 6,
+    "isFeatured": false,
+    "description": "Sturdy Samsung-spec USB-C cable supporting fast charge and stable data transfer.",
+    "image": "/products/Download/Quick%20Share/listed%20products/samsung%20usb%20cable%20(usb-c)/samsung%20usb%20cable%20(usb-c).jpg",
+    "specs": {
+      "Type": "USB-C",
+      "Use": "Charge + data",
+      "Build": "Durable"
+    },
+    "tags": [
+      "Samsung",
+      "Cable",
+      "USB-C"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/samsung%20usb%20cable%20(usb-c)/samsung%20usb%20cable%20(usb-c).jpg",
+      "/products/Download/Quick%20Share/listed%20products/samsung%20usb%20cable%20(usb-c)/IMG_20260823_213619.jpg",
+      "/products/Download/Quick%20Share/listed%20products/samsung%20usb%20cable%20(usb-c)/IMG_20260823_213629_1.jpg",
+      "/products/Download/Quick%20Share/listed%20products/samsung%20usb%20cable%20(usb-c)/IMG_20260823_213634.jpg",
+      "/products/Download/Quick%20Share/listed%20products/samsung%20usb%20cable%20(usb-c)/IMG_20260823_213637.jpg"
+    ]
+  },
+  {
+    "id": "prod-26",
+    "name": "Smart Watch 8 Classic",
+    "slug": "smart-watch-8-classic",
+    "price": 4500,
+    "originalPrice": 6000,
+    "category": "Smart Watches",
+    "rating": 4.56,
+    "reviewsCount": 20,
+    "stock": 9,
+    "isFeatured": true,
+    "description": "Watch 8 Classic style smartwatch with rotating bezel feel, sports modes and notifications.",
+    "image": "/products/Download/Quick%20Share/listed%20products/smart%20watch%208%20classic/smart%20watch%208%20classic.jpg",
+    "specs": {
+      "Style": "Classic bezel",
+      "Modes": "Sports + health",
+      "Calls": "BT calling"
+    },
+    "tags": [
+      "Smart Watch",
+      "8 Classic"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/smart%20watch%208%20classic/smart%20watch%208%20classic.jpg",
+      "/products/Download/Quick%20Share/listed%20products/smart%20watch%208%20classic/IMG_20260823_220613.jpg"
+    ]
+  },
+  {
+    "id": "prod-27",
+    "name": "WiWU Power Charger-Bank",
+    "slug": "wiwu-power-charger-bank",
+    "price": 4000,
+    "originalPrice": 5500,
+    "category": "Mobile Accessories",
+    "rating": 4.64,
+    "reviewsCount": 27,
+    "stock": 12,
+    "isFeatured": true,
+    "description": "2-in-1 WiWU wall charger and power bank combo for travel-ready backup power.",
+    "image": "/products/Download/Quick%20Share/listed%20products/wiwu%20power%20charger-bank/wiwu%20power%20charger-bank.jpg",
+    "specs": {
+      "Type": "Charger + Power Bank",
+      "Use": "Travel",
+      "Output": "Multi-port"
+    },
+    "tags": [
+      "WiWU",
+      "Power Bank",
+      "Charger"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/wiwu%20power%20charger-bank/wiwu%20power%20charger-bank.jpg",
+      "/products/Download/Quick%20Share/listed%20products/wiwu%20power%20charger-bank/IMG_20260823_214549.jpg",
+      "/products/Download/Quick%20Share/listed%20products/wiwu%20power%20charger-bank/IMG_20260823_214627.jpg",
+      "/products/Download/Quick%20Share/listed%20products/wiwu%20power%20charger-bank/IMG_20260823_214634.jpg",
+      "/products/Download/Quick%20Share/listed%20products/wiwu%20power%20charger-bank/IMG_20260823_214645.jpg",
+      "/products/Download/Quick%20Share/listed%20products/wiwu%20power%20charger-bank/IMG_20260823_214651.jpg",
+      "/products/Download/Quick%20Share/listed%20products/wiwu%20power%20charger-bank/IMG_20260823_220311.jpg",
+      "/products/Download/Quick%20Share/listed%20products/wiwu%20power%20charger-bank/IMG_20260823_220314.jpg",
+      "/products/Download/Quick%20Share/listed%20products/wiwu%20power%20charger-bank/IMG_20260823_220319.jpg",
+      "/products/Download/Quick%20Share/listed%20products/wiwu%20power%20charger-bank/IMG_20260823_220323.jpg"
+    ]
+  },
+  {
+    "id": "prod-28",
+    "name": "DT NO.1 Smart Watch",
+    "slug": "dt-no-1-smart-watch",
+    "price": 5200,
+    "originalPrice": 7000,
+    "category": "Smart Watches",
+    "rating": 4.72,
+    "reviewsCount": 34,
+    "stock": 15,
+    "isFeatured": true,
+    "description": "DT NO.1 feature-packed smart watch with large display, fitness tracking and call support.",
+    "image": "/products/Download/Quick%20Share/listed%20products/DTNO-1%20SMART%20WATCH/DTNO-1%20SMART%20WATCH.jpg",
+    "specs": {
+      "Display": "Large square HD",
+      "Health": "HR + SpO2",
+      "Calls": "Bluetooth"
+    },
+    "tags": [
+      "DT NO.1",
+      "Smart Watch"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/DTNO-1%20SMART%20WATCH/DTNO-1%20SMART%20WATCH.jpg",
+      "/products/Download/Quick%20Share/listed%20products/DTNO-1%20SMART%20WATCH/IMG-20260824-WA0042.jpg",
+      "/products/Download/Quick%20Share/listed%20products/DTNO-1%20SMART%20WATCH/IMG-20260824-WA0091.jpg",
+      "/products/Download/Quick%20Share/listed%20products/DTNO-1%20SMART%20WATCH/IMG-20260824-WA0106.jpg",
+      "/products/Download/Quick%20Share/listed%20products/DTNO-1%20SMART%20WATCH/watermarked_img_9251323770787452642.jpg"
+    ]
+  },
+  {
+    "id": "prod-29",
+    "name": "Galaxy Watch6 Classic",
+    "slug": "galaxy-watch6-classic",
+    "price": 14000,
+    "originalPrice": 18000,
+    "category": "Smart Watches",
+    "rating": 4.8,
+    "reviewsCount": 41,
+    "stock": 18,
+    "isFeatured": true,
+    "description": "Galaxy Watch6 Classic design smart watch with rotating bezel styling and premium finish.",
+    "image": "/products/Download/Quick%20Share/listed%20products/GALAXY%20WATCH6%20CLASSIC/GALAXY%20WATCH6%20CLASSIC.jpg",
+    "specs": {
+      "Bezel": "Rotating style",
+      "Health": "Full suite",
+      "Strap": "Premium"
+    },
+    "tags": [
+      "Galaxy",
+      "Watch6",
+      "Classic"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/GALAXY%20WATCH6%20CLASSIC/GALAXY%20WATCH6%20CLASSIC.jpg",
+      "/products/Download/Quick%20Share/listed%20products/GALAXY%20WATCH6%20CLASSIC/IMG-20260824-WA0051.jpg",
+      "/products/Download/Quick%20Share/listed%20products/GALAXY%20WATCH6%20CLASSIC/IMG-20260824-WA0074.jpg"
+    ]
+  },
+  {
+    "id": "prod-30",
+    "name": "Google 30W Charger USB-C",
+    "slug": "google-30w-charger-usb-c",
+    "price": 4500,
+    "originalPrice": 6000,
+    "category": "Mobile Accessories",
+    "rating": 4.4,
+    "reviewsCount": 48,
+    "stock": 21,
+    "isFeatured": false,
+    "description": "Google-grade 30W USB-C PD charger tuned for Pixel but perfect for any USB-C device.",
+    "image": "/products/Download/Quick%20Share/listed%20products/GOOGLE%2030W%20CHARGER%20USB-C/GOOGLE%2030W%20CHARGER%20USB-C.jpg",
+    "specs": {
+      "Output": "30W PD",
+      "Port": "USB-C",
+      "Best for": "Pixel / Android"
+    },
+    "tags": [
+      "Google",
+      "Charger",
+      "30W"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/GOOGLE%2030W%20CHARGER%20USB-C/GOOGLE%2030W%20CHARGER%20USB-C.jpg",
+      "/products/Download/Quick%20Share/listed%20products/GOOGLE%2030W%20CHARGER%20USB-C/IMG-20260824-WA0070.jpg",
+      "/products/Download/Quick%20Share/listed%20products/GOOGLE%2030W%20CHARGER%20USB-C/IMG-20260824-WA0083.jpg",
+      "/products/Download/Quick%20Share/listed%20products/GOOGLE%2030W%20CHARGER%20USB-C/watermarked_img_16058709216893546003.jpg",
+      "/products/Download/Quick%20Share/listed%20products/GOOGLE%2030W%20CHARGER%20USB-C/watermarked_img_17881660168945225349.jpg",
+      "/products/Download/Quick%20Share/listed%20products/GOOGLE%2030W%20CHARGER%20USB-C/watermarked_img_4899529556197799353.jpg"
+    ]
+  },
+  {
+    "id": "prod-31",
+    "name": "Google 30W USB-C to USB-C Cable",
+    "slug": "google-30w-usb-c-to-usb-c-cable",
+    "price": 1500,
+    "originalPrice": 2200,
+    "category": "Mobile Accessories",
+    "rating": 4.48,
+    "reviewsCount": 55,
+    "stock": 24,
+    "isFeatured": false,
+    "description": "Official-spec 30W USB-C to USB-C cable with braided jacket and reliable PD handshake.",
+    "image": "/products/Download/Quick%20Share/listed%20products/GOOGLE%20CABLE%2030W%20USB-C%20TO%20USB-C/GOOGLE%20CABLE%2030W%20USB-C%20TO%20USB-C.jpg",
+    "specs": {
+      "Power": "30W",
+      "Type": "USB-C to USB-C",
+      "Build": "Braided"
+    },
+    "tags": [
+      "Google",
+      "Cable",
+      "USB-C"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/GOOGLE%20CABLE%2030W%20USB-C%20TO%20USB-C/GOOGLE%20CABLE%2030W%20USB-C%20TO%20USB-C.jpg",
+      "/products/Download/Quick%20Share/listed%20products/GOOGLE%20CABLE%2030W%20USB-C%20TO%20USB-C/IMG-20260824-WA0059.jpg",
+      "/products/Download/Quick%20Share/listed%20products/GOOGLE%20CABLE%2030W%20USB-C%20TO%20USB-C/IMG-20260824-WA0060.jpg",
+      "/products/Download/Quick%20Share/listed%20products/GOOGLE%20CABLE%2030W%20USB-C%20TO%20USB-C/IMG-20260824-WA0094.jpg"
+    ]
+  },
+  {
+    "id": "prod-32",
+    "name": "Lunar Aura AirPods ANC+ENC Quad Mic",
+    "slug": "lunar-aura-airpods-ancplusenc-quad-mic",
+    "price": 3300,
+    "originalPrice": 4700,
+    "category": "Electronics & Audio",
+    "rating": 4.56,
+    "reviewsCount": 62,
+    "stock": 27,
+    "isFeatured": false,
+    "description": "Lunar Aura flagship earbuds pairing quad-mic call clarity with strong ANC performance.",
+    "image": "/products/Download/Quick%20Share/listed%20products/LUNAR%20AURA%20AIRPODS%20ANC+ENC%20QUAD%20MIC/LUNAR%20AURA%20AIRPODS%20ANC+ENC%20QUAD%20MIC.jpg",
+    "specs": {
+      "Mics": "Quad",
+      "Noise": "ANC + ENC",
+      "Sound": "Balanced signature"
+    },
+    "tags": [
+      "Lunar",
+      "Aura",
+      "Earbuds"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/LUNAR%20AURA%20AIRPODS%20ANC+ENC%20QUAD%20MIC/LUNAR%20AURA%20AIRPODS%20ANC+ENC%20QUAD%20MIC.jpg",
+      "/products/Download/Quick%20Share/listed%20products/LUNAR%20AURA%20AIRPODS%20ANC+ENC%20QUAD%20MIC/IMG-20260824-WA0054.jpg",
+      "/products/Download/Quick%20Share/listed%20products/LUNAR%20AURA%20AIRPODS%20ANC+ENC%20QUAD%20MIC/IMG-20260824-WA0058.jpg",
+      "/products/Download/Quick%20Share/listed%20products/LUNAR%20AURA%20AIRPODS%20ANC+ENC%20QUAD%20MIC/IMG-20260824-WA0064.jpg",
+      "/products/Download/Quick%20Share/listed%20products/LUNAR%20AURA%20AIRPODS%20ANC+ENC%20QUAD%20MIC/IMG-20260824-WA0089.jpg"
+    ]
+  },
+  {
+    "id": "prod-33",
+    "name": "Neepho Cellphone Camera Neck Bracket",
+    "slug": "neepho-cellphone-camera-neck-bracket",
+    "price": 1600,
+    "originalPrice": 2400,
+    "category": "Mobile Accessories",
+    "rating": 4.64,
+    "reviewsCount": 69,
+    "stock": 30,
+    "isFeatured": false,
+    "description": "Hands-free neck-mount bracket holding your phone as a POV chest camera for vlogs.",
+    "image": "/products/Download/Quick%20Share/listed%20products/NEEPHO%20CELLPHONE%20CAMERANECK%20BRACKET/NEEPHO%20CELLPHONE%20CAMERANECK%20BRACKET.jpg",
+    "specs": {
+      "Mount": "Neck / POV",
+      "Compat": "All phones",
+      "Use": "Vlogging"
+    },
+    "tags": [
+      "Neepho",
+      "Bracket",
+      "Vlogging"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/NEEPHO%20CELLPHONE%20CAMERANECK%20BRACKET/NEEPHO%20CELLPHONE%20CAMERANECK%20BRACKET.jpg",
+      "/products/Download/Quick%20Share/listed%20products/NEEPHO%20CELLPHONE%20CAMERANECK%20BRACKET/IMG-20260824-WA0100.jpg",
+      "/products/Download/Quick%20Share/listed%20products/NEEPHO%20CELLPHONE%20CAMERANECK%20BRACKET/IMG-20260824-WA0104.jpg",
+      "/products/Download/Quick%20Share/listed%20products/NEEPHO%20CELLPHONE%20CAMERANECK%20BRACKET/IMG-20260824-WA0105.jpg",
+      "/products/Download/Quick%20Share/listed%20products/NEEPHO%20CELLPHONE%20CAMERANECK%20BRACKET/IMG-20260824-WA0107.jpg"
+    ]
+  },
+  {
+    "id": "prod-34",
+    "name": "Octo Air Buds OC-510",
+    "slug": "octo-air-buds-oc-510",
+    "price": 2200,
+    "originalPrice": 3200,
+    "category": "Electronics & Audio",
+    "rating": 4.72,
+    "reviewsCount": 76,
+    "stock": 8,
+    "isFeatured": false,
+    "description": "Octo OC-510 open-fit air buds with lightweight comfort and punchy casual listening sound.",
+    "image": "/products/Download/Quick%20Share/listed%20products/OCTO%20AIR%20BUDS%20%20OC-510/OCTO%20AIRBUDS%20PRO2%20OC-510.jpg",
+    "specs": {
+      "Fit": "Semi open",
+      "Weight": "Ultra light",
+      "Case": "Slim"
+    },
+    "tags": [
+      "Octo",
+      "Earbuds",
+      "OC-510"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/OCTO%20AIR%20BUDS%20%20OC-510/OCTO%20AIRBUDS%20PRO2%20OC-510.jpg",
+      "/products/Download/Quick%20Share/listed%20products/OCTO%20AIR%20BUDS%20%20OC-510/IMG-20260824-WA0067.jpg",
+      "/products/Download/Quick%20Share/listed%20products/OCTO%20AIR%20BUDS%20%20OC-510/IMG-20260824-WA0068.jpg",
+      "/products/Download/Quick%20Share/listed%20products/OCTO%20AIR%20BUDS%20%20OC-510/IMG-20260824-WA0101.jpg"
+    ]
+  },
+  {
+    "id": "prod-35",
+    "name": "Octo AirBuds Pro 2",
+    "slug": "octo-airbuds-pro-2",
+    "price": 2600,
+    "originalPrice": 3600,
+    "category": "Electronics & Audio",
+    "rating": 4.8,
+    "reviewsCount": 83,
+    "stock": 11,
+    "isFeatured": false,
+    "description": "Octo AirBuds Pro 2 with Bluetooth 5.3, responsive touch controls and balanced tuning.",
+    "image": "/products/Download/Quick%20Share/listed%20products/OCTO%20AIRBUDS%20PRO2/OCTO%20AIRBUDS%20PRO2.jpg",
+    "specs": {
+      "Bluetooth": "5.3",
+      "Controls": "Touch",
+      "Sound": "Balanced"
+    },
+    "tags": [
+      "Octo",
+      "Earbuds",
+      "Pro 2"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/OCTO%20AIRBUDS%20PRO2/OCTO%20AIRBUDS%20PRO2.jpg",
+      "/products/Download/Quick%20Share/listed%20products/OCTO%20AIRBUDS%20PRO2/IMG-20260824-WA0068%20-%20Copy.jpg",
+      "/products/Download/Quick%20Share/listed%20products/OCTO%20AIRBUDS%20PRO2/IMG-20260824-WA0095.jpg",
+      "/products/Download/Quick%20Share/listed%20products/OCTO%20AIRBUDS%20PRO2/IMG-20260824-WA0099.jpg",
+      "/products/Download/Quick%20Share/listed%20products/OCTO%20AIRBUDS%20PRO2/IMG-20260824-WA0101%20-%20Copy.jpg"
+    ]
+  },
+  {
+    "id": "prod-36",
+    "name": "Octo Power Bank OC-206 20000mAh",
+    "slug": "octo-power-bank-oc-206-20000mah",
+    "price": 3800,
+    "originalPrice": 5200,
+    "category": "Mobile Accessories",
+    "rating": 4.4,
+    "reviewsCount": 90,
+    "stock": 14,
+    "isFeatured": false,
+    "description": "Everyday 20000mAh OC-206 power bank with dual output and clear capacity display.",
+    "image": "/products/Download/Quick%20Share/listed%20products/OCTO%20POWER%20BANK%20OC-206%2020000MaH/OCTO%20POWER%20BANK%20OC-206%2020000MaH.jpg",
+    "specs": {
+      "Capacity": "20000mAh",
+      "Outputs": "Dual USB",
+      "Display": "Capacity indicator"
+    },
+    "tags": [
+      "Octo",
+      "Power Bank",
+      "20000mAh"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/OCTO%20POWER%20BANK%20OC-206%2020000MaH/OCTO%20POWER%20BANK%20OC-206%2020000MaH.jpg",
+      "/products/Download/Quick%20Share/listed%20products/OCTO%20POWER%20BANK%20OC-206%2020000MaH/IMG-20260824-WA0078.jpg",
+      "/products/Download/Quick%20Share/listed%20products/OCTO%20POWER%20BANK%20OC-206%2020000MaH/IMG-20260824-WA0103.jpg",
+      "/products/Download/Quick%20Share/listed%20products/OCTO%20POWER%20BANK%20OC-206%2020000MaH/watermarked_img_11155197301248345710.jpg",
+      "/products/Download/Quick%20Share/listed%20products/OCTO%20POWER%20BANK%20OC-206%2020000MaH/watermarked_img_6845772585371296154.jpg"
+    ]
+  },
+  {
+    "id": "prod-37",
+    "name": "Oraimo Thin Smart Watch",
+    "slug": "oraimo-thin-smart-watch",
+    "price": 4000,
+    "originalPrice": 5500,
+    "category": "Smart Watches",
+    "rating": 4.48,
+    "reviewsCount": 97,
+    "stock": 17,
+    "isFeatured": false,
+    "description": "Ultra-thin Oraimo smart watch with curved screen, workout modes and week-long battery.",
+    "image": "/products/Download/Quick%20Share/listed%20products/ORAIMO%20THIN%20SMART%20WATCH/ORAIMO%20THIN%20SMART%20WATCH.jpg",
+    "specs": {
+      "Body": "Ultra thin",
+      "Battery": "Up to 7 days",
+      "Modes": "Multi-sport"
+    },
+    "tags": [
+      "Oraimo",
+      "Smart Watch"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/ORAIMO%20THIN%20SMART%20WATCH/ORAIMO%20THIN%20SMART%20WATCH.jpg",
+      "/products/Download/Quick%20Share/listed%20products/ORAIMO%20THIN%20SMART%20WATCH/IMG-20260824-WA0040.jpg",
+      "/products/Download/Quick%20Share/listed%20products/ORAIMO%20THIN%20SMART%20WATCH/IMG-20260824-WA0085.jpg",
+      "/products/Download/Quick%20Share/listed%20products/ORAIMO%20THIN%20SMART%20WATCH/IMG-20260824-WA0097.jpg",
+      "/products/Download/Quick%20Share/listed%20products/ORAIMO%20THIN%20SMART%20WATCH/IMG-20260824-WA0108.jpg"
+    ]
+  },
+  {
+    "id": "prod-38",
+    "name": "Oraimo Ultra HQ Earbuds",
+    "slug": "oraimo-ultra-hq-earbuds",
+    "price": 2900,
+    "originalPrice": 4000,
+    "category": "Electronics & Audio",
+    "rating": 4.56,
+    "reviewsCount": 104,
+    "stock": 20,
+    "isFeatured": false,
+    "description": "Oraimo Ultra high-quality earbuds delivering loud clear sound with low-latency game mode.",
+    "image": "/products/Download/Quick%20Share/listed%20products/ORAIMO%20ULTRA%20HQ%20EARBUDS/ORAIMO%20ULTRA%20HQ%20EARBUDS.jpg",
+    "specs": {
+      "Sound": "High quality",
+      "Game mode": "Low latency",
+      "Bluetooth": "5.3"
+    },
+    "tags": [
+      "Oraimo",
+      "Earbuds"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/ORAIMO%20ULTRA%20HQ%20EARBUDS/ORAIMO%20ULTRA%20HQ%20EARBUDS.jpg",
+      "/products/Download/Quick%20Share/listed%20products/ORAIMO%20ULTRA%20HQ%20EARBUDS/IMG-20260824-WA0073.jpg",
+      "/products/Download/Quick%20Share/listed%20products/ORAIMO%20ULTRA%20HQ%20EARBUDS/IMG-20260824-WA0086.jpg",
+      "/products/Download/Quick%20Share/listed%20products/ORAIMO%20ULTRA%20HQ%20EARBUDS/IMG-20260824-WA0102.jpg",
+      "/products/Download/Quick%20Share/listed%20products/ORAIMO%20ULTRA%20HQ%20EARBUDS/IMG-20260824-WA0109.jpg"
+    ]
+  },
+  {
+    "id": "prod-39",
+    "name": "Samsung Galaxy Series 10 Watch",
+    "slug": "samsung-galaxy-series-10-watch",
+    "price": 8500,
+    "originalPrice": 11000,
+    "category": "Smart Watches",
+    "rating": 4.64,
+    "reviewsCount": 21,
+    "stock": 23,
+    "isFeatured": false,
+    "description": "Galaxy Series 10 inspired smart watch with slim bezels, health suite and sleek metal look.",
+    "image": "/products/Download/Quick%20Share/listed%20products/SAMSUNG%20GALAXY%20SERIES%2010/SAMSUNG%20GALAXY%20SERIES%2010.jpg",
+    "specs": {
+      "Display": "Slim bezel HD",
+      "Health": "HR, SpO2, sleep",
+      "Look": "Metal finish"
+    },
+    "tags": [
+      "Samsung",
+      "Galaxy",
+      "Watch"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/SAMSUNG%20GALAXY%20SERIES%2010/SAMSUNG%20GALAXY%20SERIES%2010.jpg",
+      "/products/Download/Quick%20Share/listed%20products/SAMSUNG%20GALAXY%20SERIES%2010/IMG-20260824-WA0092.jpg",
+      "/products/Download/Quick%20Share/listed%20products/SAMSUNG%20GALAXY%20SERIES%2010/IMG-20260824-WA0098.jpg"
+    ]
+  },
+  {
+    "id": "prod-40",
+    "name": "Apple AirPods 2 ANC+ENC",
+    "slug": "apple-airpods-2-ancplusenc",
+    "price": 5000,
+    "originalPrice": 6800,
+    "category": "Electronics & Audio",
+    "rating": 4.72,
+    "reviewsCount": 28,
+    "stock": 26,
+    "isFeatured": false,
+    "description": "AirPods 2 style earbuds adding ANC+ENC noise handling over the classic design.",
+    "image": "/products/Download/Quick%20Share/listed%20products/apple%20airpods2%20anc+enc/apple%20airpods2%20anc+enc.png",
+    "specs": {
+      "Noise": "ANC + ENC",
+      "Design": "AirPods style",
+      "Bluetooth": "5.3"
+    },
+    "tags": [
+      "AirPods",
+      "Earbuds",
+      "ANC"
+    ],
+    "images": [
+      "/products/Download/Quick%20Share/listed%20products/apple%20airpods2%20anc+enc/apple%20airpods2%20anc+enc.png",
+      "/products/Download/Quick%20Share/listed%20products/apple%20airpods2%20anc+enc/IMG_20260823_213523.jpg",
+      "/products/Download/Quick%20Share/listed%20products/apple%20airpods2%20anc+enc/IMG_20260823_213527.jpg",
+      "/products/Download/Quick%20Share/listed%20products/apple%20airpods2%20anc+enc/IMG_20260823_213533.jpg"
     ]
   }
 ]

@@ -3,8 +3,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter, usePathname } from 'next/navigation';
 import { useStore } from '@/context/StoreContext';
-import { ShoppingBag, Search, User as UserIcon, LogOut, Sparkles, Truck, Globe, Heart, X, ArrowRight, Star } from 'lucide-react';
+import { ShoppingBag, Search, User as UserIcon, LogOut, Sparkles, Truck, Globe, Heart, X, ArrowRight, Star, ChevronDown } from 'lucide-react';
 
 export const Header: React.FC = () => {
   const {
@@ -17,13 +18,22 @@ export const Header: React.FC = () => {
     setSearchQuery,
     getCartItemsCount,
     wishlist,
+    selectedCategory,
+    setSelectedCategory,
   } = useStore();
 
+  const router = useRouter();
+  const pathname = usePathname();
+
   const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
   const searchContainerRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const cartCount = getCartItemsCount();
   const wishlistCount = wishlist.length;
+
+  const categories = ['All', ...Array.from(new Set(products.map(p => p.category)))];
 
   // Search suggestions: top 4 matching products
   const suggestions = searchQuery.trim()
@@ -41,6 +51,9 @@ export const Header: React.FC = () => {
     const handleClickOutside = (e: MouseEvent) => {
       if (searchContainerRef.current && !searchContainerRef.current.contains(e.target as Node)) {
         setIsSearchFocused(false);
+      }
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setIsCategoryDropdownOpen(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -74,7 +87,45 @@ export const Header: React.FC = () => {
 
           {/* Live Search with Dropdown Suggestions */}
           <div ref={searchContainerRef} className="hidden md:flex flex-1 max-w-md mx-4 relative">
-            <div className="relative w-full">
+            <div className="relative w-full flex items-center rounded-full bg-slate-800/90 border border-slate-700 focus-within:border-emerald-500 focus-within:ring-2 focus-within:ring-emerald-500/20 transition overflow-hidden">
+              {/* Category filter button inside search bar */}
+              <div ref={dropdownRef} className="relative shrink-0">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsCategoryDropdownOpen(prev => !prev);
+                    setIsSearchFocused(false);
+                  }}
+                  className="flex items-center gap-1 pl-3 pr-2.5 text-[11px] font-bold whitespace-nowrap text-emerald-400 hover:text-emerald-300 transition border-r border-slate-700 h-9"
+                  aria-label="Select category"
+                >
+                  <span className="max-w-[70px] truncate">{selectedCategory === 'All' ? 'All' : selectedCategory}</span>
+                  <ChevronDown className={`w-3 h-3 transition-transform ${isCategoryDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {/* Category dropdown */}
+                {isCategoryDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-56 bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden z-50 animate-in fade-in-0 duration-200 py-1.5">
+                    {categories.map(cat => (
+                      <button
+                        key={cat}
+                        onClick={() => {
+                          setSelectedCategory(cat);
+                          setIsCategoryDropdownOpen(false);
+                          if (pathname !== '/') router.push('/#products');
+                        }}
+                        className={`w-full text-left px-4 py-2.5 text-xs font-medium transition flex items-center justify-between ${
+                          selectedCategory === cat
+                            ? 'bg-emerald-500/10 text-emerald-400'
+                            : 'text-slate-300 hover:bg-slate-800/80 hover:text-white'
+                        }`}
+                      >
+                        {cat}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+
               <input
                 type="text"
                 placeholder="Search chargers, earbuds, power banks..."
@@ -84,13 +135,13 @@ export const Header: React.FC = () => {
                   setSearchQuery(e.target.value);
                   setIsSearchFocused(true);
                 }}
-                className="w-full bg-slate-800/90 text-white placeholder-slate-400 text-xs rounded-full py-2.5 pl-10 pr-8 border border-slate-700 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition"
+                className="w-full bg-transparent text-white placeholder-slate-400 text-xs py-2.5 pr-8 pl-3 focus:outline-none transition"
               />
-              <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
+              <Search className="w-4 h-4 text-slate-400 absolute right-3 top-3 pointer-events-none" />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-3 top-3 text-slate-400 hover:text-white"
+                  className="absolute right-8 top-3 text-slate-400 hover:text-white"
                 >
                   <X className="w-3.5 h-3.5" />
                 </button>
@@ -153,6 +204,26 @@ export const Header: React.FC = () => {
                 </div>
               </div>
             )}
+          </div>
+
+          {/* Categories Filter Bar — desktop only, upper right */}
+          <div className="hidden lg:flex items-center gap-1.5 shrink-0">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => {
+                  setSelectedCategory(cat);
+                  if (pathname !== '/') router.push('/#products');
+                }}
+                className={`px-3 py-1.5 rounded-full text-[11px] font-bold whitespace-nowrap transition ${
+                  selectedCategory === cat
+                    ? 'bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20'
+                    : 'bg-slate-800 text-slate-300 border border-slate-700 hover:border-emerald-500/50 hover:text-emerald-400'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
           </div>
 
           {/* Right Navigation */}

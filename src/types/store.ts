@@ -15,6 +15,7 @@ export interface Product {
   isFeatured?: boolean;
   description: string;
   image: string;
+  images?: string[];
   specs: ProductSpecs;
   tags: string[];
 }

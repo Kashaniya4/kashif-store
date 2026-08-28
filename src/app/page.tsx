@@ -230,48 +230,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Promotional Strip Banner — E-commerce standard */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <PromoBanner
-            href="/products"
-            title="Flash Sale — Up to 40% OFF"
-            subtitle="Limited-time deals on chargers, cables, earbuds &amp; power banks."
-            cta="Shop Deals Now"
-            icon={Zap}
-            variant="emerald"
-            accentText="Hot Deals"
-            images={[
-              'ronin-axis-bar-rgb-soundbar-speaker',
-              'romoss-pct10-10000mah-fast-charge-power-bank',
-              'octo-oc502-50000mah-22-5w-mega-power-bank',
-              'google-pixel-30w-usb-c-charging-cable',
-            ].map(slug => {
-              const p = products.find(x => x.slug === slug);
-              return p ? { src: p.image, alt: p.name, href: `/products/${p.slug}` } : null;
-            }).filter(Boolean) as { src: string; alt: string; href: string }[]}
-          />
-          <PromoBanner
-            href="/category/electronics-and-audio"
-            title="Audio &amp; Accessories"
-            subtitle="Premium Bluetooth speakers, earbuds, TWS &amp; gaming audio accessories."
-            cta="Browse Audio"
-            icon={Headphones}
-            variant="violet"
-            accentText="Trending"
-            images={[
-              'buds3-pro-anc-wireless-earbuds',
-              'apple-airpods-pro-wireless-earbuds-premium',
-              'lunar-ultrapods-pro-tws-transparent-earbuds',
-              'octo-music-bar-m750-rgb-bluetooth-speaker',
-            ].map(slug => {
-              const p = products.find(x => x.slug === slug);
-              return p ? { src: p.image, alt: p.name, href: `/products/${p.slug}` } : null;
-            }).filter(Boolean) as { src: string; alt: string; href: string }[]}
-          />
-        </div>
-      </section>
-
       {/* Featured products — clean standard grid */}
       <section id="products" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
@@ -314,6 +272,48 @@ export default function HomePage() {
         )}
       </section>
 
+      {/* Promotional Strip Banner — E-commerce standard */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <PromoBanner
+            href="/products"
+            title="Flash Sale — Up to 40% OFF"
+            subtitle="Limited-time deals on chargers, cables, earbuds &amp; power banks."
+            cta="Shop Deals Now"
+            icon={Zap}
+            variant="emerald"
+            accentText="Hot Deals"
+            images={[
+              'ronin-r-3010-axis-bar-speaker',
+              'romoss-pct10-10000mah-20w-fast-charging-power-bank',
+              'octo-power-bank-oc-206-20000mah',
+              'google-30w-usb-c-to-usb-c-cable',
+            ].map(slug => {
+              const p = products.find(x => x.slug === slug);
+              return p ? { src: p.image, alt: p.name, href: `/products/${p.slug}` } : null;
+            }).filter(Boolean) as { src: string; alt: string; href: string }[]}
+          />
+          <PromoBanner
+            href="/category/electronics-and-audio"
+            title="Audio &amp; Accessories"
+            subtitle="Premium Bluetooth speakers, earbuds, TWS &amp; gaming audio accessories."
+            cta="Browse Audio"
+            icon={Headphones}
+            variant="violet"
+            accentText="Trending"
+            images={[
+              'buds-3-pro-anc-wireless-earbuds',
+              'apple-airpods-3',
+              'lunar-airpods-pro',
+              'ronin-r-3010-axis-bar-speaker',
+            ].map(slug => {
+              const p = products.find(x => x.slug === slug);
+              return p ? { src: p.image, alt: p.name, href: `/products/${p.slug}` } : null;
+            }).filter(Boolean) as { src: string; alt: string; href: string }[]}
+          />
+        </div>
+      </section>
+
       {/* Auto-scrolling product image strip — below products */}
       <section>
         <ProductMarquee />
@@ -324,55 +324,60 @@ export default function HomePage() {
         <RecentlyViewed />
       </section>
 
-      {/* Trust Badges — Delivery, Genuine, Returns, Support */}
+      {/* Trust Badges — Delivery, Genuine, Returns, Support — clickable cards with rich descriptions */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-800">
         <div className="flex items-end justify-between gap-4 mb-6">
           <div>
             <h2 className="text-2xl font-black text-white">Why shop with us</h2>
+            <p className="text-xl font-bold text-emerald-400 mt-2 tracking-wide" dir="rtl">اب خریدا ہوا سامان واپس بھی ہوگا، تبدیل بھی۔</p>
             <p className="text-sm text-slate-400 mt-1">Trusted by thousands of Pakistani customers.</p>
           </div>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="group flex items-center gap-3 rounded-2xl border border-slate-800 bg-slate-900/50 px-5 py-4 hover:border-emerald-500/50 transition">
-            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+          <Link href="/shipping-policy" className="group flex items-center gap-3 rounded-2xl border border-slate-800 bg-slate-900/50 px-5 py-4 hover:border-emerald-500/50 hover:bg-slate-900/80 transition-all duration-300">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-transform duration-300">
               <Truck className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-white font-semibold text-sm block">24-48h Delivery</span>
-              <span className="text-slate-400 text-xs">TCS, Leopards & Trax</span>
+              <span className="text-white font-semibold text-sm block group-hover:text-emerald-400 transition-colors">24-48h Delivery</span>
+              <span className="text-slate-400 text-xs block">TCS, Leopards & Trax — nationwide courier partners</span>
+              <span className="text-[10px] text-emerald-400/80 mt-1 block">Free delivery on orders over ₨15,000</span>
             </div>
-          </div>
+          </Link>
 
-          <div className="group flex items-center gap-3 rounded-2xl border border-slate-800 bg-slate-900/50 px-5 py-4 hover:border-emerald-500/50 transition">
-            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+          <Link href="/warranty-claim" className="group flex items-center gap-3 rounded-2xl border border-slate-800 bg-slate-900/50 px-5 py-4 hover:border-emerald-500/50 hover:bg-slate-900/80 transition-all duration-300">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-transform duration-300">
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-white font-semibold text-sm block">100% Genuine</span>
-              <span className="text-slate-400 text-xs">Verified products &amp; warranty</span>
+              <span className="text-white font-semibold text-sm block group-hover:text-emerald-400 transition-colors">100% Genuine</span>
+              <span className="text-slate-400 text-xs block">Official manufacturer warranty on every product</span>
+              <span className="text-[10px] text-emerald-400/80 mt-1 block">File claims in 2 mins via WhatsApp</span>
             </div>
-          </div>
+          </Link>
 
-          <div className="group flex items-center gap-3 rounded-2xl border border-slate-800 bg-slate-900/50 px-5 py-4 hover:border-emerald-500/50 transition">
-            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+          <Link href="/return-policy" className="group flex items-center gap-3 rounded-2xl border border-slate-800 bg-slate-900/50 px-5 py-4 hover:border-emerald-500/50 hover:bg-slate-900/80 transition-all duration-300">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-transform duration-300">
               <RefreshCw className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-white font-semibold text-sm block">7-day returns</span>
-              <span className="text-slate-400 text-xs">Hassle-free replacement</span>
+              <span className="text-white font-semibold text-sm block group-hover:text-emerald-400 transition-colors">7-day returns</span>
+              <span className="text-slate-400 text-xs block">Hassle-free replacement or refund — no questions asked</span>
+              <span className="text-[10px] text-emerald-400/80 mt-1 block">Doorstep pickup arranged for you</span>
             </div>
-          </div>
+          </Link>
 
-          <div className="group flex items-center gap-3 rounded-2xl border border-slate-800 bg-slate-900/50 px-5 py-4 hover:border-emerald-500/50 transition">
-            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+          <Link href="/contact" className="group flex items-center gap-3 rounded-2xl border border-slate-800 bg-slate-900/50 px-5 py-4 hover:border-emerald-500/50 hover:bg-slate-900/80 transition-all duration-300">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-transform duration-300">
               <MessageCircle className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-white font-semibold text-sm block">Local support</span>
-              <span className="text-slate-400 text-xs">WhatsApp &amp; email help</span>
+              <span className="text-white font-semibold text-sm block group-hover:text-emerald-400 transition-colors">Local support</span>
+              <span className="text-slate-400 text-xs block">WhatsApp, email & phone — real humans, no bots</span>
+              <span className="text-[10px] text-emerald-400/80 mt-1 block">Mon–Sat 10 AM – 7 PM PKT</span>
             </div>
-          </div>
+          </Link>
         </div>
       </section>
 
