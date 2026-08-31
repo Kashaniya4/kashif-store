@@ -44,6 +44,10 @@ interface StoreContextType {
   deleteOrder: (orderId: string) => void;
   getStock: (productId: string) => number;
   importProducts: (newProducts: Product[]) => void;
+  // Product Management
+  updateProduct: (productId: string, updates: Partial<Product>) => void;
+  deleteProduct: (productId: string) => void;
+  addProduct: (product: Product) => void;
   getCartSubtotal: () => number;
   getDiscountAmount: () => number;
   getShippingFee: () => number;
@@ -455,6 +459,20 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     });
   }, []);
 
+  const updateProduct = useCallback((productId: string, updates: Partial<Product>) => {
+    setProducts(prev =>
+      prev.map(p => (p.id === productId ? { ...p, ...updates } : p))
+    );
+  }, []);
+
+  const deleteProduct = useCallback((productId: string) => {
+    setProducts(prev => prev.filter(p => p.id !== productId));
+  }, []);
+
+  const addProduct = useCallback((product: Product) => {
+    setProducts(prev => [...prev, product]);
+  }, []);
+
   return (
     <StoreContext.Provider
       value={{
@@ -488,6 +506,9 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         deleteOrder,
         getStock,
         importProducts,
+        updateProduct,
+        deleteProduct,
+        addProduct,
         getCartSubtotal,
         getDiscountAmount,
         getShippingFee,

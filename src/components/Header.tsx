@@ -76,13 +76,18 @@ export const Header: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 sm:h-24 gap-4">
-          {/* Logo — wide format with neon cyber glow */}
-          <Link href="/" className="shrink-0 group flex items-center" title="sastamaal.net - Home">
+          {/* Logo — wide format with neon cyber glow + Urdu Tagline */}
+          <Link href="/" className="shrink-0 group flex flex-col items-center sm:flex-row sm:items-center" title="sastamaal.net - Home">
             <img
               src="/brand/sastamaal-logo.png"
               alt="sastamaal.net"
               className="h-14 sm:h-18 w-auto max-w-[240px] sm:max-w-[320px] object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_12px_rgba(16,185,129,0.35)]"
             />
+            <div className="pt-1.5 sm:pl-4 sm:pt-0 text-center sm:text-left">
+              <p className="text-xs font-bold text-emerald-400 tracking-wide" dir="rtl">
+                اب خریدا ہوا سامان واپس بھی ہوگا، تبدیل بھی۔
+              </p>
+            </div>
           </Link>
 
           {/* Live Search with Dropdown Suggestions */}
