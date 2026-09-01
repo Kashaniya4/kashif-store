@@ -10,9 +10,10 @@ import { Star, ShoppingCart, Check, Tag, Heart, Zap } from 'lucide-react';
 
 interface ProductCardProps {
   product: Product;
+  priority?: boolean;
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = false }) => {
   const router = useRouter();
   const { addToCart, cart, getStock, toggleWishlist, isInWishlist } = useStore();
   const isInCart = cart.some(item => item.product.id === product.id);
@@ -60,6 +61,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           src={product.image}
           alt={product.name}
           fill
+          priority={priority}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
@@ -68,7 +70,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         {/* Badges */}
         <div className="absolute top-3 left-3 flex flex-col gap-1.5">
           {product.isFeatured && (
-            <span className="bg-emerald-500 text-slate-50 font-bold text-[10px] uppercase px-2.5 py-1 rounded-md shadow-md">
+            <span className="bg-emerald-600 text-white font-bold text-[10px] uppercase px-2.5 py-1 rounded-md shadow-md">
               Featured
             </span>
           )}

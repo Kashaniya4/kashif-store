@@ -161,27 +161,28 @@ export default function ProductView({ product }: { product: Product }) {
           </div>
           {/* Thumbnail Gallery */}
           {(product.images && product.images.length > 1) && (
-            <div className="flex gap-2 mt-4 overflow-x-auto pb-2 px-2" role="list" aria-label="Product images">
+            <div className="flex gap-2 mt-4 overflow-x-auto pb-2 px-2" aria-label="Product images">
               {product.images.map((img, idx) => (
-                <button
-                  key={img}
-                  onClick={() => setSelectedImage(img)}
-                  className={`relative flex-shrink-0 w-20 h-20 rounded-xl overflow-hidden border-2 transition-all ${
-                    selectedImage === img
-                      ? 'border-emerald-400 shadow-lg shadow-emerald-500/20'
-                      : 'border-slate-300 hover:border-slate-500'
-                  }`}
-                  aria-label={`View image ${idx + 1}`}
-                  aria-current={selectedImage === img ? 'true' : 'false'}
-                >
-                  <Image
-                    src={img}
-                    alt={`${product.name} - view ${idx + 1}`}
-                    fill
-                    sizes="80px"
-                    className="object-cover"
-                  />
-                </button>
+                <div key={img} role="listitem" className="shrink-0">
+                  <button
+                    onClick={() => setSelectedImage(img)}
+                    className={`relative flex-shrink-0 w-20 h-20 rounded-xl overflow-hidden border-2 transition-all ${
+                      selectedImage === img
+                        ? 'border-emerald-600 shadow-lg shadow-emerald-500/20'
+                        : 'border-slate-300 hover:border-slate-500'
+                    }`}
+                    aria-label={`View image ${idx + 1} of ${product.images?.length ?? product.images!.length}`}
+                    aria-current={selectedImage === img ? 'true' : 'false'}
+                  >
+                    <Image
+                      src={img}
+                      alt={`${product.name} - view ${idx + 1}`}
+                      fill
+                      sizes="80px"
+                      className="object-cover"
+                    />
+                  </button>
+                </div>
               ))}
             </div>
           )}
@@ -253,16 +254,18 @@ export default function ProductView({ product }: { product: Product }) {
               <button
                 onClick={() => handleQuantity(-1)}
                 disabled={quantity <= 1}
+                aria-label="Decrease quantity"
                 className="p-2 text-slate-600 hover:text-slate-900 disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 <Minus className="w-4 h-4" />
               </button>
-              <span className="w-10 text-center font-extrabold text-sm text-slate-900">
+              <span className="w-10 text-center font-extrabold text-sm text-slate-900" aria-live="polite">
                 {quantity}
               </span>
               <button
                 onClick={() => handleQuantity(+1)}
                 disabled={quantity >= liveStock}
+                aria-label="Increase quantity"
                 className="p-2 text-slate-600 hover:text-slate-900 disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 <Plus className="w-4 h-4" />
@@ -272,7 +275,7 @@ export default function ProductView({ product }: { product: Product }) {
             <button
               onClick={handleAddToCart}
               disabled={isSoldOut}
-              className="flex-1 py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-50 font-black text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl shadow-emerald-500/20 transition disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-black text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl shadow-emerald-500/20 transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <ShoppingCart className="w-5 h-5" />
               <span>Add {quantity} to Cart</span>
@@ -381,7 +384,7 @@ export default function ProductView({ product }: { product: Product }) {
           <h2 className="text-xl font-black text-slate-900 mt-1">More {product.category} products in Pakistan</h2>
           <p className="text-sm text-slate-600 mt-1">Compare similar products with local payments, PKR pricing, and nationwide delivery.</p>
         </div>
-        <Link href={`/category/${categorySlug(product.category)}`} className="px-5 py-3 rounded-xl bg-emerald-500 text-slate-50 font-black text-xs uppercase tracking-wider text-center">
+        <Link href={`/category/${categorySlug(product.category)}`} className="px-5 py-3 rounded-xl bg-emerald-600 text-white font-black text-xs uppercase tracking-wider text-center">
           View Category
         </Link>
       </section>

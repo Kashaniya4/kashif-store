@@ -305,13 +305,21 @@ export const CustomerReviewsCarousel: React.FC = () => {
                     setTimeout(() => { animatingRef.current = false; }, 500);
                   }
                 }}
-                className={`h-2 rounded-full transition-all ${
+                className={`h-6 px-1 flex items-center justify-center rounded-full transition-all ${
                   i === currentIndex
-                    ? 'bg-emerald-400 w-5'
-                    : 'w-2 bg-slate-600 hover:bg-slate-500'
+                    ? 'w-6'
+                    : 'w-4 hover:bg-slate-200'
                 }`}
                 aria-label={`Go to review set ${i + 1}`}
-              />
+              >
+                <span
+                  className={`block rounded-full transition-all ${
+                    i === currentIndex
+                      ? 'w-4 h-2 bg-emerald-500'
+                      : 'w-2 h-2 bg-slate-600'
+                  }`}
+                />
+              </button>
             ))}
           </div>
         )}

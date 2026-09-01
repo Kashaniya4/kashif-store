@@ -66,7 +66,7 @@ export const Header: React.FC = () => {
       <div className="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-xs py-1.5 px-4 text-center font-medium tracking-wide flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-2 mx-auto sm:mx-0">
           <Sparkles className="w-3.5 h-3.5 animate-pulse text-amber-600" />
-          <span>FAST DELIVERIES ACROSS PAKISTAN • USE CODE <strong className="bg-emerald-700 px-1.5 py-0.5 rounded text-amber-700">WELCOME10</strong> FOR 10% OFF</span>
+          <span>FAST DELIVERIES ACROSS PAKISTAN • USE CODE <strong className="bg-slate-900 px-1.5 py-0.5 rounded text-amber-300">WELCOME10</strong> FOR 10% OFF</span>
         </div>
         <div className="hidden sm:flex items-center gap-4 text-emerald-100">
           <span className="flex items-center gap-1.5"><Truck className="w-3.5 h-3.5" /> Nationwide Shipping (TCS, Leopards, Trax)</span>
@@ -81,6 +81,8 @@ export const Header: React.FC = () => {
             <img
               src="/brand/sastamaal-logo.png"
               alt="sastamaal.net"
+              width={320}
+              height={72}
               className="h-14 sm:h-18 w-auto max-w-[240px] sm:max-w-[320px] object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_12px_rgba(16,185,129,0.35)]"
             />
             <div className="pt-1 sm:pl-4 sm:pt-0 text-center sm:text-left">
