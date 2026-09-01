@@ -131,7 +131,7 @@ export const ProductMarquee: React.FC = () => {
   }, [animate]);
 
   return (
-    <section className="relative overflow-hidden border-y border-slate-800 bg-slate-950/80 backdrop-blur-sm py-4">
+    <section className="relative overflow-hidden border-y border-slate-200 bg-white/80 backdrop-blur-sm py-4">
       {/* Fade edges */}
       <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-950 to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-950 to-transparent z-10 pointer-events-none" />
@@ -146,22 +146,22 @@ export const ProductMarquee: React.FC = () => {
         {items.map((review, i) => (
           <div
             key={`${review.id}-${i}`}
-            className="group shrink-0 w-72 sm:w-80 rounded-xl border border-slate-800 bg-slate-900/70 p-4 backdrop-blur-sm transition-all hover:border-emerald-500/50"
+            className="group shrink-0 w-72 sm:w-80 rounded-xl border border-slate-200 bg-white/70 p-4 backdrop-blur-sm transition-all hover:border-emerald-600/50"
           >
             {/* Header: avatar + name + verified */}
             <div className="flex items-center gap-3 mb-2">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center text-slate-950 font-bold text-xs shrink-0 shadow-lg shadow-emerald-500/20">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center text-slate-50 font-bold text-xs shrink-0 shadow-lg shadow-emerald-500/20">
                 {review.avatar}
               </div>
               <div className="min-w-0">
-                <div className="text-white font-semibold text-sm truncate">{review.name}</div>
-                <div className="flex items-center gap-1 text-[10px] text-slate-400">
+                <div className="text-slate-900 font-semibold text-sm truncate">{review.name}</div>
+                <div className="flex items-center gap-1 text-[10px] text-slate-600">
                   <span>{review.city}</span>
                   {review.verified && (
                     <>
                       <span>•</span>
-                      <ShieldCheck className="w-3 h-3 text-emerald-400" />
-                      <span className="text-emerald-400">Verified</span>
+                      <ShieldCheck className="w-3 h-3 text-emerald-600" />
+                      <span className="text-emerald-600">Verified</span>
                     </>
                   )}
                 </div>
@@ -174,20 +174,20 @@ export const ProductMarquee: React.FC = () => {
                 <Star
                   key={star}
                   className={`w-3.5 h-3.5 ${
-                    star <= review.rating ? 'fill-amber-400 text-amber-400' : 'text-slate-600'
+                    star <= review.rating ? 'fill-amber-400 text-amber-600' : 'text-slate-600'
                   }`}
                 />
               ))}
             </div>
 
             {/* Review text */}
-            <p className="relative text-slate-200 text-xs leading-relaxed line-clamp-3">
+            <p className="relative text-slate-800 text-xs leading-relaxed line-clamp-3">
               <Quote className="w-3 h-3 text-emerald-500/50 absolute -left-0.5 -top-0.5" />
               <span className="pl-3">{review.text}</span>
             </p>
 
             {/* Product */}
-            <div className="mt-2 text-emerald-400 text-[10px] font-medium">{review.product}</div>
+            <div className="mt-2 text-emerald-600 text-[10px] font-medium">{review.product}</div>
           </div>
         ))}
       </div>

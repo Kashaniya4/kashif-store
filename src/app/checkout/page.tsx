@@ -98,48 +98,48 @@ export default function CheckoutPage() {
 
   if (placedOrder) {
     return (
-      <div className="max-w-3xl mx-auto px-4 py-16 text-slate-100 space-y-8">
+      <div className="max-w-3xl mx-auto px-4 py-16 text-slate-900 space-y-8">
         
         {/* Success Card */}
-        <div className="bg-slate-900 border border-emerald-500/40 rounded-3xl p-8 shadow-2xl text-center space-y-4">
-          <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center mx-auto">
+        <div className="bg-white border border-emerald-500/40 rounded-3xl p-8 shadow-2xl text-center space-y-4">
+          <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-600 border border-emerald-500/40 flex items-center justify-center mx-auto">
             <CheckCircle2 className="w-10 h-10" />
           </div>
 
-          <span className="text-xs uppercase font-extrabold text-emerald-400 tracking-wider">
+          <span className="text-xs uppercase font-extrabold text-emerald-600 tracking-wider">
             Order Placed Successfully
           </span>
 
-          <h1 className="text-3xl font-black text-white">
+          <h1 className="text-3xl font-black text-slate-900">
             Thank You, {placedOrder.customer.fullName}!
           </h1>
 
-          <p className="text-xs text-slate-400">
-            Order Reference: <strong className="text-emerald-400 font-mono">{placedOrder.orderNumber}</strong> • Status: <strong className="text-amber-300 capitalize">{placedOrder.status}</strong>
+          <p className="text-xs text-slate-600">
+            Order Reference: <strong className="text-emerald-600 font-mono">{placedOrder.orderNumber}</strong> • Status: <strong className="text-amber-600 capitalize">{placedOrder.status}</strong>
           </p>
 
-          <div className="p-4 rounded-2xl bg-slate-950 border border-slate-800 text-left text-xs space-y-2">
-            <div className="flex justify-between font-bold text-white pb-2 border-b border-slate-800">
+          <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-left text-xs space-y-2">
+            <div className="flex justify-between font-bold text-slate-900 pb-2 border-b border-slate-200">
               <span>Fulfillment Courier</span>
-              <span className="text-emerald-400">{placedOrder.courier} ({placedOrder.trackingNumber})</span>
+              <span className="text-emerald-600">{placedOrder.courier} ({placedOrder.trackingNumber})</span>
             </div>
-            <div>Payment Gateway: <strong className="text-white uppercase">{placedOrder.paymentMethod}</strong></div>
-            <div>Delivery Address: <strong className="text-white">{placedOrder.customer.address}, {placedOrder.customer.city}</strong></div>
-            <div>Contact Phone: <strong className="text-white">{placedOrder.customer.phone}</strong></div>
-            <div>Total Paid: <strong className="text-emerald-400">₨ {placedOrder.total.toLocaleString()}</strong></div>
+            <div>Payment Gateway: <strong className="text-slate-900 uppercase">{placedOrder.paymentMethod}</strong></div>
+            <div>Delivery Address: <strong className="text-slate-900">{placedOrder.customer.address}, {placedOrder.customer.city}</strong></div>
+            <div>Contact Phone: <strong className="text-slate-900">{placedOrder.customer.phone}</strong></div>
+            <div>Total Paid: <strong className="text-emerald-600">₨ {placedOrder.total.toLocaleString()}</strong></div>
           </div>
 
           <div className="pt-4 flex flex-wrap gap-4 justify-center">
             <button
               onClick={() => window.print()}
-              className="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs border border-slate-700 flex items-center gap-2"
+              className="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-900 font-bold text-xs border border-slate-300 flex items-center gap-2"
             >
-              <Printer className="w-4 h-4 text-emerald-400" />
+              <Printer className="w-4 h-4 text-emerald-600" />
               <span>Print Receipt</span>
             </button>
             <Link
               href="/admin"
-              className="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs flex items-center gap-2"
+              className="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-50 font-bold text-xs flex items-center gap-2"
             >
               <Truck className="w-4 h-4" />
               <span>View in Logistics Admin Portal</span>
@@ -156,9 +156,9 @@ export default function CheckoutPage() {
     return (
       <div className="max-w-4xl mx-auto px-4 py-24 text-center space-y-6">
         <ShoppingBag className="w-16 h-16 text-slate-600 mx-auto" />
-        <h2 className="text-2xl font-bold text-white">Your Cart is Empty</h2>
-        <p className="text-xs text-slate-400">Add products to your cart before proceeding to checkout.</p>
-        <Link href="/" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 text-slate-950 font-bold text-xs">
+        <h2 className="text-2xl font-bold text-slate-900">Your Cart is Empty</h2>
+        <p className="text-xs text-slate-600">Add products to your cart before proceeding to checkout.</p>
+        <Link href="/" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 text-slate-50 font-bold text-xs">
           <ArrowLeft className="w-4 h-4" />
           <span>Return to Catalog</span>
         </Link>
@@ -178,7 +178,7 @@ export default function CheckoutPage() {
       <div className="max-w-2xl mx-auto mb-4">
         <div className="flex items-center justify-between relative">
           {/* Connector Line */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 h-0.5 bg-slate-800 w-full z-0" />
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 h-0.5 bg-slate-100 w-full z-0" />
           <div
             className="absolute left-0 top-1/2 -translate-y-1/2 h-0.5 bg-emerald-500 z-0 transition-all duration-500"
             style={{ width: isPaymentModalOpen ? '66%' : '33%' }}
@@ -186,29 +186,29 @@ export default function CheckoutPage() {
 
           {/* Step 1 */}
           <div className="relative z-10 flex flex-col items-center gap-1.5">
-            <div className="w-8 h-8 rounded-full bg-emerald-500 text-slate-950 font-bold text-xs flex items-center justify-center shadow-lg shadow-emerald-500/20">
+            <div className="w-8 h-8 rounded-full bg-emerald-500 text-slate-50 font-bold text-xs flex items-center justify-center shadow-lg shadow-emerald-500/20">
               1
             </div>
-            <span className="text-[11px] font-bold text-white">Shipping Details</span>
+            <span className="text-[11px] font-bold text-slate-900">Shipping Details</span>
           </div>
 
           {/* Step 2 */}
           <div className="relative z-10 flex flex-col items-center gap-1.5">
             <div className={`w-8 h-8 rounded-full font-bold text-xs flex items-center justify-center transition-colors ${
               isPaymentModalOpen
-                ? 'bg-emerald-500 text-slate-950 shadow-lg shadow-emerald-500/20'
-                : 'bg-slate-800 border border-slate-700 text-slate-400'
+                ? 'bg-emerald-500 text-slate-50 shadow-lg shadow-emerald-500/20'
+                : 'bg-slate-100 border border-slate-300 text-slate-600'
             }`}>
               2
             </div>
-            <span className={`text-[11px] font-bold transition-colors ${isPaymentModalOpen ? 'text-white' : 'text-slate-400'}`}>
+            <span className={`text-[11px] font-bold transition-colors ${isPaymentModalOpen ? 'text-slate-900' : 'text-slate-600'}`}>
               Payment Method
             </span>
           </div>
 
           {/* Step 3 */}
           <div className="relative z-10 flex flex-col items-center gap-1.5">
-            <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 text-slate-500 font-bold text-xs flex items-center justify-center">
+            <div className="w-8 h-8 rounded-full bg-slate-100 border border-slate-300 text-slate-500 font-bold text-xs flex items-center justify-center">
               3
             </div>
             <span className="text-[11px] font-bold text-slate-500">Order Confirmed</span>
@@ -216,12 +216,12 @@ export default function CheckoutPage() {
         </div>
       </div>
 
-      <div className="flex items-center justify-between border-b border-slate-800 pb-6">
+      <div className="flex items-center justify-between border-b border-slate-200 pb-6">
         <div>
-          <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">Secure Order</span>
-          <h1 className="text-3xl font-black text-white">Checkout & Shipping</h1>
+          <span className="text-xs font-bold uppercase tracking-widest text-emerald-600">Secure Order</span>
+          <h1 className="text-3xl font-black text-slate-900">Checkout & Shipping</h1>
         </div>
-        <Link href="/" className="text-xs text-slate-400 hover:text-emerald-400 flex items-center gap-1">
+        <Link href="/" className="text-xs text-slate-600 hover:text-emerald-600 flex items-center gap-1">
           <ArrowLeft className="w-4 h-4" />
           <span>Continue Shopping</span>
         </Link>
@@ -233,14 +233,14 @@ export default function CheckoutPage() {
         <div className="lg:col-span-7 space-y-6">
           
           {/* Auth Banner */}
-          <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-between">
+          <div className="p-4 rounded-2xl bg-white border border-slate-200 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <UserIcon className="w-5 h-5 text-emerald-400" />
+              <UserIcon className="w-5 h-5 text-emerald-600" />
               <div>
-                <div className="text-xs font-bold text-white">
+                <div className="text-xs font-bold text-slate-900">
                   {user ? `Logged in as ${user.name}` : 'Checking out as Guest'}
                 </div>
-                <div className="text-[11px] text-slate-400">
+                <div className="text-[11px] text-slate-600">
                   {user ? user.email : 'You can checkout instantly without password'}
                 </div>
               </div>
@@ -249,7 +249,7 @@ export default function CheckoutPage() {
               <button
                 type="button"
                 onClick={() => setIsAuthModalOpen(true)}
-                className="px-3.5 py-2 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs font-bold hover:bg-emerald-500/20 transition"
+                className="px-3.5 py-2 rounded-lg bg-emerald-500/10 text-emerald-600 border border-emerald-600/40 text-xs font-bold hover:bg-emerald-500/20 transition"
               >
                 Social Login
               </button>
@@ -257,14 +257,14 @@ export default function CheckoutPage() {
           </div>
 
           {/* Form */}
-          <form id="checkout-form" onSubmit={handleOpenPayment} className="bg-slate-900 border border-slate-800 rounded-3xl p-6 space-y-4">
-            <h3 className="text-base font-bold text-white border-b border-slate-800 pb-3">
+          <form id="checkout-form" onSubmit={handleOpenPayment} className="bg-white border border-slate-200 rounded-3xl p-6 space-y-4">
+            <h3 className="text-base font-bold text-slate-900 border-b border-slate-200 pb-3">
               Shipping & Delivery Information (Pakistan)
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold text-slate-300 mb-1">Full Name *</label>
+                <label className="block text-xs font-bold text-slate-700 mb-1">Full Name *</label>
                 <div className="relative">
                   <input
                     type="text"
@@ -272,14 +272,14 @@ export default function CheckoutPage() {
                     placeholder="e.g. Saad Mansoor"
                     value={customer.fullName}
                     onChange={e => setCustomer({ ...customer, fullName: e.target.value })}
-                    className="w-full bg-slate-950 text-white placeholder-slate-500 text-xs rounded-xl py-2.5 pl-9 pr-3 border border-slate-800 focus:outline-none focus:border-emerald-500"
+                    className="w-full bg-slate-50 text-slate-900 placeholder-slate-400 text-xs rounded-xl py-2.5 pl-9 pr-3 border border-slate-200 focus:outline-none focus:border-emerald-500"
                   />
-                  <UserIcon className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+                  <UserIcon className="w-4 h-4 text-slate-600 absolute left-3 top-3" />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-300 mb-1">Pakistani Mobile Number *</label>
+                <label className="block text-xs font-bold text-slate-700 mb-1">Pakistani Mobile Number *</label>
                 <div className="relative">
                   <input
                     type="tel"
@@ -287,34 +287,34 @@ export default function CheckoutPage() {
                     placeholder="03001234567"
                     value={customer.phone}
                     onChange={e => setCustomer({ ...customer, phone: e.target.value })}
-                    className="w-full bg-slate-950 text-white placeholder-slate-500 text-xs rounded-xl py-2.5 pl-9 pr-3 border border-slate-800 focus:outline-none focus:border-emerald-500"
+                    className="w-full bg-slate-50 text-slate-900 placeholder-slate-400 text-xs rounded-xl py-2.5 pl-9 pr-3 border border-slate-200 focus:outline-none focus:border-emerald-500"
                   />
-                  <Phone className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+                  <Phone className="w-4 h-4 text-slate-600 absolute left-3 top-3" />
                 </div>
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold text-slate-300 mb-1">Email Address</label>
+                <label className="block text-xs font-bold text-slate-700 mb-1">Email Address</label>
                 <div className="relative">
                   <input
                     type="email"
                     placeholder="saad@example.pk"
                     value={customer.email}
                     onChange={e => setCustomer({ ...customer, email: e.target.value })}
-                    className="w-full bg-slate-950 text-white placeholder-slate-500 text-xs rounded-xl py-2.5 pl-9 pr-3 border border-slate-800 focus:outline-none focus:border-emerald-500"
+                    className="w-full bg-slate-50 text-slate-900 placeholder-slate-400 text-xs rounded-xl py-2.5 pl-9 pr-3 border border-slate-200 focus:outline-none focus:border-emerald-500"
                   />
-                  <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+                  <Mail className="w-4 h-4 text-slate-600 absolute left-3 top-3" />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-300 mb-1">Select City *</label>
+                <label className="block text-xs font-bold text-slate-700 mb-1">Select City *</label>
                 <select
                   value={customer.city}
                   onChange={e => setCustomer({ ...customer, city: e.target.value })}
-                  className="w-full bg-slate-950 text-white text-xs rounded-xl py-2.5 px-3 border border-slate-800 focus:outline-none focus:border-emerald-500"
+                  className="w-full bg-slate-50 text-slate-900 text-xs rounded-xl py-2.5 px-3 border border-slate-200 focus:outline-none focus:border-emerald-500"
                 >
                   {PAKISTANI_CITIES.map(city => (
                     <option key={city} value={city}>{city}</option>
@@ -324,7 +324,7 @@ export default function CheckoutPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-slate-300 mb-1">Complete Street Address *</label>
+              <label className="block text-xs font-bold text-slate-700 mb-1">Complete Street Address *</label>
               <div className="relative">
                 <textarea
                   required
@@ -332,13 +332,13 @@ export default function CheckoutPage() {
                   placeholder="House / Apartment #, Street Name, Sector/Block, Landmark"
                   value={customer.address}
                   onChange={e => setCustomer({ ...customer, address: e.target.value })}
-                  className="w-full bg-slate-950 text-white placeholder-slate-500 text-xs rounded-xl p-3 border border-slate-800 focus:outline-none focus:border-emerald-500"
+                  className="w-full bg-slate-50 text-slate-900 placeholder-slate-400 text-xs rounded-xl p-3 border border-slate-200 focus:outline-none focus:border-emerald-500"
                 />
               </div>
             </div>
 
             {formError && (
-              <div className="p-3 rounded-xl bg-rose-950/80 border border-rose-800 text-rose-300 text-xs font-semibold flex items-center gap-2">
+              <div className="p-3 rounded-xl bg-rose-50/80 border border-rose-800 text-rose-300 text-xs font-semibold flex items-center gap-2">
                 <ShieldAlert className="w-4 h-4 shrink-0" />
                 <span>{formError}</span>
               </div>
@@ -350,22 +350,22 @@ export default function CheckoutPage() {
         {/* Right Column: Cart Overview, Promo Code & Payment Button */}
         <div className="lg:col-span-5 space-y-6">
           
-          <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 space-y-6">
-            <h3 className="text-base font-bold text-white border-b border-slate-800 pb-3 flex items-center justify-between">
+          <div className="bg-white border border-slate-200 rounded-3xl p-6 space-y-6">
+            <h3 className="text-base font-bold text-slate-900 border-b border-slate-200 pb-3 flex items-center justify-between">
               <span>Order Items ({cart.length})</span>
-              <span className="text-xs text-emerald-400 font-mono">₨ {subtotal.toLocaleString()}</span>
+              <span className="text-xs text-emerald-600 font-mono">₨ {subtotal.toLocaleString()}</span>
             </h3>
 
             {/* Item list */}
             <div className="space-y-3 max-h-60 overflow-y-auto pr-1">
               {cart.map(item => (
                 <div key={item.product.id} className="flex items-center gap-3 text-xs">
-                  <Image src={item.product.image} alt={item.product.name} width={48} height={48} className="w-12 h-12 rounded-lg object-cover bg-slate-950" />
+                  <Image src={item.product.image} alt={item.product.name} width={48} height={48} className="w-12 h-12 rounded-lg object-cover bg-slate-50" />
                   <div className="flex-1 min-w-0">
-                    <div className="font-semibold text-white truncate">{item.product.name}</div>
-                    <div className="text-slate-400">Qty: {item.quantity} × ₨ {item.product.price.toLocaleString()}</div>
+                    <div className="font-semibold text-slate-900 truncate">{item.product.name}</div>
+                    <div className="text-slate-600">Qty: {item.quantity} × ₨ {item.product.price.toLocaleString()}</div>
                   </div>
-                  <div className="font-bold text-white">
+                  <div className="font-bold text-slate-900">
                     ₨ {(item.product.price * item.quantity).toLocaleString()}
                   </div>
                 </div>
@@ -373,17 +373,17 @@ export default function CheckoutPage() {
             </div>
 
             {/* Promo Code Engine Box */}
-            <div className="pt-4 border-t border-slate-800">
+            <div className="pt-4 border-t border-slate-200">
               {activePromo ? (
                 <div className="flex items-center justify-between p-3 rounded-xl bg-emerald-950/60 border border-emerald-600/60 text-xs">
                   <div className="flex items-center gap-2">
-                    <Tag className="w-4 h-4 text-emerald-400" />
+                    <Tag className="w-4 h-4 text-emerald-600" />
                     <div>
-                      <span className="font-bold text-emerald-300">{activePromo.code}</span>
-                      <span className="block text-[10px] text-slate-400">{activePromo.description}</span>
+                      <span className="font-bold text-emerald-700">{activePromo.code}</span>
+                      <span className="block text-[10px] text-slate-600">{activePromo.description}</span>
                     </div>
                   </div>
-                  <button onClick={removePromoCode} className="text-rose-400 font-bold hover:underline">
+                  <button onClick={removePromoCode} className="text-rose-600 font-bold hover:underline">
                     Remove
                   </button>
                 </div>
@@ -394,42 +394,42 @@ export default function CheckoutPage() {
                     placeholder="Promo Code (WELCOME10)"
                     value={inputCode}
                     onChange={e => setInputCode(e.target.value)}
-                    className="flex-1 bg-slate-950 text-white placeholder-slate-500 text-xs rounded-xl py-2 px-3 border border-slate-800 focus:outline-none focus:border-emerald-500"
+                    className="flex-1 bg-slate-50 text-slate-900 placeholder-slate-400 text-xs rounded-xl py-2 px-3 border border-slate-200 focus:outline-none focus:border-emerald-500"
                   />
                   <button
                     type="submit"
-                    className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-emerald-400 font-bold text-xs border border-slate-700 transition"
+                    className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-emerald-600 font-bold text-xs border border-slate-300 transition"
                   >
                     Apply
                   </button>
                 </form>
               )}
               {promoError && (
-                <p className="text-[11px] text-rose-400 mt-1 font-medium">{promoError}</p>
+                <p className="text-[11px] text-rose-600 mt-1 font-medium">{promoError}</p>
               )}
             </div>
 
             {/* Total Calculations */}
-            <div className="space-y-2 text-xs pt-4 border-t border-slate-800">
-              <div className="flex justify-between text-slate-400">
+            <div className="space-y-2 text-xs pt-4 border-t border-slate-200">
+              <div className="flex justify-between text-slate-600">
                 <span>Subtotal</span>
-                <span className="text-white">₨ {subtotal.toLocaleString()}</span>
+                <span className="text-slate-900">₨ {subtotal.toLocaleString()}</span>
               </div>
               {discount > 0 && (
-                <div className="flex justify-between text-emerald-400 font-semibold">
+                <div className="flex justify-between text-emerald-600 font-semibold">
                   <span>Promo Code Savings</span>
                   <span>- ₨ {discount.toLocaleString()}</span>
                 </div>
               )}
-              <div className="flex justify-between text-slate-400">
+              <div className="flex justify-between text-slate-600">
                 <span>Shipping Nationwide</span>
-                <span className={shipping === 0 ? 'text-emerald-400 font-bold' : 'text-white'}>
+                <span className={shipping === 0 ? 'text-emerald-600 font-bold' : 'text-slate-900'}>
                   {shipping === 0 ? 'FREE' : `₨ ${shipping.toLocaleString()}`}
                 </span>
               </div>
-              <div className="flex justify-between text-lg font-black text-white pt-2 border-t border-slate-800">
+              <div className="flex justify-between text-lg font-black text-slate-900 pt-2 border-t border-slate-200">
                 <span>Total Amount</span>
-                <span className="text-emerald-400">₨ {total.toLocaleString()}</span>
+                <span className="text-emerald-600">₨ {total.toLocaleString()}</span>
               </div>
             </div>
 
@@ -437,7 +437,7 @@ export default function CheckoutPage() {
             <button
               form="checkout-form"
               type="submit"
-              className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl shadow-emerald-500/20 transition"
+              className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-50 font-black text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl shadow-emerald-500/20 transition"
             >
               <CreditCard className="w-5 h-5" />
               <span>Select Pakistani Gateway & Pay</span>

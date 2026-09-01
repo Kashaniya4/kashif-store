@@ -89,9 +89,9 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
   if (!category || categoryProducts.length === 0) {
     return (
       <div className="max-w-4xl mx-auto px-4 py-24 text-center space-y-6">
-        <h1 className="text-2xl font-bold text-white">Category Not Found</h1>
-        <p className="text-sm text-slate-400">This category does not exist or has no products yet.</p>
-        <Link href="/products" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 text-slate-950 font-bold text-xs">
+        <h1 className="text-2xl font-bold text-slate-900">Category Not Found</h1>
+        <p className="text-sm text-slate-600">This category does not exist or has no products yet.</p>
+        <Link href="/products" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 text-slate-50 font-bold text-xs">
           <ArrowLeft className="w-4 h-4" />
           <span>Browse All Products</span>
         </Link>
@@ -123,21 +123,21 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
       <StructuredData data={schemas} />
 
       {/* Breadcrumb nav */}
-      <nav className="flex items-center gap-2 text-xs text-slate-400" aria-label="Breadcrumb">
-        <Link href="/" className="hover:text-emerald-400 transition">Home</Link>
+      <nav className="flex items-center gap-2 text-xs text-slate-600" aria-label="Breadcrumb">
+        <Link href="/" className="hover:text-emerald-600 transition">Home</Link>
         <span>/</span>
-        <Link href="/products" className="hover:text-emerald-400 transition">All Products</Link>
+        <Link href="/products" className="hover:text-emerald-600 transition">All Products</Link>
         <span>/</span>
-        <span className="text-white font-semibold">{category}</span>
+        <span className="text-slate-900 font-semibold">{category}</span>
       </nav>
 
       {/* Page header */}
-      <div className="border-b border-slate-800 pb-6">
-        <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">Category</span>
-        <h1 className="text-3xl font-black text-white mt-1">
+      <div className="border-b border-slate-200 pb-6">
+        <span className="text-xs font-bold uppercase tracking-widest text-emerald-600">Category</span>
+        <h1 className="text-3xl font-black text-slate-900 mt-1">
           {descriptor?.title ?? category} in Pakistan
         </h1>
-        <p className="text-xs text-slate-400 mt-2 max-w-2xl">
+        <p className="text-xs text-slate-600 mt-2 max-w-2xl">
           {descriptor?.description ?? `Shop ${category} online in Pakistan`} — {categoryProducts.length} products available with nationwide delivery and local payment options.
         </p>
       </div>

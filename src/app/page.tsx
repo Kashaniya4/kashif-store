@@ -133,16 +133,16 @@ export default function HomePage() {
             className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30"
           />
 
-          {/* Dark gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/70 to-transparent" />
+          {/* Light gradient overlay for readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/70 to-transparent" />
 
           {/* Content overlay */}
           <div className="absolute inset-0 flex items-center">
             <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full">
               <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
                 {/* Left: Text content */}
-                <div className="max-w-2xl text-white flex-1 min-w-0">
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] sm:text-xs font-semibold shadow-sm backdrop-blur-sm">
+                <div className="max-w-2xl text-slate-900 flex-1 min-w-0">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-600/40 text-emerald-600 text-[11px] sm:text-xs font-semibold shadow-sm backdrop-blur-sm">
                     <Tag className="w-3.5 h-3.5 shrink-0" />
                     <span>Pakistan&apos;s Trusted Mobile Accessories &amp; Gadgets Store</span>
                   </div>
@@ -155,21 +155,21 @@ export default function HomePage() {
                     in Pakistan
                   </h1>
 
-                  <p className="mt-3 sm:mt-4 text-slate-200 text-xs sm:text-base leading-relaxed max-w-lg drop-shadow">
+                  <p className="mt-3 sm:mt-4 text-slate-800 text-xs sm:text-base leading-relaxed max-w-lg drop-shadow">
                     Chargers, cables, covers, screen glass, power banks &amp; audio — with lightning-fast delivery and trusted payments: JazzCash, EasyPaisa &amp; COD.
                   </p>
 
                   <div className="mt-6 sm:mt-7 flex flex-wrap items-center gap-3">
                     <a
                       href="#products"
-                      className="px-5 sm:px-7 py-2.5 sm:py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-slate-950 font-black text-xs sm:text-sm uppercase tracking-wider transition shadow-lg shadow-emerald-500/25 inline-flex items-center gap-2 active:scale-95"
+                      className="px-5 sm:px-7 py-2.5 sm:py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-slate-50 font-black text-xs sm:text-sm uppercase tracking-wider transition shadow-lg shadow-emerald-500/25 inline-flex items-center gap-2 active:scale-95"
                     >
                       Shop All Deals
                       <ArrowRight className="w-4 h-4" />
                     </a>
                     <Link
                       href="/shipping-policy"
-                      className="px-5 sm:px-7 py-2.5 sm:py-3.5 rounded-xl border border-white/10 bg-white/5 text-white font-semibold text-xs sm:text-sm hover:border-emerald-500/60 hover:bg-white/10 transition backdrop-blur-sm"
+                      className="px-5 sm:px-7 py-2.5 sm:py-3.5 rounded-xl border border-white/10 bg-white/5 text-slate-900 font-semibold text-xs sm:text-sm hover:border-emerald-500/60 hover:bg-white/10 transition backdrop-blur-sm"
                     >
                       Delivery Times
                     </Link>
@@ -181,7 +181,7 @@ export default function HomePage() {
                       <Link
                         key={cat}
                         href={`/category/${toCategorySlug(cat)}`}
-                        className="px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-semibold whitespace-nowrap transition backdrop-blur-sm bg-white/5 text-slate-300 border border-white/10 hover:border-emerald-500/40 hover:bg-emerald-500/10 hover:text-emerald-400"
+                        className="px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-semibold whitespace-nowrap transition backdrop-blur-sm bg-white/5 text-slate-700 border border-white/10 hover:border-emerald-500/40 hover:bg-emerald-500/10 hover:text-emerald-600"
                       >
                         {cat}
                       </Link>
@@ -199,7 +199,7 @@ export default function HomePage() {
                       <Link
                         key={product.id}
                         href={`/products/${product.slug || product.id}`}
-                        className="group flex items-center gap-2.5 bg-slate-900/80 backdrop-blur-md border border-emerald-500/20 rounded-xl p-2 hover:bg-slate-900 hover:border-emerald-500/50 transition-all duration-300 w-60 shadow-lg shadow-black/40"
+                        className="group flex items-center gap-2.5 bg-white/80 backdrop-blur-md border border-emerald-600/30 rounded-xl p-2 hover:bg-white hover:border-emerald-600/50 transition-all duration-300 w-60 shadow-lg shadow-black/40"
                         style={{ animationDelay: `${idx * 0.15}s` }}
                       >
                         <div className="relative w-10 h-10 rounded-lg overflow-hidden shrink-0 border border-white/10">
@@ -210,16 +210,16 @@ export default function HomePage() {
                             loading="lazy"
                           />
                           {discount > 0 && (
-                            <span className="absolute top-0 left-0 bg-rose-500 text-white text-[7px] font-bold px-0.5 rounded-sm">
+                            <span className="absolute top-0 left-0 bg-orange-500 text-white text-[7px] font-bold px-0.5 rounded-sm">
                               -{discount}%
                             </span>
                           )}
                         </div>
                         <div className="flex-1 min-w-0">
-                          <p className="text-white text-[11px] font-semibold truncate drop-shadow">{product.name}</p>
-                          <span className="text-emerald-400 text-xs font-extrabold">₨{product.price.toLocaleString()}</span>
+                          <p className="text-slate-900 text-[11px] font-semibold truncate drop-shadow">{product.name}</p>
+                          <span className="text-emerald-600 text-xs font-extrabold">₨{product.price.toLocaleString()}</span>
                         </div>
-                        <ArrowRight className="w-3 h-3 text-slate-500 group-hover:text-emerald-400 transition shrink-0" />
+                        <ArrowRight className="w-3 h-3 text-slate-500 group-hover:text-emerald-600 transition shrink-0" />
                       </Link>
                     );
                   })}
@@ -234,8 +234,8 @@ export default function HomePage() {
       <section id="products" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-black text-white">Featured products</h2>
-            <p className="text-sm text-slate-400 mt-1">Hand-picked gadgets at the best prices in Pakistan.</p>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900">Featured products</h2>
+            <p className="text-sm text-slate-600 mt-1">Hand-picked gadgets at the best prices in Pakistan.</p>
           </div>
 
           <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
@@ -245,8 +245,8 @@ export default function HomePage() {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition ${
                   selectedCategory === cat
-                    ? 'bg-emerald-500 text-slate-950'
-                    : 'bg-slate-900 text-slate-300 border border-slate-800 hover:border-emerald-500/50'
+                    ? 'bg-emerald-500 text-slate-50'
+                    : 'bg-white text-slate-700 border border-slate-200 hover:border-emerald-600/50'
                 }`}
               >
                 {cat}
@@ -258,8 +258,8 @@ export default function HomePage() {
         {filteredProducts.length === 0 ? (
           <div className="text-center py-20 space-y-3">
             <PackageCheck className="w-10 h-10 text-slate-600 mx-auto" />
-            <h3 className="text-lg font-bold text-white">No products found</h3>
-            <p className="text-xs text-slate-400">
+            <h3 className="text-lg font-bold text-slate-900">No products found</h3>
+            <p className="text-xs text-slate-600">
               No items matched &quot;{searchQuery}&quot; or category &quot;{selectedCategory}&quot;.
             </p>
           </div>
@@ -325,57 +325,57 @@ export default function HomePage() {
       </section>
 
       {/* Trust Badges — Delivery, Genuine, Returns, Support — clickable cards with rich descriptions */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-800">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200">
         <div className="flex items-end justify-between gap-4 mb-6">
           <div>
-            <h2 className="text-2xl font-black text-white">Why shop with us</h2>
-            <p className="text-xl font-bold text-emerald-400 mt-2 tracking-wide" dir="rtl">اب خریدا ہوا سامان واپس بھی ہوگا، تبدیل بھی۔</p>
-            <p className="text-sm text-slate-400 mt-1">Trusted by thousands of Pakistani customers.</p>
+            <h2 className="text-2xl font-black text-slate-900">Why shop with us</h2>
+            <p className="text-xl font-bold text-emerald-600 mt-2 tracking-wide" dir="rtl">اب خریدا ہوا سامان واپس بھی ہوگا، تبدیل بھی۔</p>
+            <p className="text-sm text-slate-600 mt-1">Trusted by thousands of Pakistani customers.</p>
           </div>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <Link href="/shipping-policy" className="group flex items-center gap-3 rounded-2xl border border-slate-800 bg-slate-900/50 px-5 py-4 hover:border-emerald-500/50 hover:bg-slate-900/80 transition-all duration-300">
-            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-transform duration-300">
+          <Link href="/shipping-policy" className="group flex items-center gap-3 rounded-2xl border border-slate-200 bg-white/50 px-5 py-4 hover:border-emerald-600/50 hover:bg-white/80 transition-all duration-300">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-600/30 flex items-center justify-center text-emerald-600 shrink-0 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-transform duration-300">
               <Truck className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-white font-semibold text-sm block group-hover:text-emerald-400 transition-colors">24-48h Delivery</span>
-              <span className="text-slate-400 text-xs block">TCS, Leopards & Trax — nationwide courier partners</span>
-              <span className="text-[10px] text-emerald-400/80 mt-1 block">Free delivery on orders over ₨15,000</span>
+              <span className="text-slate-900 font-semibold text-sm block group-hover:text-emerald-600 transition-colors">24-48h Delivery</span>
+              <span className="text-slate-600 text-xs block">TCS, Leopards & Trax — nationwide courier partners</span>
+              <span className="text-[10px] text-emerald-600/80 mt-1 block">Free delivery on orders over ₨15,000</span>
             </div>
           </Link>
 
-          <Link href="/warranty-claim" className="group flex items-center gap-3 rounded-2xl border border-slate-800 bg-slate-900/50 px-5 py-4 hover:border-emerald-500/50 hover:bg-slate-900/80 transition-all duration-300">
-            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-transform duration-300">
+          <Link href="/warranty-claim" className="group flex items-center gap-3 rounded-2xl border border-slate-200 bg-white/50 px-5 py-4 hover:border-emerald-600/50 hover:bg-white/80 transition-all duration-300">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-600/30 flex items-center justify-center text-emerald-600 shrink-0 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-transform duration-300">
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-white font-semibold text-sm block group-hover:text-emerald-400 transition-colors">100% Genuine</span>
-              <span className="text-slate-400 text-xs block">Official manufacturer warranty on every product</span>
-              <span className="text-[10px] text-emerald-400/80 mt-1 block">File claims in 2 mins via WhatsApp</span>
+              <span className="text-slate-900 font-semibold text-sm block group-hover:text-emerald-600 transition-colors">100% Genuine</span>
+              <span className="text-slate-600 text-xs block">Official manufacturer warranty on every product</span>
+              <span className="text-[10px] text-emerald-600/80 mt-1 block">File claims in 2 mins via WhatsApp</span>
             </div>
           </Link>
 
-          <Link href="/return-policy" className="group flex items-center gap-3 rounded-2xl border border-slate-800 bg-slate-900/50 px-5 py-4 hover:border-emerald-500/50 hover:bg-slate-900/80 transition-all duration-300">
-            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-transform duration-300">
+          <Link href="/return-policy" className="group flex items-center gap-3 rounded-2xl border border-slate-200 bg-white/50 px-5 py-4 hover:border-emerald-600/50 hover:bg-white/80 transition-all duration-300">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-600/30 flex items-center justify-center text-emerald-600 shrink-0 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-transform duration-300">
               <RefreshCw className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-white font-semibold text-sm block group-hover:text-emerald-400 transition-colors">7-day returns</span>
-              <span className="text-slate-400 text-xs block">Hassle-free replacement or refund — no questions asked</span>
-              <span className="text-[10px] text-emerald-400/80 mt-1 block">Doorstep pickup arranged for you</span>
+              <span className="text-slate-900 font-semibold text-sm block group-hover:text-emerald-600 transition-colors">7-day returns</span>
+              <span className="text-slate-600 text-xs block">Hassle-free replacement or refund — no questions asked</span>
+              <span className="text-[10px] text-emerald-600/80 mt-1 block">Doorstep pickup arranged for you</span>
             </div>
           </Link>
 
-          <Link href="/contact" className="group flex items-center gap-3 rounded-2xl border border-slate-800 bg-slate-900/50 px-5 py-4 hover:border-emerald-500/50 hover:bg-slate-900/80 transition-all duration-300">
-            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-transform duration-300">
+          <Link href="/contact" className="group flex items-center gap-3 rounded-2xl border border-slate-200 bg-white/50 px-5 py-4 hover:border-emerald-600/50 hover:bg-white/80 transition-all duration-300">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-600/30 flex items-center justify-center text-emerald-600 shrink-0 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-transform duration-300">
               <MessageCircle className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-white font-semibold text-sm block group-hover:text-emerald-400 transition-colors">Local support</span>
-              <span className="text-slate-400 text-xs block">WhatsApp, email & phone — real humans, no bots</span>
-              <span className="text-[10px] text-emerald-400/80 mt-1 block">Mon–Sat 10 AM – 7 PM PKT</span>
+              <span className="text-slate-900 font-semibold text-sm block group-hover:text-emerald-600 transition-colors">Local support</span>
+              <span className="text-slate-600 text-xs block">WhatsApp, email & phone — real humans, no bots</span>
+              <span className="text-[10px] text-emerald-600/80 mt-1 block">Mon–Sat 10 AM – 7 PM PKT</span>
             </div>
           </Link>
         </div>
@@ -384,18 +384,18 @@ export default function HomePage() {
       {/* FAQ — light */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-6">
         <div className="text-center">
-          <h2 className="text-2xl font-black text-white">Common questions</h2>
-          <p className="text-sm text-slate-400 mt-1">Everything you need to know before ordering.</p>
+          <h2 className="text-2xl font-black text-slate-900">Common questions</h2>
+          <p className="text-sm text-slate-600 mt-1">Everything you need to know before ordering.</p>
         </div>
 
         <div className="space-y-3">
           {FAQS.map((faq) => (
-            <article key={faq.question} className="rounded-2xl border border-slate-800 bg-slate-900/40 p-5">
-              <h3 className="text-white font-semibold flex items-start gap-2">
-                <Star className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+            <article key={faq.question} className="rounded-2xl border border-slate-200 bg-white/40 p-5">
+              <h3 className="text-slate-900 font-semibold flex items-start gap-2">
+                <Star className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                 {faq.question}
               </h3>
-              <p className="text-sm text-slate-400 leading-relaxed mt-2">{faq.answer}</p>
+              <p className="text-sm text-slate-600 leading-relaxed mt-2">{faq.answer}</p>
             </article>
           ))}
         </div>

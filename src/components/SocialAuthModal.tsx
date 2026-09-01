@@ -56,35 +56,35 @@ export const SocialAuthModal: React.FC = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
-      <div className="bg-slate-900 border border-slate-800 rounded-3xl max-w-md w-full p-6 text-white shadow-2xl relative">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-white/80 backdrop-blur-md flex items-center justify-center p-4">
+      <div className="bg-white border border-slate-200 rounded-3xl max-w-md w-full p-6 text-slate-900 shadow-2xl relative">
         
         {/* Close Button */}
         <button
           onClick={() => setIsAuthModalOpen(false)}
-          className="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-white hover:bg-slate-800 transition"
+          className="absolute top-5 right-5 p-2 rounded-full text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition"
         >
           <X className="w-5 h-5" />
         </button>
 
         <div className="text-center mb-6">
-          <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto mb-3">
+          <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-600/40 text-emerald-600 flex items-center justify-center mx-auto mb-3">
             <UserIcon className="w-6 h-6" />
           </div>
-          <h3 className="text-xl font-extrabold text-white">Welcome to sastamaal.net</h3>
-          <p className="text-xs text-slate-400 mt-1">
+          <h3 className="text-xl font-extrabold text-slate-900">Welcome to sastamaal.net</h3>
+          <p className="text-xs text-slate-600 mt-1">
             Choose your preferred sign in method or continue as a guest for fast checkout.
           </p>
         </div>
 
         {/* Tab Switcher */}
-        <div className="grid grid-cols-2 p-1 rounded-xl bg-slate-950 border border-slate-800 mb-6 text-xs font-bold">
+        <div className="grid grid-cols-2 p-1 rounded-xl bg-slate-50 border border-slate-200 mb-6 text-xs font-bold">
           <button
             onClick={() => setActiveTab('social')}
             className={`py-2.5 rounded-lg transition ${
               activeTab === 'social'
-                ? 'bg-emerald-500 text-slate-950 shadow-md'
-                : 'text-slate-400 hover:text-white'
+                ? 'bg-emerald-500 text-slate-50 shadow-md'
+                : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             Social Signup
@@ -93,8 +93,8 @@ export const SocialAuthModal: React.FC = () => {
             onClick={() => setActiveTab('guest')}
             className={`py-2.5 rounded-lg transition ${
               activeTab === 'guest'
-                ? 'bg-emerald-500 text-slate-950 shadow-md'
-                : 'text-slate-400 hover:text-white'
+                ? 'bg-emerald-500 text-slate-50 shadow-md'
+                : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             Instant Guest Checkout
@@ -119,7 +119,7 @@ export const SocialAuthModal: React.FC = () => {
 
             <button
               onClick={() => handleSocialLogin('facebook')}
-              className="w-full py-3 px-4 rounded-xl bg-[#1877F2] hover:bg-blue-600 text-white font-bold text-xs flex items-center justify-center gap-3 transition shadow-md"
+              className="w-full py-3 px-4 rounded-xl bg-[#1877F2] hover:bg-blue-600 text-slate-900 font-bold text-xs flex items-center justify-center gap-3 transition shadow-md"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -129,7 +129,7 @@ export const SocialAuthModal: React.FC = () => {
 
             <button
               onClick={() => handleSocialLogin('apple')}
-              className="w-full py-3 px-4 rounded-xl bg-slate-950 hover:bg-slate-800 text-white font-bold text-xs border border-slate-700 flex items-center justify-center gap-3 transition shadow-md"
+              className="w-full py-3 px-4 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-900 font-bold text-xs border border-slate-300 flex items-center justify-center gap-3 transition shadow-md"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                 <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.85c.66-.8 1.11-1.92.99-3.04-.96.04-2.13.64-2.82 1.44-.61.71-1.15 1.86-1 2.96 1.07.08 2.17-.56 2.83-1.36z"/>
@@ -139,7 +139,7 @@ export const SocialAuthModal: React.FC = () => {
 
             <div className="pt-3 text-center">
               <span className="text-[11px] text-slate-500 flex items-center justify-center gap-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                 100% Encrypted & Safe Authentication
               </span>
             </div>
@@ -148,7 +148,7 @@ export const SocialAuthModal: React.FC = () => {
           /* Guest Signup Content */
           <form onSubmit={handleGuestSignup} className="space-y-4">
             <div>
-              <label className="block text-xs font-bold text-slate-300 mb-1">Full Name *</label>
+              <label className="block text-xs font-bold text-slate-700 mb-1">Full Name *</label>
               <div className="relative">
                 <input
                   type="text"
@@ -156,14 +156,14 @@ export const SocialAuthModal: React.FC = () => {
                   placeholder="e.g. Usman Chaudhry"
                   value={guestName}
                   onChange={e => setGuestName(e.target.value)}
-                  className="w-full bg-slate-950 text-white placeholder-slate-500 text-xs rounded-xl py-2.5 pl-9 pr-3 border border-slate-800 focus:outline-none focus:border-emerald-500"
+                  className="w-full bg-slate-50 text-slate-900 placeholder-slate-400 text-xs rounded-xl py-2.5 pl-9 pr-3 border border-slate-200 focus:outline-none focus:border-emerald-500"
                 />
-                <UserIcon className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+                <UserIcon className="w-4 h-4 text-slate-600 absolute left-3 top-3" />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-slate-300 mb-1">Pakistani Mobile Number *</label>
+              <label className="block text-xs font-bold text-slate-700 mb-1">Pakistani Mobile Number *</label>
               <div className="relative">
                 <input
                   type="tel"
@@ -171,29 +171,29 @@ export const SocialAuthModal: React.FC = () => {
                   placeholder="03001234567"
                   value={guestPhone}
                   onChange={e => setGuestPhone(e.target.value)}
-                  className="w-full bg-slate-950 text-white placeholder-slate-500 text-xs rounded-xl py-2.5 pl-9 pr-3 border border-slate-800 focus:outline-none focus:border-emerald-500"
+                  className="w-full bg-slate-50 text-slate-900 placeholder-slate-400 text-xs rounded-xl py-2.5 pl-9 pr-3 border border-slate-200 focus:outline-none focus:border-emerald-500"
                 />
-                <Phone className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+                <Phone className="w-4 h-4 text-slate-600 absolute left-3 top-3" />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-slate-300 mb-1">Email Address (Optional)</label>
+              <label className="block text-xs font-bold text-slate-700 mb-1">Email Address (Optional)</label>
               <div className="relative">
                 <input
                   type="email"
                   placeholder="usman@example.com"
                   value={guestEmail}
                   onChange={e => setGuestEmail(e.target.value)}
-                  className="w-full bg-slate-950 text-white placeholder-slate-500 text-xs rounded-xl py-2.5 pl-9 pr-3 border border-slate-800 focus:outline-none focus:border-emerald-500"
+                  className="w-full bg-slate-50 text-slate-900 placeholder-slate-400 text-xs rounded-xl py-2.5 pl-9 pr-3 border border-slate-200 focus:outline-none focus:border-emerald-500"
                 />
-                <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+                <Mail className="w-4 h-4 text-slate-600 absolute left-3 top-3" />
               </div>
             </div>
 
             <button
               type="submit"
-              className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:from-emerald-400 hover:to-teal-400 transition shadow-lg shadow-emerald-500/20"
+              className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-50 font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:from-emerald-400 hover:to-teal-400 transition shadow-lg shadow-emerald-500/20"
             >
               <Check className="w-4 h-4" />
               <span>Continue as Guest</span>

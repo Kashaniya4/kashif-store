@@ -97,8 +97,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: dark)', color: '#020617' },
-    { media: '(prefers-color-scheme: light)', color: '#020617' },
+    { media: '(prefers-color-scheme: dark)', color: '#f8fafc' },
+    { media: '(prefers-color-scheme: light)', color: '#f8fafc' },
   ],
   width: 'device-width',
   initialScale: 1,
@@ -111,8 +111,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-PK" className="dark">
-      <body className={`${inter.className} bg-slate-950 text-slate-100 antialiased min-h-screen flex flex-col`}>
+    <html lang="en-PK" className="light">
+      <body className={`${inter.className} bg-slate-50 text-slate-900 antialiased min-h-screen flex flex-col`}>
         <StoreProvider>
           <Header />
           <main className="flex-1">

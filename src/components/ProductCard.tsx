@@ -25,7 +25,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     : 0;
 
   return (
-    <div className="group bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/5 flex flex-col justify-between relative">
+    <div className="group bg-white/80 border border-slate-200 rounded-2xl overflow-hidden hover:border-emerald-600/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/5 flex flex-col justify-between relative">
 
       {/* Wishlist Button */}
       <button
@@ -36,17 +36,17 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         }}
         className={`absolute top-3 right-3 z-20 p-2 rounded-full backdrop-blur-md border transition-all duration-200 ${
           isWishlisted
-            ? 'bg-rose-500/20 border-rose-500/50 text-rose-400'
-            : 'bg-slate-900/70 border-slate-700/60 text-slate-400 hover:text-white hover:scale-110'
+            ? 'bg-rose-500/20 border-rose-500/50 text-rose-600'
+            : 'bg-white/70 border-slate-300/60 text-slate-600 hover:text-slate-900 hover:scale-110'
         }`}
         title={isWishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
         aria-label="Wishlist"
       >
-        <Heart className={`w-3.5 h-3.5 ${isWishlisted ? 'fill-rose-500 text-rose-400' : ''}`} />
+        <Heart className={`w-3.5 h-3.5 ${isWishlisted ? 'fill-rose-500 text-rose-600' : ''}`} />
       </button>
 
       {/* Product Image & Badges — clickable */}
-      <Link href={`/products/${product.slug || product.id}`} className="relative block aspect-square overflow-hidden bg-slate-950">
+      <Link href={`/products/${product.slug || product.id}`} className="relative block aspect-square overflow-hidden bg-slate-50">
         <Image
           src={product.image}
           alt={product.name}
@@ -59,12 +59,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         {/* Badges */}
         <div className="absolute top-3 left-3 flex flex-col gap-1.5">
           {product.isFeatured && (
-            <span className="bg-emerald-500 text-slate-950 font-bold text-[10px] uppercase px-2.5 py-1 rounded-md shadow-md">
+            <span className="bg-emerald-500 text-slate-50 font-bold text-[10px] uppercase px-2.5 py-1 rounded-md shadow-md">
               Featured
             </span>
           )}
           {discountPercent > 0 && (
-            <span className="bg-rose-500 text-white font-bold text-[10px] uppercase px-2.5 py-1 rounded-md shadow-md flex items-center gap-1">
+            <span className="bg-orange-500 text-white font-bold text-[10px] uppercase px-2.5 py-1 rounded-md shadow-md flex items-center gap-1">
               <Tag className="w-3 h-3" />
               {discountPercent}% OFF
             </span>
@@ -74,11 +74,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         {/* Stock Badge */}
         <div className="absolute bottom-3 right-3">
           {!isSoldOut ? (
-            <span className="bg-emerald-950/95 text-emerald-300 border border-emerald-500/40 text-[10px] font-semibold px-2 py-0.5 rounded-full backdrop-blur-sm">
+            <span className="bg-emerald-950/95 text-emerald-700 border border-emerald-500/40 text-[10px] font-semibold px-2 py-0.5 rounded-full backdrop-blur-sm">
               In Stock ({liveStock})
             </span>
           ) : (
-            <span className="bg-rose-950/95 text-rose-300 border border-rose-500/40 text-[10px] font-semibold px-2 py-0.5 rounded-full backdrop-blur-sm">
+            <span className="bg-rose-50/95 text-rose-300 border border-rose-500/40 text-[10px] font-semibold px-2 py-0.5 rounded-full backdrop-blur-sm">
               Out of Stock
             </span>
           )}
@@ -88,9 +88,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       {/* Content */}
       <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
         <div>
-          <div className="flex items-center justify-between text-xs text-slate-400 mb-1">
-            <span className="font-medium text-emerald-400">{product.category}</span>
-            <div className="flex items-center gap-1 text-amber-400 font-semibold">
+          <div className="flex items-center justify-between text-xs text-slate-600 mb-1">
+            <span className="font-medium text-emerald-600">{product.category}</span>
+            <div className="flex items-center gap-1 text-amber-600 font-semibold">
               <Star className="w-3.5 h-3.5 fill-amber-400" />
               <span>{product.rating}</span>
               <span className="text-slate-500">({product.reviewsCount})</span>
@@ -98,22 +98,22 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           </div>
 
           <Link href={`/products/${product.slug || product.id}`}>
-            <h3 className="font-bold text-base text-white line-clamp-2 leading-snug group-hover:text-emerald-400 transition-colors">
+            <h3 className="font-bold text-base text-slate-900 line-clamp-2 leading-snug group-hover:text-emerald-600 transition-colors">
               {product.name}
             </h3>
           </Link>
 
-          <p className="text-xs text-slate-400 line-clamp-2 mt-2 leading-relaxed">
+          <p className="text-xs text-slate-600 line-clamp-2 mt-2 leading-relaxed">
             {product.description}
           </p>
         </div>
 
         {/* Price & Action */}
-        <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between">
+        <div className="pt-3 border-t border-slate-200 flex items-center justify-between">
           <div>
             <div className="text-xs text-slate-500 font-medium">Price in Pakistan</div>
             <div className="flex items-baseline gap-2">
-              <span className="text-lg font-extrabold text-white">
+              <span className="text-lg font-extrabold text-slate-900">
                 ₨ {product.price.toLocaleString()}
               </span>
               {product.originalPrice && (
@@ -129,8 +129,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             disabled={isSoldOut || isMaxed}
             className={`p-3 rounded-xl font-bold transition-all flex items-center justify-center ${
               isInCart
-                ? 'bg-emerald-950 border border-emerald-600 text-emerald-400'
-                : 'bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-md shadow-emerald-500/20'
+                ? 'bg-emerald-950 border border-emerald-600 text-emerald-600'
+                : 'bg-emerald-500 hover:bg-emerald-400 text-slate-50 shadow-md shadow-emerald-500/20'
             } disabled:opacity-50 disabled:cursor-not-allowed`}
             title={
               isSoldOut

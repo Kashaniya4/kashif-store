@@ -188,22 +188,22 @@ export const CustomerReviewsCarousel: React.FC = () => {
   const slideWidthPercent = 100 / reviewsPerView;
 
   return (
-    <div className="relative w-full bg-slate-950/60 backdrop-blur-sm rounded-2xl border border-slate-800/50 p-5 lg:p-7 overflow-hidden">
+    <div className="relative w-full bg-white/60 backdrop-blur-sm rounded-2xl border border-slate-200/50 p-5 lg:p-7 overflow-hidden">
       {/* Header */}
       <div className="flex items-center justify-between mb-5">
         <div className="flex items-center gap-2">
-          <MessageCircle className="w-5 h-5 text-emerald-400" />
-          <h3 className="text-white font-bold text-lg">Customer Reviews</h3>
+          <MessageCircle className="w-5 h-5 text-emerald-600" />
+          <h3 className="text-slate-900 font-bold text-lg">Customer Reviews</h3>
         </div>
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-1">
-            <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-            <span className="text-xs text-amber-300 font-bold">4.9/5</span>
+            <Star className="w-4 h-4 fill-amber-400 text-amber-600" />
+            <span className="text-xs text-amber-600 font-bold">4.9/5</span>
             <span className="text-[10px] text-slate-500">({reviewsList.length}+ reviews)</span>
           </div>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-semibold transition"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-600 border border-emerald-600/40 text-xs font-semibold transition"
           >
             <Plus className="w-3.5 h-3.5" /> Write a Review
           </button>
@@ -226,24 +226,24 @@ export const CustomerReviewsCarousel: React.FC = () => {
                   isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
                 }`}
               >
-                <div className="h-full bg-slate-900/80 border border-slate-800 rounded-xl p-4 sm:p-5 flex flex-col justify-between">
+                <div className="h-full bg-white/80 border border-slate-200 rounded-xl p-4 sm:p-5 flex flex-col justify-between">
                   {/* Header */}
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-xs shrink-0">
+                      <div className="w-9 h-9 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-600 font-bold text-xs shrink-0">
                         {review.avatar}
                       </div>
                       <div>
-                        <div className="text-white font-semibold text-sm">{review.name}</div>
-                        <div className="flex items-center gap-1 text-[11px] text-slate-400">
+                        <div className="text-slate-900 font-semibold text-sm">{review.name}</div>
+                        <div className="flex items-center gap-1 text-[11px] text-slate-600">
                           <span>{review.city}</span>
                           <span>•</span>
                           <span>{review.date}</span>
                           {review.verified && (
                             <>
                               <span>•</span>
-                              <ShieldCheck className="w-3 h-3 text-emerald-400" />
-                              <span className="text-emerald-400">Verified</span>
+                              <ShieldCheck className="w-3 h-3 text-emerald-600" />
+                              <span className="text-emerald-600">Verified</span>
                             </>
                           )}
                         </div>
@@ -254,7 +254,7 @@ export const CustomerReviewsCarousel: React.FC = () => {
                         <Star
                           key={i}
                           className={`w-3.5 h-3.5 ${
-                            i < review.rating ? 'fill-amber-400 text-amber-400' : 'text-slate-600'
+                            i < review.rating ? 'fill-amber-400 text-amber-600' : 'text-slate-600'
                           }`}
                         />
                       ))}
@@ -262,10 +262,10 @@ export const CustomerReviewsCarousel: React.FC = () => {
                   </div>
 
                   {/* Product */}
-                  <div className="text-emerald-400 text-xs font-medium mb-2">{review.product}</div>
+                  <div className="text-emerald-600 text-xs font-medium mb-2">{review.product}</div>
 
                   {/* Review Text */}
-                  <p className="text-slate-200 text-sm leading-relaxed flex-1 line-clamp-3">
+                  <p className="text-slate-800 text-sm leading-relaxed flex-1 line-clamp-3">
                     {review.text}
                   </p>
                 </div>
@@ -278,7 +278,7 @@ export const CustomerReviewsCarousel: React.FC = () => {
         <button
           onClick={goToPrev}
           disabled={maxIndex === 0}
-          className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-slate-900/80 border border-slate-700 text-white hover:bg-slate-800 hover:border-emerald-500/50 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed z-10"
+          className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 border border-slate-300 text-slate-900 hover:bg-slate-100 hover:border-emerald-600/50 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed z-10"
           aria-label="Previous review"
         >
           <ChevronLeft className="w-5 h-5" />
@@ -286,7 +286,7 @@ export const CustomerReviewsCarousel: React.FC = () => {
         <button
           onClick={goToNext}
           disabled={maxIndex === 0}
-          className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-slate-900/80 border border-slate-700 text-white hover:bg-slate-800 hover:border-emerald-500/50 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed z-10"
+          className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 border border-slate-300 text-slate-900 hover:bg-slate-100 hover:border-emerald-600/50 flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed z-10"
           aria-label="Next review"
         >
           <ChevronRight className="w-5 h-5" />
@@ -319,33 +319,33 @@ export const CustomerReviewsCarousel: React.FC = () => {
 
       {/* Write a Review Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-md p-4 animate-in fade-in-0 duration-200">
-          <div className="bg-slate-900 border border-slate-800 w-full max-w-lg rounded-3xl p-6 sm:p-8 shadow-2xl relative">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-white/80 backdrop-blur-md p-4 animate-in fade-in-0 duration-200">
+          <div className="bg-white border border-slate-200 w-full max-w-lg rounded-3xl p-6 sm:p-8 shadow-2xl relative">
             <button
               onClick={() => setIsModalOpen(false)}
-              className="absolute top-5 right-5 text-slate-400 hover:text-white p-1"
+              className="absolute top-5 right-5 text-slate-600 hover:text-slate-900 p-1"
             >
               <X className="w-5 h-5" />
             </button>
 
             {submitted ? (
               <div className="py-12 text-center space-y-3">
-                <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto">
+                <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-600 flex items-center justify-center mx-auto">
                   <Check className="w-6 h-6" />
                 </div>
-                <h4 className="text-xl font-bold text-white">Review Submitted!</h4>
-                <p className="text-xs text-slate-400">Thank you for sharing your feedback with the community.</p>
+                <h4 className="text-xl font-bold text-slate-900">Review Submitted!</h4>
+                <p className="text-xs text-slate-600">Thank you for sharing your feedback with the community.</p>
               </div>
             ) : (
               <form onSubmit={handleReviewSubmit} className="space-y-4">
                 <div>
-                  <h4 className="text-xl font-black text-white">Write a Customer Review</h4>
-                  <p className="text-xs text-slate-400 mt-1">Share your experience with fellow shoppers across Pakistan.</p>
+                  <h4 className="text-xl font-black text-slate-900">Write a Customer Review</h4>
+                  <p className="text-xs text-slate-600 mt-1">Share your experience with fellow shoppers across Pakistan.</p>
                 </div>
 
                 {/* Star Rating */}
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1.5">Rating</label>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">Rating</label>
                   <div className="flex gap-1.5">
                     {[1, 2, 3, 4, 5].map(star => (
                       <button
@@ -357,7 +357,7 @@ export const CustomerReviewsCarousel: React.FC = () => {
                         <Star
                           className={`w-6 h-6 ${
                             star <= formRating
-                              ? 'fill-amber-400 text-amber-400'
+                              ? 'fill-amber-400 text-amber-600'
                               : 'text-slate-600'
                           }`}
                         />
@@ -369,57 +369,57 @@ export const CustomerReviewsCarousel: React.FC = () => {
                 {/* Name & City */}
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1">Your Name</label>
+                    <label className="block text-xs font-semibold text-slate-700 mb-1">Your Name</label>
                     <input
                       type="text"
                       required
                       placeholder="e.g. Usman Ali"
                       value={formName}
                       onChange={e => setFormName(e.target.value)}
-                      className="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
+                      className="w-full bg-slate-100 border border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-500"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1">City</label>
+                    <label className="block text-xs font-semibold text-slate-700 mb-1">City</label>
                     <input
                       type="text"
                       placeholder="e.g. Lahore, Karachi"
                       value={formCity}
                       onChange={e => setFormCity(e.target.value)}
-                      className="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
+                      className="w-full bg-slate-100 border border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-500"
                     />
                   </div>
                 </div>
 
                 {/* Product Name */}
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">Product Purchased (Optional)</label>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1">Product Purchased (Optional)</label>
                   <input
                     type="text"
                     placeholder="e.g. VoltX Max 65W GaN Fast Charger"
                     value={formProduct}
                     onChange={e => setFormProduct(e.target.value)}
-                    className="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
+                    className="w-full bg-slate-100 border border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-500"
                   />
                 </div>
 
                 {/* Review Text */}
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">Review</label>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1">Review</label>
                   <textarea
                     required
                     rows={3}
                     placeholder="Tell us about the delivery, build quality, and performance..."
                     value={formText}
                     onChange={e => setFormText(e.target.value)}
-                    className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
+                    className="w-full bg-slate-100 border border-slate-300 rounded-xl p-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-500"
                   />
                 </div>
 
                 {/* Submit button */}
                 <button
                   type="submit"
-                  className="w-full py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition shadow-lg shadow-emerald-500/20"
+                  className="w-full py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-50 font-bold text-xs uppercase tracking-wider transition shadow-lg shadow-emerald-500/20"
                 >
                   Submit Review
                 </button>

@@ -60,23 +60,23 @@ export const PromoBanner: React.FC<PromoBannerProps> = ({
       <div className="relative z-10 flex items-center justify-between gap-2">
         <div className={`p-1 rounded-lg backdrop-blur-sm border ${isViolet
           ? 'bg-violet-500/15 border-violet-500/30'
-          : 'bg-emerald-500/15 border-emerald-500/30'
+          : 'bg-emerald-500/15 border-emerald-600/40'
         }`}>
-          <Icon className={`w-3.5 h-3.5 ${isViolet ? 'text-violet-400' : 'text-emerald-400'}`} />
+          <Icon className={`w-3.5 h-3.5 ${isViolet ? 'text-violet-400' : 'text-emerald-600'}`} />
         </div>
         <div className="flex-1 min-w-0">
-          <h3 className="text-white text-[11px] font-bold leading-tight truncate drop-shadow-lg">{title}</h3>
-          <p className="text-slate-400 text-[9px] leading-tight truncate">{subtitle}</p>
+          <h3 className="text-slate-900 text-[11px] font-bold leading-tight truncate drop-shadow-lg">{title}</h3>
+          <p className="text-slate-600 text-[9px] leading-tight truncate">{subtitle}</p>
         </div>
         {accentText && (
           <span className={`px-1.5 py-0.5 rounded-full text-[8px] font-extrabold uppercase tracking-wider backdrop-blur-sm border shrink-0 ${isViolet
             ? 'bg-violet-500/20 text-violet-300 border-violet-500/40'
-            : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40'
+            : 'bg-emerald-500/20 text-emerald-700 border-emerald-500/40'
           }`}>
             {accentText}
           </span>
         )}
-        <ArrowRight className={`w-3.5 h-3.5 shrink-0 ${isViolet ? 'text-violet-400' : 'text-emerald-400'} group-hover:translate-x-0.5 transition-transform`} />
+        <ArrowRight className={`w-3.5 h-3.5 shrink-0 ${isViolet ? 'text-violet-400' : 'text-emerald-600'} group-hover:translate-x-0.5 transition-transform`} />
       </div>
 
       {/* Product thumbnail row — 4 product images (no nested links) */}

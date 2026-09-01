@@ -91,9 +91,9 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   if (!product) {
     return (
       <div className="max-w-4xl mx-auto px-4 py-24 text-center space-y-6">
-        <h2 className="text-2xl font-bold text-white">Product Not Found</h2>
-        <p className="text-sm text-slate-400">The product you are looking for does not exist or was removed.</p>
-        <Link href="/" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 text-slate-950 font-bold text-xs">
+        <h2 className="text-2xl font-bold text-slate-900">Product Not Found</h2>
+        <p className="text-sm text-slate-600">The product you are looking for does not exist or was removed.</p>
+        <Link href="/" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 text-slate-50 font-bold text-xs">
           <ArrowLeft className="w-4 h-4" />
           <span>Back to Catalog</span>
         </Link>

@@ -80,19 +80,19 @@ export default function AllProductsPage() {
       <StructuredData data={productListStructuredData(products)} />
 
       {/* Header */}
-      <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 border-b border-slate-800">
+      <div className="bg-gradient-to-r from-slate-100 via-white to-slate-100 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex items-center gap-2 text-xs mb-4">
-            <Link href="/" className="hover:text-emerald-400 transition">Home</Link>
+            <Link href="/" className="hover:text-emerald-600 transition">Home</Link>
             <span>/</span>
-            <span className="text-slate-300">All Products</span>
+            <span className="text-slate-700">All Products</span>
             <div className="ml-auto flex items-center gap-3">
-              <Link href="/warranty-claim" className="hover:text-emerald-400 transition text-xs">Warranty Claim</Link>
-              <Link href="/return-policy" className="hover:text-emerald-400 transition text-xs">Return Policy</Link>
+              <Link href="/warranty-claim" className="hover:text-emerald-600 transition text-xs">Warranty Claim</Link>
+              <Link href="/return-policy" className="hover:text-emerald-600 transition text-xs">Return Policy</Link>
             </div>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-black text-white">All Products</h1>
-          <p className="text-sm text-slate-400 mt-2">{filtered.length} of {products.length} products — nationwide delivery, local payments</p>
+          <h1 className="text-3xl sm:text-4xl font-black text-slate-900">All Products</h1>
+          <p className="text-sm text-slate-600 mt-2">{filtered.length} of {products.length} products — nationwide delivery, local payments</p>
         </div>
       </div>
 
@@ -100,17 +100,17 @@ export default function AllProductsPage() {
         {/* Mobile: Search + Filter Toggle */}
         <div className="flex gap-3 mb-4 lg:hidden">
           <div className="relative flex-1">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
-            <input type="text" placeholder="Search..." value={search} onChange={e => setSearch(e.target.value)} className="w-full bg-slate-900 text-white placeholder-slate-400 text-sm rounded-xl py-2.5 pl-10 pr-4 border border-slate-700 focus:outline-none focus:border-emerald-500 transition" />
+            <Search className="w-4 h-4 text-slate-600 absolute left-3 top-3" />
+            <input type="text" placeholder="Search..." value={search} onChange={e => setSearch(e.target.value)} className="w-full bg-white text-slate-900 placeholder-slate-400 text-sm rounded-xl py-2.5 pl-10 pr-4 border border-slate-300 focus:outline-none focus:border-emerald-500 transition" />
           </div>
-          <button onClick={() => setShowMobileFilters(!showMobileFilters)} className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 text-slate-300 border border-slate-700 text-sm font-semibold">
+          <button onClick={() => setShowMobileFilters(!showMobileFilters)} className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white text-slate-700 border border-slate-300 text-sm font-semibold">
             <Filter className="w-4 h-4" /> Filters
           </button>
         </div>
 
         {/* Mobile Filters Panel */}
         {showMobileFilters && (
-          <div className="lg:hidden bg-slate-900/80 border border-slate-800 rounded-2xl p-4 mb-4 space-y-4">
+          <div className="lg:hidden bg-white/80 border border-slate-200 rounded-2xl p-4 mb-4 space-y-4">
             <SidebarFilters categories={categories} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} priceRange={priceRange} setPriceRange={setPriceRange} minRating={minRating} setMinRating={setMinRating} inStockOnly={inStockOnly} setInStockOnly={setInStockOnly} sortBy={sortBy} setSortBy={setSortBy} resetFilters={resetFilters} />
           </div>
         )}
@@ -118,27 +118,27 @@ export default function AllProductsPage() {
         <div className="flex gap-6">
           {/* Desktop Sidebar */}
           <aside className="hidden lg:block w-64 shrink-0">
-            <div className="sticky top-28 bg-slate-900/60 border border-slate-800 rounded-2xl p-5 space-y-5">
+            <div className="sticky top-28 bg-white/60 border border-slate-200 rounded-2xl p-5 space-y-5">
               <div className="flex items-center justify-between">
-                <h3 className="text-sm font-bold text-white flex items-center gap-2"><SlidersHorizontal className="w-4 h-4 text-emerald-400" /> Filters</h3>
-                <button onClick={resetFilters} className="text-[11px] text-slate-500 hover:text-emerald-400 transition">Reset</button>
+                <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2"><SlidersHorizontal className="w-4 h-4 text-emerald-600" /> Filters</h3>
+                <button onClick={resetFilters} className="text-[11px] text-slate-500 hover:text-emerald-600 transition">Reset</button>
               </div>
 
               {/* Search */}
               <div className="relative">
-                <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" />
-                <input type="text" placeholder="Search..." value={search} onChange={e => setSearch(e.target.value)} className="w-full bg-slate-800 text-white placeholder-slate-400 text-xs rounded-lg py-2 pl-8 pr-3 border border-slate-700 focus:outline-none focus:border-emerald-500 transition" />
+                <Search className="w-3.5 h-3.5 text-slate-600 absolute left-2.5 top-2.5" />
+                <input type="text" placeholder="Search..." value={search} onChange={e => setSearch(e.target.value)} className="w-full bg-slate-100 text-slate-900 placeholder-slate-400 text-xs rounded-lg py-2 pl-8 pr-3 border border-slate-300 focus:outline-none focus:border-emerald-500 transition" />
               </div>
 
               {/* Categories */}
               <div className="space-y-2">
-                <h4 className="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2">Categories</h4>
+                <h4 className="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-2">Categories</h4>
                 <div className="flex flex-wrap gap-1.5">
                   {categories.map(cat => (
                     <button
                       key={cat}
                       onClick={() => setSelectedCategory(cat)}
-                      className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition ${selectedCategory === cat ? 'bg-emerald-500 text-slate-950' : 'bg-slate-800 text-slate-400 border border-slate-700 hover:border-emerald-500/30'}`}
+                      className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition ${selectedCategory === cat ? 'bg-emerald-500 text-slate-50' : 'bg-slate-100 text-slate-600 border border-slate-300 hover:border-emerald-600/40'}`}
                     >
                       {cat}
                     </button>
@@ -149,15 +149,15 @@ export default function AllProductsPage() {
               <SidebarFilters categories={categories} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} priceRange={priceRange} setPriceRange={setPriceRange} minRating={minRating} setMinRating={setMinRating} inStockOnly={inStockOnly} setInStockOnly={setInStockOnly} sortBy={sortBy} setSortBy={setSortBy} resetFilters={resetFilters} />
 
               {/* Customer Care */}
-              <div className="pt-4 border-t border-slate-800 space-y-2">
-                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Customer Care</h4>
+              <div className="pt-4 border-t border-slate-200 space-y-2">
+                <h4 className="text-xs font-bold text-slate-600 uppercase tracking-wider mb-2">Customer Care</h4>
                 <div className="space-y-1">
-                  <Link href="/warranty-claim" className="flex items-center gap-2 text-xs text-slate-300 hover:text-emerald-400 py-1 transition">
-                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                  <Link href="/warranty-claim" className="flex items-center gap-2 text-xs text-slate-700 hover:text-emerald-600 py-1 transition">
+                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                     <span>Warranty Claim</span>
                   </Link>
-                  <Link href="/return-policy" className="flex items-center gap-2 text-xs text-slate-300 hover:text-emerald-400 py-1 transition">
-                    <RotateCcw className="w-3.5 h-3.5 text-emerald-400" />
+                  <Link href="/return-policy" className="flex items-center gap-2 text-xs text-slate-700 hover:text-emerald-600 py-1 transition">
+                    <RotateCcw className="w-3.5 h-3.5 text-emerald-600" />
                     <span>Return Policy</span>
                   </Link>
                 </div>
@@ -171,11 +171,11 @@ export default function AllProductsPage() {
             <div className="flex items-center justify-between mb-4">
               <span className="text-xs text-slate-500">{filtered.length} products</span>
               <div className="relative">
-                <ArrowUpDown className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" />
-                <select value={sortBy} onChange={e => setSortBy(e.target.value)} className="bg-slate-900 text-white text-xs rounded-lg py-2 pl-8 pr-8 border border-slate-700 focus:outline-none focus:border-emerald-500 appearance-none cursor-pointer">
+                <ArrowUpDown className="w-3.5 h-3.5 text-slate-600 absolute left-2.5 top-2.5" />
+                <select value={sortBy} onChange={e => setSortBy(e.target.value)} className="bg-white text-slate-900 text-xs rounded-lg py-2 pl-8 pr-8 border border-slate-300 focus:outline-none focus:border-emerald-500 appearance-none cursor-pointer">
                   {SORT_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
                 </select>
-                <ChevronDown className="w-3 h-3 text-slate-400 absolute right-2.5 top-2.5 pointer-events-none" />
+                <ChevronDown className="w-3 h-3 text-slate-600 absolute right-2.5 top-2.5 pointer-events-none" />
               </div>
             </div>
 
@@ -183,8 +183,8 @@ export default function AllProductsPage() {
             {filtered.length === 0 ? (
               <div className="text-center py-20 space-y-3">
                 <PackageCheck className="w-12 h-12 text-slate-600 mx-auto" />
-                <h3 className="text-lg font-bold text-white">No products found</h3>
-                <p className="text-sm text-slate-400">Try adjusting your filters or search terms.</p>
+                <h3 className="text-lg font-bold text-slate-900">No products found</h3>
+                <p className="text-sm text-slate-600">Try adjusting your filters or search terms.</p>
               </div>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
@@ -203,10 +203,10 @@ function SidebarFilters({ categories, selectedCategory, setSelectedCategory, pri
     <div className="space-y-4">
       {/* Category */}
       <div>
-        <label className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5 block">Category</label>
+        <label className="text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1.5 block">Category</label>
         <div className="flex flex-wrap gap-1.5">
           {categories.map(cat => (
-            <button key={cat} onClick={() => setSelectedCategory(cat)} className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition ${selectedCategory === cat ? 'bg-emerald-500 text-slate-950' : 'bg-slate-800 text-slate-400 border border-slate-700 hover:border-emerald-500/30'}`}>
+            <button key={cat} onClick={() => setSelectedCategory(cat)} className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition ${selectedCategory === cat ? 'bg-emerald-500 text-slate-50' : 'bg-slate-100 text-slate-600 border border-slate-300 hover:border-emerald-600/40'}`}>
               {cat}
             </button>
           ))}
@@ -215,10 +215,10 @@ function SidebarFilters({ categories, selectedCategory, setSelectedCategory, pri
 
       {/* Price */}
       <div>
-        <label className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5 block">Price Range</label>
+        <label className="text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1.5 block">Price Range</label>
         <div className="flex flex-wrap gap-1.5">
           {PRICE_RANGES.map((r, i) => (
-            <button key={i} onClick={() => setPriceRange(i)} className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition ${priceRange === i ? 'bg-emerald-500 text-slate-950' : 'bg-slate-800 text-slate-400 border border-slate-700 hover:border-emerald-500/30'}`}>
+            <button key={i} onClick={() => setPriceRange(i)} className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition ${priceRange === i ? 'bg-emerald-500 text-slate-50' : 'bg-slate-100 text-slate-600 border border-slate-300 hover:border-emerald-600/40'}`}>
               {r.label}
             </button>
           ))}
@@ -227,10 +227,10 @@ function SidebarFilters({ categories, selectedCategory, setSelectedCategory, pri
 
       {/* Rating */}
       <div>
-        <label className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5 block">Rating</label>
+        <label className="text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1.5 block">Rating</label>
         <div className="flex gap-1.5">
           {RATINGS.map(r => (
-            <button key={r} onClick={() => setMinRating(r)} className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition ${minRating === r ? 'bg-amber-500 text-slate-950' : 'bg-slate-800 text-slate-400 border border-slate-700 hover:border-amber-500/30'}`}>
+            <button key={r} onClick={() => setMinRating(r)} className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition ${minRating === r ? 'bg-amber-500 text-slate-50' : 'bg-slate-100 text-slate-600 border border-slate-300 hover:border-amber-500/30'}`}>
               {r === 0 ? 'All' : `${r}★+`}
             </button>
           ))}
@@ -239,8 +239,8 @@ function SidebarFilters({ categories, selectedCategory, setSelectedCategory, pri
 
       {/* Stock */}
       <div>
-        <label className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5 block">Availability</label>
-        <button onClick={() => setInStockOnly(!inStockOnly)} className={`w-full px-3 py-1.5 rounded-md text-[11px] font-semibold transition ${inStockOnly ? 'bg-emerald-500 text-slate-950' : 'bg-slate-800 text-slate-400 border border-slate-700 hover:border-emerald-500/30'}`}>
+        <label className="text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1.5 block">Availability</label>
+        <button onClick={() => setInStockOnly(!inStockOnly)} className={`w-full px-3 py-1.5 rounded-md text-[11px] font-semibold transition ${inStockOnly ? 'bg-emerald-500 text-slate-50' : 'bg-slate-100 text-slate-600 border border-slate-300 hover:border-emerald-600/40'}`}>
           {inStockOnly ? '✓ In Stock Only' : 'Show All'}
         </button>
       </div>
