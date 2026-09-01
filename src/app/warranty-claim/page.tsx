@@ -114,8 +114,8 @@ export default function WarrantyClaimPage() {
       <div className="rounded-3xl border border-slate-200 bg-white/60 p-6 space-y-4">
         <h2 className="text-xl font-bold text-slate-900">File Your Claim</h2>
         <div className="space-y-3 text-sm text-slate-700">
-          <p><strong>WhatsApp (Fastest):</strong> +92 3XX XXXXXXX — Send order #, photos, issue description</p>
-          <p><strong>Email:</strong> warranty@sastamaal.net — Subject: "Warranty Claim — [Order #]"</p>
+          <p><strong>WhatsApp (Fastest):</strong> <a href="https://wa.me/923397100515?text=Hi%20sastamaal.net%20team,%20I%20want%20to%20file%20a%20warranty%20claim." target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline font-semibold">+92 339-7100515</a> — Send order #, photos, issue description</p>
+          <p><strong>Email:</strong> <a href="mailto:blasterbeaty@gmail.com?subject=Warranty%20Claim" className="text-emerald-600 hover:text-emerald-700 underline font-semibold">blasterbeaty@gmail.com</a> — Subject: "Warranty Claim — [Order #]"</p>
           <p><strong>Hours:</strong> Mon–Sat 10 AM – 7 PM PKT | Response within 4 hours</p>
         </div>
         <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 text-slate-50 font-bold text-sm">
