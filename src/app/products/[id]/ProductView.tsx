@@ -298,9 +298,9 @@ export default function ProductView({ product }: { product: Product }) {
           <button
             onClick={handleBuyNow}
             disabled={isSoldOut}
-            className="w-full py-4 px-6 rounded-2xl bg-orange-500 hover:bg-orange-600 text-white font-black text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl shadow-orange-500/20 transition disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full py-3 px-5 rounded-xl border border-emerald-600 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-bold text-xs uppercase tracking-wide flex items-center justify-center gap-2 transition disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <Zap className="w-5 h-5" />
+            <Zap className="w-4 h-4" />
             <span>Buy Now</span>
           </button>
 

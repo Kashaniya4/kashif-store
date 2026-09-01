@@ -137,7 +137,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             <button
               onClick={() => addToCart(product)}
               disabled={isSoldOut || isMaxed}
-              className={`p-3 rounded-xl font-bold transition-all flex items-center justify-center shrink-0 ${
+              className={`p-2.5 rounded-lg font-bold transition-all flex items-center justify-center shrink-0 ${
                 isInCart
                   ? 'bg-emerald-50 border border-emerald-600 text-emerald-600'
                   : 'bg-emerald-500 hover:bg-emerald-400 text-white shadow-md shadow-emerald-500/20'
@@ -153,16 +153,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               }
               aria-label="Add to cart"
             >
-              {isInCart ? <Check className="w-5 h-5" /> : <ShoppingCart className="w-5 h-5" />}
+              {isInCart ? <Check className="w-4 h-4" /> : <ShoppingCart className="w-4 h-4" />}
             </button>
 
             <button
               onClick={handleBuyNow}
               disabled={isSoldOut}
-              className="flex-1 py-3 px-4 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-md shadow-orange-500/20 transition disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 py-2 px-3 rounded-lg border border-emerald-600 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-semibold text-[11px] uppercase tracking-wide flex items-center justify-center gap-1 transition disabled:opacity-50 disabled:cursor-not-allowed"
               title={isSoldOut ? 'Out of Stock' : 'Buy Now'}
             >
-              <Zap className="w-4 h-4" />
+              <Zap className="w-3.5 h-3.5" />
               <span>Buy Now</span>
             </button>
           </div>
