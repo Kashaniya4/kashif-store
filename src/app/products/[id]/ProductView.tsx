@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { Product } from '@/types/store';
 import { useStore } from '@/context/StoreContext';
 import { categorySlug } from '@/lib/seo';
@@ -24,10 +25,12 @@ import {
   Heart,
   ChevronLeft,
   ChevronRight,
+  Zap,
 } from 'lucide-react';
 import { RecentlyViewed } from '@/components/RecentlyViewed';
 
 export default function ProductView({ product }: { product: Product }) {
+  const router = useRouter();
   const { addToCart, cart, getStock, toggleWishlist, isInWishlist, trackRecentlyViewed } = useStore();
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(product.image);
@@ -58,6 +61,13 @@ export default function ProductView({ product }: { product: Product }) {
     const added = addToCart(product, quantity);
     if (added) {
       setQuantity(1);
+    }
+  };
+
+  const handleBuyNow = () => {
+    const added = addToCart(product, quantity);
+    if (added) {
+      router.push('/checkout');
     }
   };
 
@@ -283,6 +293,16 @@ export default function ProductView({ product }: { product: Product }) {
               <Heart className={`w-5 h-5 ${isWishlisted ? 'fill-rose-500 text-rose-600' : ''}`} />
             </button>
           </div>
+
+          {/* Buy Now — direct to checkout */}
+          <button
+            onClick={handleBuyNow}
+            disabled={isSoldOut}
+            className="w-full py-4 px-6 rounded-2xl bg-orange-500 hover:bg-orange-600 text-white font-black text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl shadow-orange-500/20 transition disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <Zap className="w-5 h-5" />
+            <span>Buy Now</span>
+          </button>
 
           {!canAddMore && !isSoldOut && (
             <p className="text-xs text-amber-600 font-semibold">

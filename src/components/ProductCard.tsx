@@ -3,15 +3,17 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { Product } from '@/types/store';
 import { useStore } from '@/context/StoreContext';
-import { Star, ShoppingCart, Check, Tag, Heart } from 'lucide-react';
+import { Star, ShoppingCart, Check, Tag, Heart, Zap } from 'lucide-react';
 
 interface ProductCardProps {
   product: Product;
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  const router = useRouter();
   const { addToCart, cart, getStock, toggleWishlist, isInWishlist } = useStore();
   const isInCart = cart.some(item => item.product.id === product.id);
   const liveStock = getStock(product.id);
@@ -23,6 +25,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const discountPercent = product.originalPrice
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
     : 0;
+
+  const handleBuyNow = () => {
+    const added = addToCart(product);
+    if (added) {
+      router.push('/checkout');
+    }
+  };
 
   return (
     <div className="group bg-white/80 border border-slate-200 rounded-2xl overflow-hidden hover:border-emerald-600/50 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/5 flex flex-col justify-between relative">
@@ -108,8 +117,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           </p>
         </div>
 
-        {/* Price & Action */}
-        <div className="pt-3 border-t border-slate-200 flex items-center justify-between">
+        {/* Price & Actions */}
+        <div className="pt-3 border-t border-slate-200 space-y-3">
           <div>
             <div className="text-xs text-slate-500 font-medium">Price in Pakistan</div>
             <div className="flex items-baseline gap-2">
@@ -124,26 +133,39 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             </div>
           </div>
 
-          <button
-            onClick={() => addToCart(product)}
-            disabled={isSoldOut || isMaxed}
-            className={`p-3 rounded-xl font-bold transition-all flex items-center justify-center ${
-              isInCart
-                ? 'bg-emerald-950 border border-emerald-600 text-emerald-600'
-                : 'bg-emerald-500 hover:bg-emerald-400 text-slate-50 shadow-md shadow-emerald-500/20'
-            } disabled:opacity-50 disabled:cursor-not-allowed`}
-            title={
-              isSoldOut
-                ? 'Out of Stock'
-                : isMaxed
-                ? 'Max quantity in cart'
-                : isInCart
-                ? 'In Cart'
-                : 'Add to Cart'
-            }
-          >
-            {isInCart ? <Check className="w-5 h-5" /> : <ShoppingCart className="w-5 h-5" />}
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => addToCart(product)}
+              disabled={isSoldOut || isMaxed}
+              className={`p-3 rounded-xl font-bold transition-all flex items-center justify-center shrink-0 ${
+                isInCart
+                  ? 'bg-emerald-50 border border-emerald-600 text-emerald-600'
+                  : 'bg-emerald-500 hover:bg-emerald-400 text-white shadow-md shadow-emerald-500/20'
+              } disabled:opacity-50 disabled:cursor-not-allowed`}
+              title={
+                isSoldOut
+                  ? 'Out of Stock'
+                  : isMaxed
+                  ? 'Max quantity in cart'
+                  : isInCart
+                  ? 'In Cart'
+                  : 'Add to Cart'
+              }
+              aria-label="Add to cart"
+            >
+              {isInCart ? <Check className="w-5 h-5" /> : <ShoppingCart className="w-5 h-5" />}
+            </button>
+
+            <button
+              onClick={handleBuyNow}
+              disabled={isSoldOut}
+              className="flex-1 py-3 px-4 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-md shadow-orange-500/20 transition disabled:opacity-50 disabled:cursor-not-allowed"
+              title={isSoldOut ? 'Out of Stock' : 'Buy Now'}
+            >
+              <Zap className="w-4 h-4" />
+              <span>Buy Now</span>
+            </button>
+          </div>
         </div>
 
       </div>
