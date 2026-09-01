@@ -40,6 +40,10 @@ public/products/Download/Quick Share/**/*.jpg
 public/products/Download/Quick Share/**/*.jpeg
 public/products/Download/Quick Share/**/*.png
 !public/products/Download/Quick Share/**/generated_product.png
+# Allow compressed listed-product images (referenced in products.json, deployed to Vercel)
+!public/products/Download/Quick Share/listed products/**/*.jpg
+!public/products/Download/Quick Share/listed products/**/*.jpeg
+!public/products/Download/Quick Share/listed products/**/*.png
 
 # vercel
 .vercel
