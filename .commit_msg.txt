@@ -1,7 +1,0 @@
-feat: add Buy Now button on product page and product cards
-
-- Add Buy Now button (orange) with Zap icon next to Add to Cart
-- Buy Now adds product to cart then redirects straight to /checkout
-- Works on both ProductView page and ProductCard grid
-
-Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
