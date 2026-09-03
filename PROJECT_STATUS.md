@@ -15,6 +15,7 @@ This Next.js 16 version has breaking changes vs training data. Read the relevant
 - Product images: compress before committing (see image rules below). Raw photos live outside git.
 
 ## User preferences (from memory + session)
+- **Owner: Kashif** — personal email **KashifRaj1981@gmail.com** (GitHub: Kashaniya4). Works from Khanewal; shifts between PCs — old PC via AnyDesk/remote, main work on new PC. This file keeps full context across machines.
 - **Roman Urdu / English mix** for communication.
 - **MINIMALISTIC design** — clean, no clutter, no over-decoration. Recent example: Buy Now button was made small emerald-outline (secondary to Add to Cart solid green).
 - **Light theme** site-wide (converted from dark). Classes: `bg-white`/`bg-slate-50`/`text-slate-900`/`border-slate-200`/emerald accents.
