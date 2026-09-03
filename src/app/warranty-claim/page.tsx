@@ -40,9 +40,9 @@ export default function WarrantyClaimPage() {
         </div>
       </div>
 
-      {/* What's Covered */}
+      {/* What&apos;s Covered */}
       <div className="space-y-4">
-        <h2 className="text-xl font-bold text-slate-900">What's Covered</h2>
+        <h2 className="text-xl font-bold text-slate-900">What&apos;s Covered</h2>
         <div className="grid gap-3 sm:grid-cols-2">
           <div className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white/60 p-4">
             <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
@@ -115,7 +115,7 @@ export default function WarrantyClaimPage() {
         <h2 className="text-xl font-bold text-slate-900">File Your Claim</h2>
         <div className="space-y-3 text-sm text-slate-700">
           <p><strong>WhatsApp (Fastest):</strong> <a href="https://wa.me/923397100515?text=Hi%20sastamaal.net%20team,%20I%20want%20to%20file%20a%20warranty%20claim." target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline font-semibold">+92 339-7100515</a> — Send order #, photos, issue description</p>
-          <p><strong>Email:</strong> <a href="mailto:blasterbeaty@gmail.com?subject=Warranty%20Claim" className="text-emerald-600 hover:text-emerald-700 underline font-semibold">blasterbeaty@gmail.com</a> — Subject: "Warranty Claim — [Order #]"</p>
+          <p><strong>Email:</strong> <a href="mailto:blasterbeaty@gmail.com?subject=Warranty%20Claim" className="text-emerald-600 hover:text-emerald-700 underline font-semibold">blasterbeaty@gmail.com</a> — Subject: &quot;Warranty Claim — [Order #]&quot;</p>
           <p><strong>Hours:</strong> Mon–Sat 10 AM – 7 PM PKT | Response within 4 hours</p>
         </div>
         <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 text-slate-50 font-bold text-sm">

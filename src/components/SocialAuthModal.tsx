@@ -18,7 +18,7 @@ export const SocialAuthModal: React.FC = () => {
   const handleSocialLogin = (provider: 'google' | 'facebook' | 'apple') => {
     let mockName = 'Ali Raza';
     let mockEmail = 'ali.raza@example.pk';
-    let avatar = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80';
+    const avatar = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80';
 
     if (provider === 'google') {
       mockName = 'Hamza Khan (Google)';
